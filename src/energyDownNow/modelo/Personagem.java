@@ -14,6 +14,14 @@ public abstract class Personagem {
         this.descricao = descricao;
     }
     
+    public Aparelho getAparelho(List<Aparelho> lista, String nomeAparelho){
+         for (Aparelho a : lista) {
+            if (nomeAparelho.equals(a.getDescricao())) {
+                return a;
+            }
+        }
+        return null;
+    }
 
     public abstract EscalaConforto calcular(List<Aparelho> aparelhosCenario);
     
