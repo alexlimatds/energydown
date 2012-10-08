@@ -1,4 +1,4 @@
-package energyDownNow;
+package energyDownNow.modelo;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package energyDownNow;
+package energyDownNow.modelo;
 
 //import org.junit.AfterClass;
 //import org.junit.BeforeClass;
@@ -7,6 +7,13 @@ package energyDownNow;
 //import energyDownNow.EscalaConforto;
 //import energyDownNow.FimDeJogo;
 //import energyDownNow.Aparelho;
+import energyDownNow.modelo.Personagem;
+import energyDownNow.modelo.FimDeJogo;
+import energyDownNow.modelo.Aparelho;
+import energyDownNow.modelo.Cenario;
+import energyDownNow.modelo.UnidadeDeTempo;
+import energyDownNow.modelo.MetaConforto;
+import energyDownNow.modelo.EscalaConforto;
 import java.util.ArrayList;
 import java.util.List;
 import static org.junit.Assert.*;

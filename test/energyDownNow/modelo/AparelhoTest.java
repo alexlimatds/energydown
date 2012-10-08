@@ -1,9 +1,11 @@
-package energyDownNow;
+package energyDownNow.modelo;
 
 //import org.junit.AfterClass;
 //import org.junit.BeforeClass;
 //import energyDownNow.UnidadeDeTempo;
 //import energyDownNow.Aparelho;
+import energyDownNow.modelo.Aparelho;
+import energyDownNow.modelo.UnidadeDeTempo;
 import static org.junit.Assert.*;
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package energyDownNow;
+package energyDownNow.modelo;
 
 
 public class Aparelho {

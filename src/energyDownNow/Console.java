@@ -1,5 +1,9 @@
 package energyDownNow;
 
+import energyDownNow.modelo.Aparelho;
+import energyDownNow.modelo.Cenario;
+import energyDownNow.modelo.FimDeJogo;
+import energyDownNow.modelo.UnidadeDeTempo;
 import java.util.Scanner;
 
 public class Console {
