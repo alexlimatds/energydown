@@ -12,21 +12,13 @@ public class Cenario {
     private double metaDespesa;
     private double ultimaDespesa;
     private double ultimoConsumo;
-    private EscalaConforto ultimoConforto;
-    private EscalaConforto metaConforto;
-    private List<Aparelho> aparelhos = new ArrayList<Aparelho>();
+    private MetaConforto metaConforto;
     private double valorKwh = 0.55;
+    private List<Aparelho> aparelhos = new ArrayList<Aparelho>();
     private List<Aparelho> aparelhosParaCompra = new ArrayList<Aparelho>();
-    //private List<Personagem> personagensCenario = new ArrayList<Personagem>();
     
     public Cenario(double orcamento, String descricao, int prazo, double metaDespesa, 
-            EscalaConforto metaConforto, double valorKwh) {
-        this(orcamento, descricao, prazo, metaDespesa, metaConforto);
-        this.valorKwh = valorKwh;
-    }
-     
-    public Cenario(double orcamento, String descricao, int prazo, double metaDespesa, 
-            EscalaConforto metaConforto) {
+            MetaConforto metaConforto) {
         this.orcamento = orcamento;
         this.descricao = descricao;
         this.prazo = 3;
@@ -34,17 +26,25 @@ public class Cenario {
         this.metaDespesa = metaDespesa;
         this.metaConforto = metaConforto;
     }
-
+    
     public Cenario(double orcamento, String descricao, int prazo, double metaDespesa, 
-            EscalaConforto metaConforto, List<Aparelho> aparelhosParaCompra) {
+            MetaConforto metaConforto, double valorKwh) {
         this(orcamento, descricao, prazo, metaDespesa, metaConforto);
+        this.valorKwh = valorKwh;
+    }
+      
+    public Cenario(double orcamento, String descricao, int prazo, double metaDespesa, 
+            MetaConforto metaConforto, List<Aparelho> aparelhosParaCompra, double valorKwh){
+        this(orcamento, descricao, prazo, metaDespesa, metaConforto, valorKwh);
         this.aparelhosParaCompra = aparelhosParaCompra;
     }
     
     public void addAparelho(Aparelho aparelho) {
-        
-       getAparelhos().add(aparelho);
-        
+       getAparelhos().add(aparelho); 
+    }
+    
+    public void addAparelhos(List<Aparelho> lista){
+        aparelhos.addAll(lista);
     }
     
     public void removeAparelho(Aparelho aparelho){
@@ -75,14 +75,12 @@ public class Cenario {
     }
 
     public double calcularDespesa(double consumoEmKWh) {
-
         return getValorKwh() * consumoEmKWh;
     }
 
     public void avancar() {
         ultimoConsumo = calcularConsumoEmKWh();
         ultimaDespesa = calcularDespesa(ultimoConsumo);
-        ultimoConforto = calcularConforto();
 
         mesAtual++;
     }
@@ -100,7 +98,7 @@ public class Cenario {
 
     public boolean metaAtingida() {
 
-        if (getUltimaDespesa() <= metaDespesa && getUltimoConforto().getValor() >= metaConforto.getValor()) {
+        if (getUltimaDespesa() <= metaDespesa && metaConforto.atingida(aparelhos)) {
             return true;
         } else {
             return false;
@@ -140,7 +138,7 @@ public class Cenario {
         return aparelhos;
     }
 
-    public EscalaConforto getMetaConforto() {
+    public MetaConforto getMetaConforto() {
         return metaConforto;
     }
 
@@ -158,13 +156,6 @@ public class Cenario {
         }
         return ultimoConsumo;
     }
-
-    public EscalaConforto getUltimoConforto() {
-        if (mesAtual == 1){
-            ultimoConforto = calcularConforto();
-        }
-        return ultimoConforto;
-    }
     
     public int getUltimoMes(){
         return prazo + 1;        
@@ -172,11 +163,6 @@ public class Cenario {
 
     public List<Aparelho> getAparelhosParaCompra(){
         return aparelhosParaCompra;
-    }
-    
-    private EscalaConforto calcularConforto() {
-        //TODO
-        return metaConforto;
     }
     
     public void trocarAparelhos(Aparelho antigo, Aparelho novo){

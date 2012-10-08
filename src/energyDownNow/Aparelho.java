@@ -7,7 +7,6 @@ public class Aparelho {
     private String descricao;
     private double preco;
     private int tempoUso = 1;
-    private int confortoDesejavel;
     private UnidadeDeTempo unidadeDeTempo = UnidadeDeTempo.HORAS_DIA;
     
     public Aparelho (int potencia, String descricao, double preco){
@@ -16,22 +15,6 @@ public class Aparelho {
         this.descricao = descricao;
         this.preco = preco;
     }
-    
-    public Aparelho (int potencia, String descricao, double preco, int confortoDesejavel){
-        
-        this(potencia, descricao, preco);
-        this.confortoDesejavel = confortoDesejavel; // esse conforto seria em horas equivalente a 100%
-    }
-    
-    public void setconfortoDesejavel(int novoConforto)
-    {
-        this.setconfortoDesejavel(novoConforto);
-    }
-    
-    public int getconfortoDesejavel() {
-        return confortoDesejavel;
-    }
-    
     
     public double getConsumoMensal()
     {

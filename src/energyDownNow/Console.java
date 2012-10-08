@@ -5,9 +5,11 @@ import java.util.Scanner;
 public class Console {
     public static void main(String[] args) {
         
-        Cenario cenario = new Cenario(4000, "Casa", 3, 100, EscalaConforto.OTIMO);
-       
         
+           
+        Cenario cenario = new Cenario(4000, "Casa", 3, 100, null);//TODO
+       
+               
         Aparelho aparelho1 = new Aparelho(1125, "Ar Condicionado - Janela 12.000btus", 1200);
         Aparelho aparelho2 = new Aparelho(140, "TV 21\"", 780);
         Aparelho aparelho3 = new Aparelho(10, "DVD", 110);

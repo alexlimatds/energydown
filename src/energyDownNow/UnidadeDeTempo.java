@@ -13,6 +13,7 @@ public enum UnidadeDeTempo {
    }
 
     /**
+     * Retorna o fator utilizado para conveter esta unidade de tempo para horas.
      * @return the fatorConversao
      */
     public double getFatorConversao() {

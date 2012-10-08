@@ -1,7 +1,8 @@
-
 package energyDownNow;
 
-public class Personagem {
+import java.util.List;
+
+public abstract class Personagem {
     
     private String descricao;
     private String sexo;
@@ -13,6 +14,7 @@ public class Personagem {
         this.descricao = descricao;
     }
     
-    
+
+    public abstract EscalaConforto calcular(List<Aparelho> aparelhosCenario);
     
 }
