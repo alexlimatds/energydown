@@ -9,8 +9,14 @@ public class Aparelho {
     private int tempoUso = 1;
     private UnidadeDeTempo unidadeDeTempo = UnidadeDeTempo.HORAS_DIA;
     
+    public Aparelho(int potencia, String descricao, double preco, int tempoDeUso, 
+            UnidadeDeTempo unidade){
+        this(potencia, descricao, preco);
+        this.tempoUso = tempoDeUso;
+        this.unidadeDeTempo = unidade;
+    }
+    
     public Aparelho (int potencia, String descricao, double preco){
-        
         this.potencia = potencia;
         this.descricao = descricao;
         this.preco = preco;
@@ -20,12 +26,6 @@ public class Aparelho {
     {
         return getPotencia() * getTempoUso() * getUnidadeDeTempo().getFatorConversao() / 1000.0;
     }
-    
-    public void settempoUso(int tempo)
-    {
-        this.setTempoUso(tempo);
-    }
-
    
     public int getPotencia() {
         return potencia;

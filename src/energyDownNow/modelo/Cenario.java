@@ -21,7 +21,7 @@ public class Cenario {
             MetaConforto metaConforto) {
         this.orcamento = orcamento;
         this.descricao = descricao;
-        this.prazo = 3;
+        this.prazo = prazo;
         this.mesAtual = 1;
         this.metaDespesa = metaDespesa;
         this.metaConforto = metaConforto;
@@ -97,7 +97,6 @@ public class Cenario {
     }
 
     public boolean metaAtingida() {
-
         if (getUltimaDespesa() <= metaDespesa && metaConforto.atingida(aparelhos)) {
             return true;
         } else {
@@ -199,5 +198,15 @@ public class Cenario {
      */
     public double getValorKwh() {
         return valorKwh;
+    }
+    
+    public Aparelho getAparelho(String descricaoAparelho){
+        for(Aparelho ap : aparelhos){
+            if(descricaoAparelho.equals(ap.getDescricao())){
+                return ap;
+            }
+        }
+        
+        return null;
     }
 }
