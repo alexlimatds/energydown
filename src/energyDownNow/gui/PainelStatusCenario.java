@@ -5,6 +5,7 @@
 package energyDownNow.gui;
 
 import energyDownNow.modelo.Cenario;
+import java.text.DecimalFormat;
 
 /**
  *
@@ -13,6 +14,7 @@ import energyDownNow.modelo.Cenario;
 public class PainelStatusCenario extends javax.swing.JPanel {
     
     private Cenario cenario;
+    private DecimalFormat fmt = new DecimalFormat("#,##0.00");
     
     /**
      * Creates new form PainelStatusCenario
@@ -28,9 +30,9 @@ public class PainelStatusCenario extends javax.swing.JPanel {
     
     public void atualizar(){
         txtMesAtual.setText(String.valueOf(cenario.getMesAtual()));
-        txtConsumoAtual.setText(String.valueOf(cenario.getUltimoConsumo()));
-        txtDespesaAtual.setText(String.valueOf(cenario.getUltimaDespesa()));
-        txtMetaDespesa.setText(String.valueOf(cenario.getMetaDespesa()));
+        txtConsumoAtual.setText(fmt.format(cenario.getUltimoConsumo()));
+        txtDespesaAtual.setText(fmt.format(cenario.getUltimaDespesa()));
+        txtMetaDespesa.setText(fmt.format(cenario.getMetaDespesa()));
     }
     
     /**
