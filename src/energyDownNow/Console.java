@@ -11,8 +11,6 @@ public class Console {
 
     public static void main(String[] args) {
 
-
-
         Cenario cenario = new Cenario(4000, "Casa", 3, 100, null);//TODO
 
         cenario.addAparelho(new Aparelho(1125, "Ar Condicionado - Janela 12.000btus", 1200));
@@ -81,6 +79,11 @@ public class Console {
         }
     }
 
+    /**
+     * Lista todos os aparelhos cadastrados no cenario desejado.
+     *
+     * @param cenario Cenario a ser utilizado.
+     */
     private static void listarAparelhos(Cenario cenario) {
         for (Aparelho a : cenario.getAparelhos()) {
             System.out.println("# " + a.getDescricao() + " - Valor = R$ " + a.getPreco() + " - Potência = " + a.getPotencia() + "kw" + " / Uso: " + a.getTempoUso() + "/" + a.getUnidadeDeTempo());
@@ -88,6 +91,13 @@ public class Console {
         System.out.println("\n");
     }
 
+    /**
+     * Menu que gerencia a alteracao do tempo de uso e unidade de medida de
+     * tempo de aparelhos em determinado cenario.
+     *
+     * @param cenario Cenario desejado.
+     * @param scan Entrada de dados.
+     */
     private static void alterarTempoDeUso(Cenario cenario, Scanner scan) {
 
         System.out.println(" ==>> META CENÁRIO ==>>> R$ " + cenario.getMetaDespesa() + "\n");
@@ -115,6 +125,12 @@ public class Console {
         ap1.setUnidadeDeTempo(UnidadeDeTempo.values()[i]);
     }
 
+    /**
+     * Menu que gerencia a troca de aparelhos em determinado cenario.
+     *
+     * @param cenario Cenario desejado.
+     * @param scan Entrada de dados.
+     */
     private static void trocarAparelho(Cenario cenario, Scanner scan) {
 
         System.out.println("Qual aparelho deseja trocar? \n");
@@ -140,6 +156,12 @@ public class Console {
                 aparelhotroca2));
     }
 
+    /**
+     * Avanca o periodo do cenario para descobrir se as metas foram atingidas.
+     *
+     * @param cenario Cenario desejado.
+     * @return -1 caso o tempo tenha acabado ou as metas atingidas.
+     */
     private static int avancarCenario(Cenario cenario) {
         int x = 9;
         cenario.avancar();
@@ -154,18 +176,13 @@ public class Console {
         System.out.println("Consumo atual do cenário = R$ " + cenario.getUltimaDespesa());
         return x;
     }
-    //ESSE TAMBEM FUNCIONA!!!
-        /*cenario.avancar();
-     if (cenario.getFimDeJogo()!=FimDeJogo.NAO_TERMINADO){
-     if (cenario.getFimDeJogo() == FimDeJogo.METAS_ATINGIDAS) {
-     System.out.println("Você venceu");
-     }
-     else{
-     System.out.println("Loooser");
-     }
-     op=-1;//Jogo terminou, sair do loop
-     }*/
 
+    /**
+     * Menu que gerencia a compra de um novo produto.
+     *
+     * @param cenario Cenario desejado.
+     * @param scan Entrada de dados.
+     */
     private static void comprarAparelho(Cenario cenario, Scanner scan) {
         System.out.println("Qual aparelho deseja comprar? \n");
 
@@ -182,6 +199,12 @@ public class Console {
 
     }
 
+    /**
+     * Menu que gerencia a exclusao de um dos produtos do cenario.
+     *
+     * @param cenario Cenario desejado.
+     * @param scan Entrada de dados.
+     */
     private static void excluirAparelho(Cenario cenario, Scanner scan) {
 
         System.out.println("Qual aparelho deseja excluir? \n");
