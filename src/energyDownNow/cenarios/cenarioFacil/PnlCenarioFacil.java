@@ -15,24 +15,24 @@ import javax.swing.JFrame;
  *
  * @author 201114040290
  */
-public class PnlCenarioFacil extends javax.swing.JPanel implements MouseListener{
-    
+public class PnlCenarioFacil extends javax.swing.JPanel implements MouseListener {
+
     private Cenario cenario;
-    
+
     /**
      * Creates new form PnlCenarioFacil
      */
     public PnlCenarioFacil() {
         initComponents();
-        
+
         cenario = CenarioFacil.getCenario();
         labelAparelho1.setAparelho(cenario.getAparelho("Ar Condicionado - Janela 12.000btus"));
         labelAparelho1.addMouseListener(this);
         labelAparelho2.setAparelho(cenario.getAparelho("TV 21\""));
-        
+
         painelStatusCenario1.setCenario(cenario);
     }
-    
+
     public static void main(String[] args) {
         JFrame frame = new JFrame("Teste");
         PnlCenarioFacil painel = new PnlCenarioFacil();
@@ -41,7 +41,7 @@ public class PnlCenarioFacil extends javax.swing.JPanel implements MouseListener
         frame.pack();
         frame.setVisible(true);
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -164,7 +164,6 @@ public class PnlCenarioFacil extends javax.swing.JPanel implements MouseListener
         cenario.avancar();
         painelStatusCenario1.atualizar();
     }//GEN-LAST:event_jButton1ActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private energyDownNow.gui.LabelAparelho labelAparelho1;
@@ -182,8 +181,8 @@ public class PnlCenarioFacil extends javax.swing.JPanel implements MouseListener
     @Override
     public void mouseClicked(MouseEvent e) {
         Object origem = e.getSource();
-        if(origem instanceof LabelAparelho){
-            LabelAparelho label = (LabelAparelho)origem;
+        if (origem instanceof LabelAparelho) {
+            LabelAparelho label = (LabelAparelho) origem;
             DialogEdicaoAparelho dialog = new DialogEdicaoAparelho(null, label.getAparelho());
             dialog.setVisible(true);
         }
@@ -191,21 +190,17 @@ public class PnlCenarioFacil extends javax.swing.JPanel implements MouseListener
 
     @Override
     public void mousePressed(MouseEvent e) {
-        
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-        
     }
 }

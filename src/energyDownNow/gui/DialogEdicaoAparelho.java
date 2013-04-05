@@ -12,9 +12,9 @@ import energyDownNow.modelo.UnidadeDeTempo;
  * @author 201114040290
  */
 public class DialogEdicaoAparelho extends javax.swing.JDialog {
-    
+
     private Aparelho aparelho;
-    
+
     /**
      * Creates new form DialogEdicaoAparelho
      */
@@ -24,11 +24,11 @@ public class DialogEdicaoAparelho extends javax.swing.JDialog {
         this.aparelho = aparelho;
         initComponents();
         lblDescricao.setText(aparelho.getDescricao());
-        txtPotencia.setText( String.valueOf(aparelho.getPotencia()) );
+        txtPotencia.setText(String.valueOf(aparelho.getPotencia()));
         spnTempoUso.setValue(aparelho.getTempoUso());
-        
+
         cbxUnidadeTempo.removeAllItems();
-        for(UnidadeDeTempo unidade : UnidadeDeTempo.values()){
+        for (UnidadeDeTempo unidade : UnidadeDeTempo.values()) {
             cbxUnidadeTempo.addItem(unidade);
         }
         cbxUnidadeTempo.setSelectedItem(aparelho.getUnidadeDeTempo());
@@ -146,8 +146,8 @@ public class DialogEdicaoAparelho extends javax.swing.JDialog {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkActionPerformed
-        aparelho.setUnidadeDeTempo((UnidadeDeTempo)cbxUnidadeTempo.getSelectedItem());
-        aparelho.setTempoUso((Integer)spnTempoUso.getValue());
+        aparelho.setUnidadeDeTempo((UnidadeDeTempo) cbxUnidadeTempo.getSelectedItem());
+        aparelho.setTempoUso((Integer) spnTempoUso.getValue());
         dispose();
     }//GEN-LAST:event_btnOkActionPerformed
 
@@ -187,18 +187,18 @@ public class DialogEdicaoAparelho extends javax.swing.JDialog {
          */
         /*java.awt.EventQueue.invokeLater(new Runnable() {
 
-            public void run() {
-                DialogEdicaoAparelho dialog = new DialogEdicaoAparelho(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+         public void run() {
+         DialogEdicaoAparelho dialog = new DialogEdicaoAparelho(new javax.swing.JFrame(), true);
+         dialog.addWindowListener(new java.awt.event.WindowAdapter() {
 
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });*/
+         @Override
+         public void windowClosing(java.awt.event.WindowEvent e) {
+         System.exit(0);
+         }
+         });
+         dialog.setVisible(true);
+         }
+         });*/
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;

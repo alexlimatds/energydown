@@ -13,16 +13,16 @@ import java.util.List;
  * @author ANA MEIRELES
  */
 public abstract class MetaConforto {
-    
+
     private List<Personagem> personagensCenario = new ArrayList<Personagem>();
-    
+
     public abstract boolean atingida(List<Aparelho> aparelhosDoCenario);
-    
-    public void addPersonagem(Personagem p){
+
+    public void addPersonagem(Personagem p) {
         personagensCenario.add(p);
     }
-    
-    public List<Personagem> getPersonagens(){
+
+    public List<Personagem> getPersonagens() {
         return Collections.unmodifiableList(personagensCenario);
     }
 }

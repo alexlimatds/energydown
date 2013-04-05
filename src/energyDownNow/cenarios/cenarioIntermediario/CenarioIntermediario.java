@@ -9,5 +9,4 @@ package energyDownNow.cenarios.cenarioIntermediario;
  * @author 201114040037
  */
 public class CenarioIntermediario {
-    
 }

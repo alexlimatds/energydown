@@ -16,8 +16,8 @@ public class Cenario {
     private double valorKwh = 0.55;
     private List<Aparelho> aparelhos = new ArrayList<Aparelho>();
     private List<Aparelho> aparelhosParaCompra = new ArrayList<Aparelho>();
-    
-    public Cenario(double orcamento, String descricao, int prazo, double metaDespesa, 
+
+    public Cenario(double orcamento, String descricao, int prazo, double metaDespesa,
             MetaConforto metaConforto) {
         this.orcamento = orcamento;
         this.descricao = descricao;
@@ -26,43 +26,43 @@ public class Cenario {
         this.metaDespesa = metaDespesa;
         this.metaConforto = metaConforto;
     }
-    
-    public Cenario(double orcamento, String descricao, int prazo, double metaDespesa, 
+
+    public Cenario(double orcamento, String descricao, int prazo, double metaDespesa,
             MetaConforto metaConforto, double valorKwh) {
         this(orcamento, descricao, prazo, metaDespesa, metaConforto);
         this.valorKwh = valorKwh;
     }
-      
-    public Cenario(double orcamento, String descricao, int prazo, double metaDespesa, 
-            MetaConforto metaConforto, List<Aparelho> aparelhosParaCompra, double valorKwh){
+
+    public Cenario(double orcamento, String descricao, int prazo, double metaDespesa,
+            MetaConforto metaConforto, List<Aparelho> aparelhosParaCompra, double valorKwh) {
         this(orcamento, descricao, prazo, metaDespesa, metaConforto, valorKwh);
         this.aparelhosParaCompra = aparelhosParaCompra;
     }
-    
+
     public void addAparelho(Aparelho aparelho) {
-       getAparelhos().add(aparelho); 
+        getAparelhos().add(aparelho);
     }
-    
-    public void addAparelhos(List<Aparelho> lista){
+
+    public void addAparelhos(List<Aparelho> lista) {
         aparelhos.addAll(lista);
     }
-    
-    public void removeAparelho(Aparelho aparelho){
+
+    public void removeAparelho(Aparelho aparelho) {
         getAparelhos().remove(aparelho);
     }
-    
-    public void removeAparelhoDeCompra(Aparelho aparelho){
+
+    public void removeAparelhoDeCompra(Aparelho aparelho) {
         getAparelhosParaCompra().remove(aparelho);
     }
-    
-    public double custoAparelhos(){
-        double totalCusto=0;
-        for(Aparelho aparelho:aparelhos){
-            totalCusto+=aparelho.getPreco();
+
+    public double custoAparelhos() {
+        double totalCusto = 0;
+        for (Aparelho aparelho : aparelhos) {
+            totalCusto += aparelho.getPreco();
         }
         return totalCusto;
     }
-    
+
     public double calcularConsumoEmKWh() {
 
         double total = 0;
@@ -142,46 +142,46 @@ public class Cenario {
     }
 
     public double getUltimaDespesa() {
-        if (mesAtual == 1){
+        if (mesAtual == 1) {
             double consumo = getUltimoConsumo();
-            return calcularDespesa(consumo); 
+            return calcularDespesa(consumo);
         }
         return ultimaDespesa;
     }
 
     public double getUltimoConsumo() {
-        if(mesAtual == 1){
+        if (mesAtual == 1) {
             ultimoConsumo = calcularConsumoEmKWh();
         }
         return ultimoConsumo;
     }
-    
-    public int getUltimoMes(){
-        return prazo + 1;        
+
+    public int getUltimoMes() {
+        return prazo + 1;
     }
 
-    public List<Aparelho> getAparelhosParaCompra(){
+    public List<Aparelho> getAparelhosParaCompra() {
         return aparelhosParaCompra;
     }
-    
-    public void trocarAparelhos(Aparelho antigo, Aparelho novo){
+
+    public void trocarAparelhos(Aparelho antigo, Aparelho novo) {
         // Remove o antigo, e adiciona o novo aparelho no cenário
-        
-        if (orcamento>novo.getPreco()){
+
+        if (orcamento > novo.getPreco()) {
             removeAparelho(antigo);
             addAparelho(novo);
-            
-        // Remove o aparelho da lista de compra
+
+            // Remove o aparelho da lista de compra
             removeAparelhoDeCompra(novo);
-        
-        // Atualiza o orçamento
+
+            // Atualiza o orçamento
             orcamento -= novo.getPreco();
         }
     }
-    
-    public void comprarAparelho(Aparelho novo){
-        
-        if (orcamento>novo.getPreco()){
+
+    public void comprarAparelho(Aparelho novo) {
+
+        if (orcamento > novo.getPreco()) {
             // Adiciona o aparelho comprado no cenário
             addAparelho(novo);
 
@@ -199,14 +199,14 @@ public class Cenario {
     public double getValorKwh() {
         return valorKwh;
     }
-    
-    public Aparelho getAparelho(String descricaoAparelho){
-        for(Aparelho ap : aparelhos){
-            if(descricaoAparelho.equals(ap.getDescricao())){
+
+    public Aparelho getAparelho(String descricaoAparelho) {
+        for (Aparelho ap : aparelhos) {
+            if (descricaoAparelho.equals(ap.getDescricao())) {
                 return ap;
             }
         }
-        
+
         return null;
     }
 }

@@ -13,31 +13,31 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class CenarioTest {
-    
+
     //Retorna uma meta conforto que é sempre atingida
-    private MetaConforto getMetaAuxliar1(){
+    private MetaConforto getMetaAuxliar1() {
         MetaConforto metaConforto = new MetaConforto() {
             @Override
             public boolean atingida(List<Aparelho> l) {
                 return true;
             }
         };
-        
+
         return metaConforto;
     }
-    
+
     //Retorna uma meta conforto que nunca é atingida
-    private MetaConforto getMetaAuxliar2(){
+    private MetaConforto getMetaAuxliar2() {
         MetaConforto metaConforto = new MetaConforto() {
             @Override
             public boolean atingida(List<Aparelho> l) {
                 return false;
             }
         };
-        
+
         return metaConforto;
     }
-    
+
     @Test
     public void testCalcularConsumoEmKWh() {
         Cenario cenarioA = new Cenario(1.200, "", 3, 1.100, getMetaAuxliar1());
@@ -69,7 +69,7 @@ public class CenarioTest {
 
     @Test
     public void testAvancar() {
-       
+
         Cenario cenarioC = new Cenario(1.200, "cccccc", 3, 1.100, getMetaAuxliar1());
         Aparelho aparelhoTeste2 = new Aparelho(3, "telefone", 100);
         aparelhoTeste2.setTempoUso(24);
@@ -77,12 +77,12 @@ public class CenarioTest {
         cenarioC.addAparelho(aparelhoTeste2);
         assertEquals(2.16, cenarioC.getUltimoConsumo(), 0.0001);
         assertEquals(2.16 * cenarioC.getValorKwh(), cenarioC.getUltimaDespesa(), 0.0001);
-        
+
         cenarioC.avancar();
-        
+
         assertEquals(2.16, cenarioC.getUltimoConsumo(), 0.0001);
-        assertEquals(2.16 * cenarioC.getValorKwh() , cenarioC.getUltimaDespesa(), 0.0001);
-        
+        assertEquals(2.16 * cenarioC.getValorKwh(), cenarioC.getUltimaDespesa(), 0.0001);
+
     }
 
     @Test
@@ -97,18 +97,17 @@ public class CenarioTest {
         aparelhoTeste3.setTempoUso(24);
         aparelhoTeste3.setUnidadeDeTempo(UnidadeDeTempo.HORAS_DIA);
         aparelhos.add(aparelhoTeste3);
-        
+
         final Personagem ana = new Personagem("F", 28, "") {
             @Override
             public EscalaConforto calcular(List<Aparelho> aparelhosCenario) {
-                for(Aparelho a : aparelhosCenario){
-                    if("Chuveiro Elétrico".equals(a.getDescricao())){
+                for (Aparelho a : aparelhosCenario) {
+                    if ("Chuveiro Elétrico".equals(a.getDescricao())) {
                         double tempoEmHoras = a.getUnidadeDeTempo().getFatorConversao() * a.getTempoUso();
-                        if(tempoEmHoras > (20.0 / 60.0)){
+                        if (tempoEmHoras > (20.0 / 60.0)) {
                             //tempo de uso maior que 20 min
                             return EscalaConforto.OTIMO;
-                        }
-                        else if(tempoEmHoras * a.getTempoUso() > (10.0 / 60.0)){
+                        } else if (tempoEmHoras * a.getTempoUso() > (10.0 / 60.0)) {
                             return EscalaConforto.BOM;
                         }
                         return EscalaConforto.PESSIMO;
@@ -127,15 +126,15 @@ public class CenarioTest {
         Cenario cenarioD = new Cenario(1200, "ddddd", 3, 1100, metaConforto);
         cenarioD.addAparelhos(aparelhos);
         cenarioD.avancar();
-        assertEquals(true, cenarioD.metaAtingida());        
-        
+        assertEquals(true, cenarioD.metaAtingida());
+
         //meta não deve ser atingida
         /*Cenario cenarioE = new Cenario(1200, "ddddd", 3, 4, EscalaConforto.OTIMO);
-        cenarioE.addAparelho(aparelhoTeste3);       
-        cenarioE.avancar();
-        assertEquals(false, cenarioE.metaAtingida());        */
+         cenarioE.addAparelho(aparelhoTeste3);       
+         cenarioE.avancar();
+         assertEquals(false, cenarioE.metaAtingida());        */
     }
-    
+
     @Test
     public void testMetaAtingida2() {
         //meta deve ser atingida
@@ -148,18 +147,17 @@ public class CenarioTest {
         aparelhoTeste3.setTempoUso(2);
         aparelhoTeste3.setUnidadeDeTempo(UnidadeDeTempo.MINUTOS_DIA);
         aparelhos.add(aparelhoTeste3);
-        
+
         final Personagem ana = new Personagem("F", 28, "") {
             @Override
             public EscalaConforto calcular(List<Aparelho> aparelhosCenario) {
-                for(Aparelho a : aparelhosCenario){
-                    if("Chuveiro Elétrico".equals(a.getDescricao())){
+                for (Aparelho a : aparelhosCenario) {
+                    if ("Chuveiro Elétrico".equals(a.getDescricao())) {
                         double tempoEmHorasMes = a.getUnidadeDeTempo().getFatorConversao() * a.getTempoUso();
-                        if(tempoEmHorasMes > (20.0 / 60.0) * 30.0){
+                        if (tempoEmHorasMes > (20.0 / 60.0) * 30.0) {
                             //tempo de uso maior que 20 min
                             return EscalaConforto.OTIMO;
-                        }
-                        else if(tempoEmHorasMes > (10.0 / 60.0) * 30.0){
+                        } else if (tempoEmHorasMes > (10.0 / 60.0) * 30.0) {
                             return EscalaConforto.BOM;
                         }
                         return EscalaConforto.PESSIMO;
@@ -173,46 +171,45 @@ public class CenarioTest {
             public EscalaConforto calcular(List<Aparelho> aparelhosCenario) {
                 Aparelho chuveiro = getAparelho(aparelhosCenario, "Chuveiro Elétrico");
                 Aparelho telefone = getAparelho(aparelhosCenario, "telefone");
-                
+
                 double tempoEmHoraschuveiro = chuveiro.getUnidadeDeTempo().getFatorConversao() * chuveiro.getTempoUso();
                 double tempoEmHorastelefone = telefone.getUnidadeDeTempo().getFatorConversao() * telefone.getTempoUso();
-                if(tempoEmHorastelefone > 20.0 / 60.0  * 30.0){
-                    if (tempoEmHoraschuveiro > (10.0 / 60.0  * 30.0)){
+                if (tempoEmHorastelefone > 20.0 / 60.0 * 30.0) {
+                    if (tempoEmHoraschuveiro > (10.0 / 60.0 * 30.0)) {
                         return EscalaConforto.OTIMO;
                     }
                     return EscalaConforto.BOM;
-                }
-                else{     
+                } else {
                     return EscalaConforto.PESSIMO;
                 }
             }
         };
-        
+
         MetaConforto metaConforto = new MetaConforto() {
             @Override
             public boolean atingida(List<Aparelho> aparelhosDoCenario) {
                 EscalaConforto confortoAna = ana.calcular(aparelhos);
                 EscalaConforto confortoRafael = rafael.calcular(aparelhos);
-                return (confortoAna.getValor() >= EscalaConforto.BOM.getValor() && 
-                        confortoRafael.getValor() >= EscalaConforto.BOM.getValor());
+                return (confortoAna.getValor() >= EscalaConforto.BOM.getValor()
+                        && confortoRafael.getValor() >= EscalaConforto.BOM.getValor());
             }
         };
         Cenario cenarioD = new Cenario(1200, "ddddd", 3, 1100, metaConforto);
         cenarioD.addAparelhos(aparelhos);
-        
+
         cenarioD.avancar();
-        assertEquals(false, cenarioD.metaAtingida());        
-        
+        assertEquals(false, cenarioD.metaAtingida());
+
         aparelhoTeste3.setTempoUso(30);
         chuveiro.setTempoUso(5);
         cenarioD.avancar();
         assertEquals(false, cenarioD.metaAtingida());
-        
+
         chuveiro.setTempoUso(11);
         cenarioD.avancar();
         assertEquals(true, cenarioD.metaAtingida());
     }
-    
+
     @Test
     public void testFimDoPrazo() {
         Cenario cenarioF = new Cenario(1200, "ddddd", 3, 1100, getMetaAuxliar2());
@@ -230,13 +227,13 @@ public class CenarioTest {
         assertFalse(cenarioF.fimDoPrazo());
         cenarioF.avancar();
         //mes 4
-        assertEquals(true, cenarioF.fimDoPrazo());               
+        assertEquals(true, cenarioF.fimDoPrazo());
     }
-    
+
     @Test
     public void testGetFimDeJogo() {
         //teste 1 - fim do prazo
-        
+
         // Cria um cenário
         Cenario cenarioG = new Cenario(1200, "ddddd", 3, 1, getMetaAuxliar2());
         // Cria um aparelho, e adiciona ele no cenário
@@ -251,7 +248,7 @@ public class CenarioTest {
         assertEquals(FimDeJogo.NAO_TERMINADO, cenarioG.getFimDeJogo());   //mes 3
         cenarioG.avancar();
         assertEquals(FimDeJogo.FIM_DO_PRAZO, cenarioG.getFimDeJogo());   //mes 4
-        
+
         //teste 2 - meta atingida
         Cenario cenarioH = new Cenario(1200, "ddddd", 5, 1, getMetaAuxliar1());
         Aparelho aparelhoTeste6 = new Aparelho(3, "telefone", 100);
@@ -264,7 +261,7 @@ public class CenarioTest {
         aparelhoTeste6.setTempoUso(5);
         cenarioH.avancar();
         assertEquals(FimDeJogo.METAS_ATINGIDAS, cenarioH.getFimDeJogo());   //mes 3
-        
+
         //teste 3 - meta atingida - mudando aparelho
         Cenario cenarioI = new Cenario(1200, "novoTeste", 5, 1, getMetaAuxliar1());
         Aparelho aparelhoTeste7 = new Aparelho(115, "televisão", 1000);
@@ -272,12 +269,12 @@ public class CenarioTest {
         aparelhoTeste7.setUnidadeDeTempo(UnidadeDeTempo.HORAS_DIA);
         cenarioI.addAparelho(aparelhoTeste7);
         //adicionando um novo aparelho no mesmo cenário
-        
-        Aparelho aparelhoTeste8=new Aparelho(60, "dvd", 200);
+
+        Aparelho aparelhoTeste8 = new Aparelho(60, "dvd", 200);
         aparelhoTeste8.setUnidadeDeTempo(UnidadeDeTempo.HORAS_MES);
         aparelhoTeste8.setTempoUso(10);
         cenarioI.addAparelho(aparelhoTeste8);
-        
+
         assertEquals(FimDeJogo.NAO_TERMINADO, cenarioI.getFimDeJogo());   //mes 1
         aparelhoTeste7.setTempoUso(5);
         cenarioI.avancar();
@@ -288,23 +285,23 @@ public class CenarioTest {
     }
 
     @Test
-    public void testTrocaAparelho(){
+    public void testTrocaAparelho() {
         ArrayList<Aparelho> aparelhosParaCompra = new ArrayList<Aparelho>();
         Aparelho aparelho2 = new Aparelho(500, "Ar condicionado", 400);
         aparelho2.setUnidadeDeTempo(UnidadeDeTempo.HORAS_MES);
         aparelho2.setTempoUso(8);
         aparelhosParaCompra.add(aparelho2);
-        
+
         Cenario cenario = new Cenario(1200, "Sei la", 3, 1, getMetaAuxliar1(), aparelhosParaCompra, 0.55);
         Aparelho aparelho1 = new Aparelho(100, "ventilador", 110);
         aparelho1.setUnidadeDeTempo(UnidadeDeTempo.HORAS_MES);
         aparelho1.setTempoUso(8);
         cenario.addAparelho(aparelho1);
-        
+
         cenario.trocarAparelhos(aparelho1, aparelho2);
-        
+
         cenario.avancar();
-        
+
         assertEquals(1, cenario.getAparelhos().size());
         assertEquals(0, aparelhosParaCompra.size());
         assertTrue(cenario.getOrcamento() >= 0);

@@ -11,7 +11,8 @@ import javax.swing.JLabel;
  *
  * @author 201114040290
  */
-public class LabelAparelho extends JLabel{
+public class LabelAparelho extends JLabel {
+
     private Aparelho aparelho;
 
     public LabelAparelho() {
@@ -20,12 +21,12 @@ public class LabelAparelho extends JLabel{
     public LabelAparelho(Aparelho aparelho) {
         this.aparelho = aparelho;
     }
-    
-    public Aparelho getAparelho(){
+
+    public Aparelho getAparelho() {
         return aparelho;
     }
-    
-    public void setAparelho(Aparelho aparelho){
+
+    public void setAparelho(Aparelho aparelho) {
         this.aparelho = aparelho;
         setText(aparelho.getDescricao());
     }

@@ -12,10 +12,10 @@ import java.text.DecimalFormat;
  * @author 201114040290
  */
 public class PainelStatusCenario extends javax.swing.JPanel {
-    
+
     private Cenario cenario;
     private DecimalFormat fmt = new DecimalFormat("#,##0.00");
-    
+
     /**
      * Creates new form PainelStatusCenario
      */
@@ -23,18 +23,18 @@ public class PainelStatusCenario extends javax.swing.JPanel {
         initComponents();
     }
 
-    public void setCenario(Cenario cenario){
+    public void setCenario(Cenario cenario) {
         this.cenario = cenario;
         atualizar();
     }
-    
-    public void atualizar(){
+
+    public void atualizar() {
         txtMesAtual.setText(String.valueOf(cenario.getMesAtual()));
         txtConsumoAtual.setText(fmt.format(cenario.getUltimoConsumo()));
         txtDespesaAtual.setText(fmt.format(cenario.getUltimaDespesa()));
         txtMetaDespesa.setText(fmt.format(cenario.getMetaDespesa()));
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
