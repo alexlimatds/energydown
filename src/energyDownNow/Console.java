@@ -1,5 +1,6 @@
 package energyDownNow;
 
+import energyDownNow.cenarios.cenarioFacil.CenarioFacil;
 import energyDownNow.modelo.Aparelho;
 import energyDownNow.modelo.Cenario;
 import energyDownNow.modelo.FimDeJogo;
@@ -50,6 +51,8 @@ public class Console {
         cenario.getAparelhosParaCompra().add(aparelhoCompra6);
         cenario.getAparelhosParaCompra().add(aparelhoCompra7);
         
+        cenario = CenarioFacil.getCenario();
+        
         System.out.println("Consumo do cenário em KWh =  " + cenario.calcularConsumoEmKWh() + " KWh.");
         System.out.println("Consumo atual do cenário = R$ " + cenario.getUltimaDespesa());
         System.out.println("Meta de consumo a ser atingida no cenário = R$ " + cenario.getMetaDespesa());
@@ -57,7 +60,7 @@ public class Console {
         Scanner scan = new Scanner(System.in); 
         int op = 9; 
            
-        while(op  >= 0){
+        while(op >= 0){
            
            System.out.println("\n");
            

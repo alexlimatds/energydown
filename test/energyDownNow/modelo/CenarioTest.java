@@ -7,13 +7,6 @@ package energyDownNow.modelo;
 //import energyDownNow.EscalaConforto;
 //import energyDownNow.FimDeJogo;
 //import energyDownNow.Aparelho;
-import energyDownNow.modelo.Personagem;
-import energyDownNow.modelo.FimDeJogo;
-import energyDownNow.modelo.Aparelho;
-import energyDownNow.modelo.Cenario;
-import energyDownNow.modelo.UnidadeDeTempo;
-import energyDownNow.modelo.MetaConforto;
-import energyDownNow.modelo.EscalaConforto;
 import java.util.ArrayList;
 import java.util.List;
 import static org.junit.Assert.*;
@@ -260,7 +253,7 @@ public class CenarioTest {
         assertEquals(FimDeJogo.FIM_DO_PRAZO, cenarioG.getFimDeJogo());   //mes 4
         
         //teste 2 - meta atingida
-        Cenario cenarioH = new Cenario(1200, "ddddd", 1, 1, getMetaAuxliar1());
+        Cenario cenarioH = new Cenario(1200, "ddddd", 5, 1, getMetaAuxliar1());
         Aparelho aparelhoTeste6 = new Aparelho(3, "telefone", 100);
         aparelhoTeste6.setTempoUso(24);
         aparelhoTeste6.setUnidadeDeTempo(UnidadeDeTempo.HORAS_DIA);
