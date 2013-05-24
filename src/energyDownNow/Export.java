@@ -21,7 +21,7 @@ public class Export {
         XStream xstream = new XStream(new StaxDriver());
         
         try {
-            FileOutputStream fs = new FileOutputStream("src/energyDownNow/cenarios/cenarioFacil.xml");
+            FileOutputStream fs = new FileOutputStream("src/energyDownNow/cenario/cenarioFacil.xml");
             xstream.toXML(CenarioFacil.getCenario(), fs);
         } catch (FileNotFoundException e1) {
             e1.printStackTrace();

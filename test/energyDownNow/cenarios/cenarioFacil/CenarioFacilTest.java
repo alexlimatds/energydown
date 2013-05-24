@@ -27,7 +27,7 @@ public class CenarioFacilTest {
         XStream xs = new XStream(new StaxDriver());
         
         try {
-            FileInputStream fis = new FileInputStream("src/energyDownNow/cenarios/cenarioFacil.xml");
+            FileInputStream fis = new FileInputStream("src/energyDownNow/cenario/cenarioFacil.xml");
             xs.fromXML(fis, cenarioFacil);
 
         } catch (FileNotFoundException ex) {
