@@ -8,7 +8,7 @@ import energyDownNow.cenario.cenarioFacil.CenarioFacil;
 import energyDownNow.gui.DialogEdicaoAparelho;
 import energyDownNow.gui.LabelAparelho;
 import energyDownNow.modelo.Cenario;
-import energyDownNow.modelo.FimDeJogo;
+import energyDownNow.modelo.unidade.FimDeJogo;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JFrame;

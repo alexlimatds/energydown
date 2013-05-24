@@ -4,7 +4,7 @@
  */
 package energyDownNow.gui;
 
-import energyDownNow.modelo.Aparelho;
+import energyDownNow.modelo.UtilizacaoAparelho;
 import energyDownNow.modelo.unidade.Tempo;
 
 /**
@@ -13,12 +13,12 @@ import energyDownNow.modelo.unidade.Tempo;
  */
 public class DialogEdicaoAparelho extends javax.swing.JDialog {
 
-    private Aparelho aparelho;
+    private UtilizacaoAparelho aparelho;
 
     /**
      * Creates new form DialogEdicaoAparelho
      */
-    public DialogEdicaoAparelho(java.awt.Frame parent, Aparelho aparelho) {
+    public DialogEdicaoAparelho(java.awt.Frame parent, UtilizacaoAparelho aparelho) {
         super(parent, true);
         setTitle("Alterar Uso do Aparelho");
         this.aparelho = aparelho;

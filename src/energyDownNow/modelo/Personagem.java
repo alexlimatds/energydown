@@ -15,8 +15,8 @@ public abstract class Personagem {
         this.descricao = descricao;
     }
 
-    public Aparelho getAparelho(List<Aparelho> lista, String nomeAparelho) {
-        for (Aparelho a : lista) {
+    public UtilizacaoAparelho getAparelho(List<UtilizacaoAparelho> lista, String nomeAparelho) {
+        for (UtilizacaoAparelho a : lista) {
             if (nomeAparelho.equals(a.getDescricao())) {
                 return a;
             }
@@ -24,5 +24,5 @@ public abstract class Personagem {
         return null;
     }
 
-    public abstract Conforto calcular(List<Aparelho> aparelhosCenario);
+    public abstract Conforto calcular(List<UtilizacaoAparelho> aparelhosCenario);
 }

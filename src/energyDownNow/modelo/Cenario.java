@@ -1,5 +1,6 @@
 package energyDownNow.modelo;
 
+import energyDownNow.modelo.unidade.FimDeJogo;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,8 +18,8 @@ public class Cenario {
     private MetaConforto metaConforto;
     private double valorKwh = 0.55;
     private List<Personagem> personagens;
-    private List<Aparelho> aparelhos = new ArrayList<Aparelho>();
-    private List<Aparelho> aparelhosParaCompra = new ArrayList<Aparelho>();
+    private List<UtilizacaoAparelho> aparelhos = new ArrayList<UtilizacaoAparelho>();
+    private List<UtilizacaoAparelho> aparelhosParaCompra = new ArrayList<UtilizacaoAparelho>();
 
     public Cenario(double orcamento, String descricao, int prazo, double metaDespesa,
             MetaConforto metaConforto) {
@@ -37,30 +38,30 @@ public class Cenario {
     }
 
     public Cenario(double orcamento, String descricao, int prazo, double metaDespesa,
-            MetaConforto metaConforto, List<Aparelho> aparelhosParaCompra, double valorKwh) {
+            MetaConforto metaConforto, List<UtilizacaoAparelho> aparelhosParaCompra, double valorKwh) {
         this(orcamento, descricao, prazo, metaDespesa, metaConforto, valorKwh);
         this.aparelhosParaCompra = aparelhosParaCompra;
     }
 
-    public void addAparelho(Aparelho aparelho) {
+    public void addAparelho(UtilizacaoAparelho aparelho) {
         getAparelhos().add(aparelho);
     }
 
-    public void addAparelhos(List<Aparelho> lista) {
+    public void addAparelhos(List<UtilizacaoAparelho> lista) {
         aparelhos.addAll(lista);
     }
 
-    public void removeAparelho(Aparelho aparelho) {
+    public void removeAparelho(UtilizacaoAparelho aparelho) {
         getAparelhos().remove(aparelho);
     }
 
-    public void removeAparelhoDeCompra(Aparelho aparelho) {
+    public void removeAparelhoDeCompra(UtilizacaoAparelho aparelho) {
         getAparelhosParaCompra().remove(aparelho);
     }
 
     public double custoAparelhos() {
         double totalCusto = 0;
-        for (Aparelho aparelho : aparelhos) {
+        for (UtilizacaoAparelho aparelho : aparelhos) {
             totalCusto += aparelho.getPreco();
         }
         return totalCusto;
@@ -70,7 +71,7 @@ public class Cenario {
 
         double total = 0;
 
-        for (Aparelho a : aparelhos) {
+        for (UtilizacaoAparelho a : aparelhos) {
 
             total += a.getConsumoMensal();
         }
@@ -136,7 +137,7 @@ public class Cenario {
         return metaDespesa;
     }
 
-    public List<Aparelho> getAparelhos() {
+    public List<UtilizacaoAparelho> getAparelhos() {
         return aparelhos;
     }
 
@@ -163,11 +164,11 @@ public class Cenario {
         return prazo + 1;
     }
 
-    public List<Aparelho> getAparelhosParaCompra() {
+    public List<UtilizacaoAparelho> getAparelhosParaCompra() {
         return aparelhosParaCompra;
     }
 
-    public void trocarAparelhos(Aparelho antigo, Aparelho novo) {
+    public void trocarAparelhos(UtilizacaoAparelho antigo, UtilizacaoAparelho novo) {
         // Remove o antigo, e adiciona o novo aparelho no cenário
 
         if (orcamento > novo.getPreco()) {
@@ -182,7 +183,7 @@ public class Cenario {
         }
     }
 
-    public void comprarAparelho(Aparelho novo) {
+    public void comprarAparelho(UtilizacaoAparelho novo) {
 
         if (orcamento > novo.getPreco()) {
             // Adiciona o aparelho comprado no cenário
@@ -203,8 +204,8 @@ public class Cenario {
         return valorKwh;
     }
 
-    public Aparelho getAparelho(String descricaoAparelho) {
-        for (Aparelho ap : aparelhos) {
+    public UtilizacaoAparelho getAparelho(String descricaoAparelho) {
+        for (UtilizacaoAparelho ap : aparelhos) {
             if (descricaoAparelho.equals(ap.getDescricao())) {
                 return ap;
             }

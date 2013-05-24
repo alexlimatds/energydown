@@ -1,4 +1,4 @@
-package energyDownNow.modelo;
+package energyDownNow.modelo.unidade;
 
 public enum FimDeJogo {
 
