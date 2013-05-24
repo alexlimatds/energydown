@@ -1,7 +1,7 @@
-package energyDownNow.cenarios.cenarioIntermediario;
+package energyDownNow.cenario.cenarioIntermediario;
 
 import energyDownNow.modelo.Aparelho;
-import energyDownNow.modelo.EscalaConforto;
+import energyDownNow.modelo.unidade.Conforto;
 import energyDownNow.modelo.MetaConforto;
 import energyDownNow.modelo.Personagem;
 import java.util.List;
@@ -15,7 +15,7 @@ public class MetaConfortoCenarioIntermediario extends MetaConforto {
     @Override
     public boolean atingida(List<Aparelho> aparelhosDoCenario) {
         for (Personagem p : getPersonagens()) {
-            if (p.calcular(aparelhosDoCenario).getValor() < EscalaConforto.BOM.getValor()) {
+            if (p.calcular(aparelhosDoCenario).getValor() < Conforto.BOM.getValor()) {
                 return false;
             }
         }

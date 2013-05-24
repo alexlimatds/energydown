@@ -10,10 +10,13 @@ public class Cenario {
     private int prazo;
     private int mesAtual;
     private double metaDespesa;
+    private List<Double> historicoDespesa;
+    private List<Double> historicoConsumo;
     private double ultimaDespesa;
     private double ultimoConsumo;
     private MetaConforto metaConforto;
     private double valorKwh = 0.55;
+    private List<Personagem> personagens;
     private List<Aparelho> aparelhos = new ArrayList<Aparelho>();
     private List<Aparelho> aparelhosParaCompra = new ArrayList<Aparelho>();
 

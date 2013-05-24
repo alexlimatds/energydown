@@ -1,15 +1,17 @@
 package energyDownNow.modelo;
 
+import energyDownNow.modelo.unidade.Tempo;
+
 public class Aparelho {
 
     private int potencia;
     private String descricao;
     private double preco;
     private int tempoUso = 1;
-    private UnidadeDeTempo unidadeDeTempo = UnidadeDeTempo.HORAS_DIA;
+    private Tempo unidadeDeTempo = Tempo.HORAS_DIA;
 
     public Aparelho(int potencia, String descricao, double preco, int tempoDeUso,
-            UnidadeDeTempo unidade) {
+            Tempo unidade) {
         this(potencia, descricao, preco);
         this.tempoUso = tempoDeUso;
         this.unidadeDeTempo = unidade;
@@ -45,11 +47,11 @@ public class Aparelho {
         this.tempoUso = tempoUso;
     }
 
-    public void setUnidadeDeTempo(UnidadeDeTempo unidadeDeTempo) {
+    public void setUnidadeDeTempo(Tempo unidadeDeTempo) {
         this.unidadeDeTempo = unidadeDeTempo;
     }
 
-    public UnidadeDeTempo getUnidadeDeTempo() {
+    public Tempo getUnidadeDeTempo() {
         return unidadeDeTempo;
     }
 }

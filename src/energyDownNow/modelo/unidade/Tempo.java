@@ -1,12 +1,11 @@
-package energyDownNow.modelo;
+package energyDownNow.modelo.unidade;
 
-public enum UnidadeDeTempo {
+public enum Tempo {
 
     HORAS_DIA(30), HORAS_MES(1), HORAS_SEMANA(4), MINUTOS_DIA(0.5), MINUTOS_SEMANA(0.13);
     private double fatorConversao;
 
-    UnidadeDeTempo(double fator) {
-
+    Tempo(double fator) {
         this.fatorConversao = fator;
     }
 

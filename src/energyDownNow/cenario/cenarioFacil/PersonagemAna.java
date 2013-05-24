@@ -1,7 +1,7 @@
-package energyDownNow.cenarios.cenarioFacil;
+package energyDownNow.cenario.cenarioFacil;
 
 import energyDownNow.modelo.Aparelho;
-import energyDownNow.modelo.EscalaConforto;
+import energyDownNow.modelo.unidade.Conforto;
 import energyDownNow.modelo.Personagem;
 import java.util.List;
 
@@ -16,20 +16,20 @@ public class PersonagemAna extends Personagem {
     }
 
     @Override
-    public EscalaConforto calcular(List<Aparelho> aparelhosCenario) {
+    public Conforto calcular(List<Aparelho> aparelhosCenario) {
         for (Aparelho a : aparelhosCenario) {
             if ("Chuveiro Elétrico".equals(a.getDescricao())) {
                 double tempoEmHoras = a.getUnidadeDeTempo().getFatorConversao() * a.getTempoUso();
                 if (tempoEmHoras > (20.0 / 60.0)) {
                     //se tempo de uso maior que 20 min
-                    return EscalaConforto.OTIMO;
+                    return Conforto.OTIMO;
                 } else if (tempoEmHoras * a.getTempoUso() > (10.0 / 60.0)) {
                     //se tempo de uso maior que 10 min
-                    return EscalaConforto.BOM;
+                    return Conforto.BOM;
                 }
-                return EscalaConforto.PESSIMO;
+                return Conforto.PESSIMO;
             }
         }
-        return EscalaConforto.PESSIMO;
+        return Conforto.PESSIMO;
     }
 }

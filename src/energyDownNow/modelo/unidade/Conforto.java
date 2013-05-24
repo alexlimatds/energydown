@@ -1,11 +1,11 @@
-package energyDownNow.modelo;
+package energyDownNow.modelo.unidade;
 
-public enum EscalaConforto {
+public enum Conforto {
 
     OTIMO(5), BOM(4), REGULAR(3), RUIM(2), PESSIMO(1);
     private Integer valor;
 
-    EscalaConforto(int valor) {
+    Conforto(int valor) {
         this.valor = valor;
     }
 

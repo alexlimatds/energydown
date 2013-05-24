@@ -1,4 +1,4 @@
-package energyDownNow.cenarios.cenarioAvancado;
+package energyDownNow.cenario.cenarioAvancado;
 
 /**
  *

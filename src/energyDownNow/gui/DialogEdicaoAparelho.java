@@ -5,7 +5,7 @@
 package energyDownNow.gui;
 
 import energyDownNow.modelo.Aparelho;
-import energyDownNow.modelo.UnidadeDeTempo;
+import energyDownNow.modelo.unidade.Tempo;
 
 /**
  *
@@ -28,7 +28,7 @@ public class DialogEdicaoAparelho extends javax.swing.JDialog {
         spnTempoUso.setValue(aparelho.getTempoUso());
 
         cbxUnidadeTempo.removeAllItems();
-        for (UnidadeDeTempo unidade : UnidadeDeTempo.values()) {
+        for (Tempo unidade : Tempo.values()) {
             cbxUnidadeTempo.addItem(unidade);
         }
         cbxUnidadeTempo.setSelectedItem(aparelho.getUnidadeDeTempo());
@@ -55,7 +55,7 @@ public class DialogEdicaoAparelho extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        lblDescricao.setText("jLabel1");
+        lblDescricao.setText("Nome do Aparelho");
 
         jLabel2.setText("Potência (W)");
 
@@ -146,7 +146,7 @@ public class DialogEdicaoAparelho extends javax.swing.JDialog {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkActionPerformed
-        aparelho.setUnidadeDeTempo((UnidadeDeTempo) cbxUnidadeTempo.getSelectedItem());
+        aparelho.setUnidadeDeTempo((Tempo) cbxUnidadeTempo.getSelectedItem());
         aparelho.setTempoUso((Integer) spnTempoUso.getValue());
         dispose();
     }//GEN-LAST:event_btnOkActionPerformed

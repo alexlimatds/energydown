@@ -1,5 +1,6 @@
 package energyDownNow.modelo;
 
+import energyDownNow.modelo.unidade.Conforto;
 import java.util.List;
 
 public abstract class Personagem {
@@ -23,5 +24,5 @@ public abstract class Personagem {
         return null;
     }
 
-    public abstract EscalaConforto calcular(List<Aparelho> aparelhosCenario);
+    public abstract Conforto calcular(List<Aparelho> aparelhosCenario);
 }

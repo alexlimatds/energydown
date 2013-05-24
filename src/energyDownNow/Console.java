@@ -1,10 +1,10 @@
 package energyDownNow;
 
-import energyDownNow.cenarios.cenarioFacil.CenarioFacil;
+import energyDownNow.cenario.cenarioFacil.CenarioFacil;
 import energyDownNow.modelo.Aparelho;
 import energyDownNow.modelo.Cenario;
 import energyDownNow.modelo.FimDeJogo;
-import energyDownNow.modelo.UnidadeDeTempo;
+import energyDownNow.modelo.unidade.Tempo;
 import java.util.Scanner;
 
 public class Console {
@@ -118,11 +118,11 @@ public class Console {
 
         System.out.println("Escolha a unidade de tempo:");
         i = 0;
-        for (UnidadeDeTempo unidade : UnidadeDeTempo.values()) {
+        for (Tempo unidade : Tempo.values()) {
             System.out.println("  " + i++ + ": " + unidade);
         }
         i = scan.nextInt();
-        ap1.setUnidadeDeTempo(UnidadeDeTempo.values()[i]);
+        ap1.setUnidadeDeTempo(Tempo.values()[i]);
     }
 
     /**

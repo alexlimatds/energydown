@@ -20,6 +20,7 @@ public class LabelAparelho extends JLabel {
 
     public LabelAparelho(Aparelho aparelho) {
         this.aparelho = aparelho;
+        setText(aparelho.getDescricao());
     }
 
     public Aparelho getAparelho() {

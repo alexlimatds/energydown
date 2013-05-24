@@ -4,26 +4,42 @@
  */
 package energyDownNow.cenarios.cenarioFacil;
 
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.xml.StaxDriver;
 import energyDownNow.modelo.Aparelho;
 import energyDownNow.modelo.Cenario;
-import energyDownNow.modelo.UnidadeDeTempo;
+import energyDownNow.modelo.unidade.Tempo;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import org.junit.Test;
 
 /**
  *
  * @author 201114040037
  */
-public class CenarioTest {
+public class CenarioFacilTest {
 
     @Test
     public void testCenario() {
-        Cenario cenarioFacil = CenarioFacil.getCenario();
+        
+        Cenario cenarioFacil = new Cenario(0, null, 0, 0, null);
+        
+        XStream xs = new XStream(new StaxDriver());
+        
+        try {
+            FileInputStream fis = new FileInputStream("src/energyDownNow/cenarios/cenarioFacil.xml");
+            xs.fromXML(fis, cenarioFacil);
+
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace();
+        }
+        
         System.out.println("despesa: " + cenarioFacil.getUltimaDespesa());
         System.out.println("Fim de jogo: " + cenarioFacil.getFimDeJogo());
 
         Aparelho dvd = cenarioFacil.getAparelho("DVD");
         dvd.setTempoUso(2);
-        dvd.setUnidadeDeTempo(UnidadeDeTempo.HORAS_SEMANA);
+        dvd.setUnidadeDeTempo(Tempo.HORAS_SEMANA);
         cenarioFacil.avancar();
         System.out.println("despesa: " + cenarioFacil.getUltimaDespesa());
         System.out.println("Fim de jogo: " + cenarioFacil.getFimDeJogo());
