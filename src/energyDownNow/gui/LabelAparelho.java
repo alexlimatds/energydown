@@ -4,7 +4,7 @@
  */
 package energyDownNow.gui;
 
-import energyDownNow.modelo.UtilizacaoAparelho;
+import energyDownNow.modelo.UsoAparelho;
 import javax.swing.JLabel;
 
 /**
@@ -13,21 +13,21 @@ import javax.swing.JLabel;
  */
 public class LabelAparelho extends JLabel {
 
-    private UtilizacaoAparelho aparelho;
+    private UsoAparelho aparelho;
 
     public LabelAparelho() {
     }
 
-    public LabelAparelho(UtilizacaoAparelho aparelho) {
+    public LabelAparelho(UsoAparelho aparelho) {
         this.aparelho = aparelho;
         setText(aparelho.getDescricao());
     }
 
-    public UtilizacaoAparelho getAparelho() {
+    public UsoAparelho getAparelho() {
         return aparelho;
     }
 
-    public void setAparelho(UtilizacaoAparelho aparelho) {
+    public void setAparelho(UsoAparelho aparelho) {
         this.aparelho = aparelho;
         setText(aparelho.getDescricao());
     }

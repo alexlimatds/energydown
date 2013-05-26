@@ -5,8 +5,6 @@
 package energyDownNow.gui;
 
 import energyDownNow.cenario.cenarioFacil.CenarioFacil;
-import energyDownNow.gui.DialogEdicaoAparelho;
-import energyDownNow.gui.LabelAparelho;
 import energyDownNow.modelo.Cenario;
 import energyDownNow.modelo.unidade.FimDeJogo;
 import java.awt.event.MouseEvent;
@@ -26,29 +24,29 @@ public class PnlCenarioFacil extends javax.swing.JPanel implements MouseListener
      * Creates new form PnlCenarioFacil
      */
     public PnlCenarioFacil() {
-        initComponents();        
+        initComponents();
         iniciarInterface();
         iniciarMouseListeners();
     }
 
     private void iniciarInterface() {
         cenario = CenarioFacil.getCenario();
-        
-        labelAparelho1.setAparelho(cenario.getAparelhosUtilizados().get(0));
-        labelAparelho2.setAparelho(cenario.getAparelhosUtilizados().get(1));
-        labelAparelho3.setAparelho(cenario.getAparelhosUtilizados().get(2));
-        labelAparelho4.setAparelho(cenario.getAparelhosUtilizados().get(3));
-        labelAparelho5.setAparelho(cenario.getAparelhosUtilizados().get(4));
-        labelAparelho6.setAparelho(cenario.getAparelhosUtilizados().get(5));
-        labelAparelho7.setAparelho(cenario.getAparelhosUtilizados().get(6));
-        labelAparelho8.setAparelho(cenario.getAparelhosUtilizados().get(7));
-        labelAparelho9.setAparelho(cenario.getAparelhosUtilizados().get(8));        
+
+        labelAparelho1.setAparelho(cenario.getUsoAparelhos().get(0));
+        labelAparelho2.setAparelho(cenario.getUsoAparelhos().get(1));
+        labelAparelho3.setAparelho(cenario.getUsoAparelhos().get(2));
+        labelAparelho4.setAparelho(cenario.getUsoAparelhos().get(3));
+        labelAparelho5.setAparelho(cenario.getUsoAparelhos().get(4));
+        labelAparelho6.setAparelho(cenario.getUsoAparelhos().get(5));
+        labelAparelho7.setAparelho(cenario.getUsoAparelhos().get(6));
+        labelAparelho8.setAparelho(cenario.getUsoAparelhos().get(7));
+        labelAparelho9.setAparelho(cenario.getUsoAparelhos().get(8));
 
         painelStatusCenario1.setCenario(cenario);
         painelStatusCenario1.atualizar();
     }
-    
-    private void iniciarMouseListeners(){
+
+    private void iniciarMouseListeners() {
         labelAparelho1.addMouseListener(this);
         labelAparelho2.addMouseListener(this);
         labelAparelho3.addMouseListener(this);
@@ -57,7 +55,7 @@ public class PnlCenarioFacil extends javax.swing.JPanel implements MouseListener
         labelAparelho6.addMouseListener(this);
         labelAparelho7.addMouseListener(this);
         labelAparelho8.addMouseListener(this);
-        labelAparelho9.addMouseListener(this);    
+        labelAparelho9.addMouseListener(this);
     }
 
     public static void main(String[] args) {
@@ -195,7 +193,6 @@ public class PnlCenarioFacil extends javax.swing.JPanel implements MouseListener
 
         }
     }//GEN-LAST:event_jButton1ActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private energyDownNow.gui.LabelAparelho labelAparelho1;

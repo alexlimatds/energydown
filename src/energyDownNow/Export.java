@@ -7,7 +7,6 @@ package energyDownNow;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.StaxDriver;
 import energyDownNow.cenario.cenarioFacil.CenarioFacil;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 

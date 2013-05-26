@@ -16,7 +16,7 @@ public abstract class MetaConforto {
 
     private List<Personagem> personagensCenario = new ArrayList<Personagem>();
 
-    public abstract boolean atingida(List<UtilizacaoAparelho> aparelhosDoCenario);
+    public abstract boolean atingida(List<UsoAparelho> aparelhosDoCenario);
 
     public void addPersonagem(Personagem p) {
         personagensCenario.add(p);

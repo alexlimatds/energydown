@@ -2,7 +2,7 @@ package energyDownNow;
 
 import energyDownNow.cenario.cenarioFacil.CenarioFacil;
 import energyDownNow.modelo.Aparelho;
-import energyDownNow.modelo.UtilizacaoAparelho;
+import energyDownNow.modelo.UsoAparelho;
 import energyDownNow.modelo.Cenario;
 import energyDownNow.modelo.unidade.FimDeJogo;
 import energyDownNow.modelo.unidade.Tempo;
@@ -14,15 +14,15 @@ public class Console {
 
         Cenario cenario = new Cenario(4000, "Casa", 3, 100, null);//TODO
 
-        cenario.addAparelhoUtilizado(new UtilizacaoAparelho(1125, "Ar Condicionado - Janela 12.000btus", 1200));
-        cenario.addAparelhoUtilizado(new UtilizacaoAparelho(140, "TV 21\"", 780));
-        cenario.addAparelhoUtilizado(new UtilizacaoAparelho(10, "DVD", 110));
-        cenario.addAparelhoUtilizado(new UtilizacaoAparelho(40, "MicroSystem", 250));
-        cenario.addAparelhoUtilizado(new UtilizacaoAparelho(220, "Máquina de Lavar", 900));
-        cenario.addAparelhoUtilizado(new UtilizacaoAparelho(1000, "Microondas 30L", 400));
-        cenario.addAparelhoUtilizado(new UtilizacaoAparelho(4000, "Chuveiro Elétrico", 100));
-        cenario.addAparelhoUtilizado(new UtilizacaoAparelho(265, "Geladeira Duplex", 4300));
-        cenario.addAparelhoUtilizado(new UtilizacaoAparelho(1200, "Ferro à Vapor", 70));
+        cenario.addUsoAparelho(new UsoAparelho(1125, "Ar Condicionado - Janela 12.000btus", 1200));
+        cenario.addUsoAparelho(new UsoAparelho(140, "TV 21\"", 780));
+        cenario.addUsoAparelho(new UsoAparelho(10, "DVD", 110));
+        cenario.addUsoAparelho(new UsoAparelho(40, "MicroSystem", 250));
+        cenario.addUsoAparelho(new UsoAparelho(220, "Máquina de Lavar", 900));
+        cenario.addUsoAparelho(new UsoAparelho(1000, "Microondas 30L", 400));
+        cenario.addUsoAparelho(new UsoAparelho(4000, "Chuveiro Elétrico", 100));
+        cenario.addUsoAparelho(new UsoAparelho(265, "Geladeira Duplex", 4300));
+        cenario.addUsoAparelho(new UsoAparelho(1200, "Ferro à Vapor", 70));
 
         cenario.getAparelhosParaCompra().add(new Aparelho(1086, "Ar condicionado Split 12.000btus", 1000));
         cenario.getAparelhosParaCompra().add(new Aparelho(80, "TV 32\" LED", 1499));
@@ -86,7 +86,7 @@ public class Console {
      * @param cenario Cenario a ser utilizado.
      */
     private static void listarAparelhos(Cenario cenario) {
-        for (UtilizacaoAparelho a : cenario.getAparelhosUtilizados()) {
+        for (UsoAparelho a : cenario.getUsoAparelhos()) {
             System.out.println("# " + a.getDescricao() + " - Valor = R$ " + a.getPreco() + " - Potência = " + a.getPotencia() + "kw" + " / Uso: " + a.getTempoUso() + "/" + a.getUnidadeDeTempo());
         }
         System.out.println("\n");
@@ -104,13 +104,13 @@ public class Console {
         System.out.println(" ==>> META CENÁRIO ==>>> R$ " + cenario.getMetaDespesa() + "\n");
         System.out.println("Deseja alterar o tempo de uso de qual aparelho? \n");
         int i = 0;
-        for (UtilizacaoAparelho a : cenario.getAparelhosUtilizados()) {
+        for (UsoAparelho a : cenario.getUsoAparelhos()) {
             System.out.println(i++ + " - " + a.getDescricao());
         }
         System.out.println("\n");
         int posicao1 = scan.nextInt();
 
-        UtilizacaoAparelho ap1 = cenario.getAparelhosUtilizados().get(posicao1);
+        UsoAparelho ap1 = cenario.getUsoAparelhos().get(posicao1);
 
         System.out.println("Tempo de uso atual: " + ap1.getTempoUso() + " " + ap1.getUnidadeDeTempo());
         System.out.println("Digite o novo tempo de uso:");
@@ -136,7 +136,7 @@ public class Console {
 
         System.out.println("Qual aparelho deseja trocar? \n");
         int x = 0;
-        for (UtilizacaoAparelho a : cenario.getAparelhosUtilizados()) {
+        for (UsoAparelho a : cenario.getUsoAparelhos()) {
             System.out.println(x++ + " - " + a.getDescricao());
         }
         System.out.println("\n");
@@ -153,7 +153,7 @@ public class Console {
 
         int aparelhotroca2 = scan.nextInt();
 
-        cenario.trocarAparelhos(cenario.getAparelhosUtilizados().get(aparelhotroca1), cenario.getAparelhosParaCompra().get(
+        cenario.trocarAparelhos(cenario.getUsoAparelhos().get(aparelhotroca1), cenario.getAparelhosParaCompra().get(
                 aparelhotroca2));
     }
 
@@ -210,13 +210,13 @@ public class Console {
 
         System.out.println("Qual aparelho deseja excluir? \n");
         int x = 0;
-        for (UtilizacaoAparelho a : cenario.getAparelhosUtilizados()) {
+        for (UsoAparelho a : cenario.getUsoAparelhos()) {
             System.out.println(x++ + " - " + a.getDescricao());
         }
         System.out.println("\n");
 
         int aparelhoExluir = scan.nextInt();
 
-        cenario.removeAparelhoUtilizado(cenario.getAparelhosUtilizados().get(aparelhoExluir));
+        cenario.removeUsoAparelho(cenario.getUsoAparelhos().get(aparelhoExluir));
     }
 }

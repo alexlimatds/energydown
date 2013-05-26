@@ -6,8 +6,8 @@ public enum Tempo {
     private double fatorConversao;
 
     /**
-     * 
-     * @param fator 
+     *
+     * @param fator
      */
     Tempo(double fator) {
         this.fatorConversao = fator;

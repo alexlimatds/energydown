@@ -2,11 +2,44 @@ package energyDownNow.modelo;
 
 import energyDownNow.modelo.unidade.Tempo;
 
-public class UtilizacaoAparelho {
+public class UsoAparelho {
 
+    private Personagem personagem;
     private Aparelho aparelho;
     private int tempoUso = 1;
     private Tempo unidadeDeTempo = Tempo.HORAS_DIA;
+
+    /**
+     *
+     * @param aparelho
+     * @param tempoDeUso
+     * @param unidade
+     * @param personagem
+     */
+    public UsoAparelho(Aparelho aparelho, int tempoDeUso,
+            Tempo unidade, Personagem personagem) {
+        this.aparelho = aparelho;
+        this.tempoUso = tempoDeUso;
+        this.unidadeDeTempo = unidade;
+        this.personagem = personagem;
+    }
+
+    /**
+     *
+     * @param potencia
+     * @param descricao
+     * @param preco
+     * @param tempoDeUso
+     * @param unidade
+     * @param personagem
+     */
+    public UsoAparelho(int potencia, String descricao, double preco, int tempoDeUso,
+            Tempo unidade, Personagem personagem) {
+        this.aparelho = new Aparelho(potencia, descricao, preco);
+        this.tempoUso = tempoDeUso;
+        this.unidadeDeTempo = unidade;
+        this.personagem = personagem;
+    }
 
     /**
      *
@@ -16,7 +49,7 @@ public class UtilizacaoAparelho {
      * @param tempoDeUso
      * @param unidade
      */
-    public UtilizacaoAparelho(int potencia, String descricao, double preco, int tempoDeUso,
+    public UsoAparelho(int potencia, String descricao, double preco, int tempoDeUso,
             Tempo unidade) {
         this.aparelho = new Aparelho(potencia, descricao, preco);
         this.tempoUso = tempoDeUso;
@@ -29,7 +62,7 @@ public class UtilizacaoAparelho {
      * @param descricao
      * @param preco
      */
-    public UtilizacaoAparelho(int potencia, String descricao, double preco) {
+    public UsoAparelho(int potencia, String descricao, double preco) {
         this.aparelho = new Aparelho(potencia, descricao, preco);
     }
 
