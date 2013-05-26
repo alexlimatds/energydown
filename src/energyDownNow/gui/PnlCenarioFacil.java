@@ -34,15 +34,15 @@ public class PnlCenarioFacil extends javax.swing.JPanel implements MouseListener
     private void iniciarInterface() {
         cenario = CenarioFacil.getCenario();
         
-        labelAparelho1.setAparelho(cenario.getAparelhos().get(0));
-        labelAparelho2.setAparelho(cenario.getAparelhos().get(1));
-        labelAparelho3.setAparelho(cenario.getAparelhos().get(2));
-        labelAparelho4.setAparelho(cenario.getAparelhos().get(3));
-        labelAparelho5.setAparelho(cenario.getAparelhos().get(4));
-        labelAparelho6.setAparelho(cenario.getAparelhos().get(5));
-        labelAparelho7.setAparelho(cenario.getAparelhos().get(6));
-        labelAparelho8.setAparelho(cenario.getAparelhos().get(7));
-        labelAparelho9.setAparelho(cenario.getAparelhos().get(8));        
+        labelAparelho1.setAparelho(cenario.getAparelhosUtilizados().get(0));
+        labelAparelho2.setAparelho(cenario.getAparelhosUtilizados().get(1));
+        labelAparelho3.setAparelho(cenario.getAparelhosUtilizados().get(2));
+        labelAparelho4.setAparelho(cenario.getAparelhosUtilizados().get(3));
+        labelAparelho5.setAparelho(cenario.getAparelhosUtilizados().get(4));
+        labelAparelho6.setAparelho(cenario.getAparelhosUtilizados().get(5));
+        labelAparelho7.setAparelho(cenario.getAparelhosUtilizados().get(6));
+        labelAparelho8.setAparelho(cenario.getAparelhosUtilizados().get(7));
+        labelAparelho9.setAparelho(cenario.getAparelhosUtilizados().get(8));        
 
         painelStatusCenario1.setCenario(cenario);
         painelStatusCenario1.atualizar();

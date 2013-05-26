@@ -9,6 +9,12 @@ public abstract class Personagem {
     private String sexo;
     private int idade;
 
+    /**
+     *
+     * @param sexo
+     * @param idade
+     * @param descricao
+     */
     public Personagem(String sexo, int idade, String descricao) {
         this.sexo = sexo;
         this.idade = idade;

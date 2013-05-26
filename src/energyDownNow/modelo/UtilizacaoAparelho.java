@@ -8,6 +8,14 @@ public class UtilizacaoAparelho {
     private int tempoUso = 1;
     private Tempo unidadeDeTempo = Tempo.HORAS_DIA;
 
+    /**
+     *
+     * @param potencia
+     * @param descricao
+     * @param preco
+     * @param tempoDeUso
+     * @param unidade
+     */
     public UtilizacaoAparelho(int potencia, String descricao, double preco, int tempoDeUso,
             Tempo unidade) {
         this.aparelho = new Aparelho(potencia, descricao, preco);
@@ -15,8 +23,18 @@ public class UtilizacaoAparelho {
         this.unidadeDeTempo = unidade;
     }
 
+    /**
+     *
+     * @param potencia
+     * @param descricao
+     * @param preco
+     */
     public UtilizacaoAparelho(int potencia, String descricao, double preco) {
         this.aparelho = new Aparelho(potencia, descricao, preco);
+    }
+
+    public Aparelho getAparelho() {
+        return aparelho;
     }
 
     public double getConsumoMensal() {
@@ -45,6 +63,10 @@ public class UtilizacaoAparelho {
 
     public void setUnidadeDeTempo(Tempo unidadeDeTempo) {
         this.unidadeDeTempo = unidadeDeTempo;
+    }
+
+    public void setAparelho(Aparelho aparelho) {
+        this.aparelho = aparelho;
     }
 
     public Tempo getUnidadeDeTempo() {

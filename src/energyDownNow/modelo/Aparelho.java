@@ -13,7 +13,13 @@ public class Aparelho {
     private int potencia;
     private String descricao;
     private double preco;
-
+    
+    /**
+     * 
+     * @param potencia
+     * @param descricao
+     * @param preco 
+     */
     public Aparelho(int potencia, String descricao, double preco) {
         this.potencia = potencia;
         this.descricao = descricao;
