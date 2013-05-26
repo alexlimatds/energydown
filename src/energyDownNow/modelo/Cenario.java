@@ -150,12 +150,18 @@ public class Cenario {
     }
 
     public double getUltimaDespesa() {
-        double consumo = getUltimoConsumo();
-        return calcularDespesa(consumo);
+        if (mesAtual == 1) {
+            double consumo = getUltimoConsumo();
+            return calcularDespesa(consumo);
+        }
+        return historicoDespesa.get(mesAtual - 2);
     }
 
     public double getUltimoConsumo() {
-        return calcularConsumoEmKWh();
+        if (mesAtual == 1) {
+            return calcularConsumoEmKWh();
+        }
+        return historicoConsumo.get(mesAtual - 2);
     }
 
     public int getUltimoMes() {
