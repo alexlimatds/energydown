@@ -6,7 +6,8 @@ package energyDownNow.modelo;
 //import energyDownNow.Tempo;
 //import energyDownNow.Conforto;
 //import energyDownNow.FimDeJogo;
-//import energyDownNow.Aparelho;
+//import energyDownNow.UtilizacaoAparelho;
+import energyDownNow.modelo.unidade.FimDeJogo;
 import energyDownNow.modelo.unidade.Conforto;
 import energyDownNow.modelo.unidade.Tempo;
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ public class CenarioTest {
     private MetaConforto getMetaAuxliar1() {
         MetaConforto metaConforto = new MetaConforto() {
             @Override
-            public boolean atingida(List<Aparelho> l) {
+            public boolean atingida(List<UtilizacaoAparelho> l) {
                 return true;
             }
         };
@@ -32,7 +33,7 @@ public class CenarioTest {
     private MetaConforto getMetaAuxliar2() {
         MetaConforto metaConforto = new MetaConforto() {
             @Override
-            public boolean atingida(List<Aparelho> l) {
+            public boolean atingida(List<UtilizacaoAparelho> l) {
                 return false;
             }
         };
@@ -46,11 +47,11 @@ public class CenarioTest {
         double totalConsumoKWh = cenarioA.calcularConsumoEmKWh();
         assertEquals(0.0, totalConsumoKWh, 0.0001);
 
-        Aparelho aparelhoTeste1 = new Aparelho(3, "telefone", 100);
+        UtilizacaoAparelho aparelhoTeste1 = new UtilizacaoAparelho(3, "telefone", 100);
         aparelhoTeste1.setTempoUso(24);
         aparelhoTeste1.setUnidadeDeTempo(Tempo.HORAS_DIA);
         cenarioA.addAparelho(aparelhoTeste1);
-        Aparelho aparelhoTeste2 = new Aparelho(5400, "chuveiro", 100);
+        UtilizacaoAparelho aparelhoTeste2 = new UtilizacaoAparelho(5400, "chuveiro", 100);
         aparelhoTeste2.setTempoUso(10);
         aparelhoTeste2.setUnidadeDeTempo(Tempo.MINUTOS_DIA);
         cenarioA.addAparelho(aparelhoTeste2);
@@ -73,7 +74,7 @@ public class CenarioTest {
     public void testAvancar() {
 
         Cenario cenarioC = new Cenario(1.200, "cccccc", 3, 1.100, getMetaAuxliar1());
-        Aparelho aparelhoTeste2 = new Aparelho(3, "telefone", 100);
+        UtilizacaoAparelho aparelhoTeste2 = new UtilizacaoAparelho(3, "telefone", 100);
         aparelhoTeste2.setTempoUso(24);
         aparelhoTeste2.setUnidadeDeTempo(Tempo.HORAS_DIA);
         cenarioC.addAparelho(aparelhoTeste2);
@@ -90,20 +91,20 @@ public class CenarioTest {
     @Test
     public void testMetaAtingida() {
         //meta deve ser atingida
-        final List<Aparelho> aparelhos = new ArrayList<Aparelho>();
-        Aparelho chuveiro = new Aparelho(3800, "Chuveiro Elétrico", 0.0);
+        final List<UtilizacaoAparelho> aparelhos = new ArrayList<UtilizacaoAparelho>();
+        UtilizacaoAparelho chuveiro = new UtilizacaoAparelho(3800, "Chuveiro Elétrico", 0.0);
         chuveiro.setTempoUso(30);
         chuveiro.setUnidadeDeTempo(Tempo.MINUTOS_DIA);
         aparelhos.add(chuveiro);
-        Aparelho aparelhoTeste3 = new Aparelho(3, "telefone", 100);
+        UtilizacaoAparelho aparelhoTeste3 = new UtilizacaoAparelho(3, "telefone", 100);
         aparelhoTeste3.setTempoUso(24);
         aparelhoTeste3.setUnidadeDeTempo(Tempo.HORAS_DIA);
         aparelhos.add(aparelhoTeste3);
 
         final Personagem ana = new Personagem("F", 28, "") {
             @Override
-            public Conforto calcular(List<Aparelho> aparelhosCenario) {
-                for (Aparelho a : aparelhosCenario) {
+            public Conforto calcular(List<UtilizacaoAparelho> aparelhosCenario) {
+                for (UtilizacaoAparelho a : aparelhosCenario) {
                     if ("Chuveiro Elétrico".equals(a.getDescricao())) {
                         double tempoEmHoras = a.getUnidadeDeTempo().getFatorConversao() * a.getTempoUso();
                         if (tempoEmHoras > (20.0 / 60.0)) {
@@ -120,7 +121,7 @@ public class CenarioTest {
         };
         MetaConforto metaConforto = new MetaConforto() {
             @Override
-            public boolean atingida(List<Aparelho> aparelhosDoCenario) {
+            public boolean atingida(List<UtilizacaoAparelho> aparelhosDoCenario) {
                 Conforto conforto = ana.calcular(aparelhos);
                 return (conforto == Conforto.OTIMO || conforto == Conforto.BOM);
             }
@@ -140,20 +141,20 @@ public class CenarioTest {
     @Test
     public void testMetaAtingida2() {
         //meta deve ser atingida
-        final List<Aparelho> aparelhos = new ArrayList<Aparelho>();
-        Aparelho chuveiro = new Aparelho(3800, "Chuveiro Elétrico", 0.0);
+        final List<UtilizacaoAparelho> aparelhos = new ArrayList<UtilizacaoAparelho>();
+        UtilizacaoAparelho chuveiro = new UtilizacaoAparelho(3800, "Chuveiro Elétrico", 0.0);
         chuveiro.setTempoUso(30);
         chuveiro.setUnidadeDeTempo(Tempo.MINUTOS_DIA);
         aparelhos.add(chuveiro);
-        Aparelho aparelhoTeste3 = new Aparelho(3, "telefone", 100);
+        UtilizacaoAparelho aparelhoTeste3 = new UtilizacaoAparelho(3, "telefone", 100);
         aparelhoTeste3.setTempoUso(2);
         aparelhoTeste3.setUnidadeDeTempo(Tempo.MINUTOS_DIA);
         aparelhos.add(aparelhoTeste3);
 
         final Personagem ana = new Personagem("F", 28, "") {
             @Override
-            public Conforto calcular(List<Aparelho> aparelhosCenario) {
-                for (Aparelho a : aparelhosCenario) {
+            public Conforto calcular(List<UtilizacaoAparelho> aparelhosCenario) {
+                for (UtilizacaoAparelho a : aparelhosCenario) {
                     if ("Chuveiro Elétrico".equals(a.getDescricao())) {
                         double tempoEmHorasMes = a.getUnidadeDeTempo().getFatorConversao() * a.getTempoUso();
                         if (tempoEmHorasMes > (20.0 / 60.0) * 30.0) {
@@ -170,9 +171,9 @@ public class CenarioTest {
         };
         final Personagem rafael = new Personagem("M", 26, "") {
             @Override
-            public Conforto calcular(List<Aparelho> aparelhosCenario) {
-                Aparelho chuveiro = getAparelho(aparelhosCenario, "Chuveiro Elétrico");
-                Aparelho telefone = getAparelho(aparelhosCenario, "telefone");
+            public Conforto calcular(List<UtilizacaoAparelho> aparelhosCenario) {
+                UtilizacaoAparelho chuveiro = getAparelho(aparelhosCenario, "Chuveiro Elétrico");
+                UtilizacaoAparelho telefone = getAparelho(aparelhosCenario, "telefone");
 
                 double tempoEmHoraschuveiro = chuveiro.getUnidadeDeTempo().getFatorConversao() * chuveiro.getTempoUso();
                 double tempoEmHorastelefone = telefone.getUnidadeDeTempo().getFatorConversao() * telefone.getTempoUso();
@@ -189,7 +190,7 @@ public class CenarioTest {
 
         MetaConforto metaConforto = new MetaConforto() {
             @Override
-            public boolean atingida(List<Aparelho> aparelhosDoCenario) {
+            public boolean atingida(List<UtilizacaoAparelho> aparelhosDoCenario) {
                 Conforto confortoAna = ana.calcular(aparelhos);
                 Conforto confortoRafael = rafael.calcular(aparelhos);
                 return (confortoAna.getValor() >= Conforto.BOM.getValor()
@@ -215,7 +216,7 @@ public class CenarioTest {
     @Test
     public void testFimDoPrazo() {
         Cenario cenarioF = new Cenario(1200, "ddddd", 3, 1100, getMetaAuxliar2());
-        Aparelho aparelhoTeste4 = new Aparelho(3, "telefone", 100);
+        UtilizacaoAparelho aparelhoTeste4 = new UtilizacaoAparelho(3, "telefone", 100);
         aparelhoTeste4.setTempoUso(24);
         aparelhoTeste4.setUnidadeDeTempo(Tempo.HORAS_DIA);
         cenarioF.addAparelho(aparelhoTeste4);
@@ -239,7 +240,7 @@ public class CenarioTest {
         // Cria um cenário
         Cenario cenarioG = new Cenario(1200, "ddddd", 3, 1, getMetaAuxliar2());
         // Cria um aparelho, e adiciona ele no cenário
-        Aparelho aparelhoTeste5 = new Aparelho(300, "telefone", 100);
+        UtilizacaoAparelho aparelhoTeste5 = new UtilizacaoAparelho(300, "telefone", 100);
         aparelhoTeste5.setTempoUso(24);
         aparelhoTeste5.setUnidadeDeTempo(Tempo.HORAS_DIA);
         cenarioG.addAparelho(aparelhoTeste5);
@@ -253,7 +254,7 @@ public class CenarioTest {
 
         //teste 2 - meta atingida
         Cenario cenarioH = new Cenario(1200, "ddddd", 5, 1, getMetaAuxliar1());
-        Aparelho aparelhoTeste6 = new Aparelho(3, "telefone", 100);
+        UtilizacaoAparelho aparelhoTeste6 = new UtilizacaoAparelho(3, "telefone", 100);
         aparelhoTeste6.setTempoUso(24);
         aparelhoTeste6.setUnidadeDeTempo(Tempo.HORAS_DIA);
         cenarioH.addAparelho(aparelhoTeste6);
@@ -266,13 +267,13 @@ public class CenarioTest {
 
         //teste 3 - meta atingida - mudando aparelho
         Cenario cenarioI = new Cenario(1200, "novoTeste", 5, 1, getMetaAuxliar1());
-        Aparelho aparelhoTeste7 = new Aparelho(115, "televisão", 1000);
+        UtilizacaoAparelho aparelhoTeste7 = new UtilizacaoAparelho(115, "televisão", 1000);
         aparelhoTeste7.setTempoUso(20);
         aparelhoTeste7.setUnidadeDeTempo(Tempo.HORAS_DIA);
         cenarioI.addAparelho(aparelhoTeste7);
         //adicionando um novo aparelho no mesmo cenário
 
-        Aparelho aparelhoTeste8 = new Aparelho(60, "dvd", 200);
+        UtilizacaoAparelho aparelhoTeste8 = new UtilizacaoAparelho(60, "dvd", 200);
         aparelhoTeste8.setUnidadeDeTempo(Tempo.HORAS_MES);
         aparelhoTeste8.setTempoUso(10);
         cenarioI.addAparelho(aparelhoTeste8);
@@ -288,14 +289,14 @@ public class CenarioTest {
 
     @Test
     public void testTrocaAparelho() {
-        ArrayList<Aparelho> aparelhosParaCompra = new ArrayList<Aparelho>();
-        Aparelho aparelho2 = new Aparelho(500, "Ar condicionado", 400);
+        ArrayList<UtilizacaoAparelho> aparelhosParaCompra = new ArrayList<UtilizacaoAparelho>();
+        UtilizacaoAparelho aparelho2 = new UtilizacaoAparelho(500, "Ar condicionado", 400);
         aparelho2.setUnidadeDeTempo(Tempo.HORAS_MES);
         aparelho2.setTempoUso(8);
         aparelhosParaCompra.add(aparelho2);
 
         Cenario cenario = new Cenario(1200, "Sei la", 3, 1, getMetaAuxliar1(), aparelhosParaCompra, 0.55);
-        Aparelho aparelho1 = new Aparelho(100, "ventilador", 110);
+        UtilizacaoAparelho aparelho1 = new UtilizacaoAparelho(100, "ventilador", 110);
         aparelho1.setUnidadeDeTempo(Tempo.HORAS_MES);
         aparelho1.setTempoUso(8);
         cenario.addAparelho(aparelho1);

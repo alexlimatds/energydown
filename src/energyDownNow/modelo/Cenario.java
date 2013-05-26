@@ -11,10 +11,8 @@ public class Cenario {
     private int prazo;
     private int mesAtual;
     private double metaDespesa;
-    private List<Double> historicoDespesa;
-    private List<Double> historicoConsumo;
-    private double ultimaDespesa;
-    private double ultimoConsumo;
+    private List<Double> historicoDespesa = new ArrayList<Double>();
+    private List<Double> historicoConsumo = new ArrayList<Double>();
     private MetaConforto metaConforto;
     private double valorKwh = 0.55;
     private List<Personagem> personagens;
@@ -83,8 +81,14 @@ public class Cenario {
     }
 
     public void avancar() {
-        ultimoConsumo = calcularConsumoEmKWh();
-        ultimaDespesa = calcularDespesa(ultimoConsumo);
+
+        int indiceMesAtual = mesAtual - 1;
+
+        double ultimoConsumo = calcularConsumoEmKWh();
+        historicoConsumo.add(indiceMesAtual, ultimoConsumo);
+
+        double ultimaDespesa = calcularDespesa(ultimoConsumo);
+        historicoDespesa.add(indiceMesAtual, ultimaDespesa);
 
         mesAtual++;
     }
@@ -146,18 +150,12 @@ public class Cenario {
     }
 
     public double getUltimaDespesa() {
-        if (mesAtual == 1) {
-            double consumo = getUltimoConsumo();
-            return calcularDespesa(consumo);
-        }
-        return ultimaDespesa;
+        double consumo = getUltimoConsumo();
+        return calcularDespesa(consumo);
     }
 
     public double getUltimoConsumo() {
-        if (mesAtual == 1) {
-            ultimoConsumo = calcularConsumoEmKWh();
-        }
-        return ultimoConsumo;
+        return calcularConsumoEmKWh();
     }
 
     public int getUltimoMes() {

@@ -6,7 +6,7 @@ package energyDownNow.cenarios.cenarioFacil;
 
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.StaxDriver;
-import energyDownNow.modelo.Aparelho;
+import energyDownNow.modelo.UtilizacaoAparelho;
 import energyDownNow.modelo.Cenario;
 import energyDownNow.modelo.unidade.Tempo;
 import java.io.FileInputStream;
@@ -37,20 +37,20 @@ public class CenarioFacilTest {
         System.out.println("despesa: " + cenarioFacil.getUltimaDespesa());
         System.out.println("Fim de jogo: " + cenarioFacil.getFimDeJogo());
 
-        Aparelho dvd = cenarioFacil.getAparelho("DVD");
+        UtilizacaoAparelho dvd = cenarioFacil.getAparelho("DVD");
         dvd.setTempoUso(2);
         dvd.setUnidadeDeTempo(Tempo.HORAS_SEMANA);
         cenarioFacil.avancar();
         System.out.println("despesa: " + cenarioFacil.getUltimaDespesa());
         System.out.println("Fim de jogo: " + cenarioFacil.getFimDeJogo());
 
-        Aparelho chuveiro = cenarioFacil.getAparelho("Chuveiro Elétrico");
+        UtilizacaoAparelho chuveiro = cenarioFacil.getAparelho("Chuveiro Elétrico");
         chuveiro.setTempoUso(0);
         cenarioFacil.avancar();
         System.out.println("despesa: " + cenarioFacil.getUltimaDespesa());
         System.out.println("Fim de jogo: " + cenarioFacil.getFimDeJogo());
 
-        Aparelho arcondicionado = cenarioFacil.getAparelho("Ar Condicionado - Janela 12.000btus");
+        UtilizacaoAparelho arcondicionado = cenarioFacil.getAparelho("Ar Condicionado - Janela 12.000btus");
         arcondicionado.setTempoUso(0);
         cenarioFacil.avancar();
         System.out.println("despesa: " + cenarioFacil.getUltimaDespesa());
