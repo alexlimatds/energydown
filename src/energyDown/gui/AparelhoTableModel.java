@@ -7,6 +7,7 @@
 package energyDown.gui;
 
 import energyDown.modelo.UsoAparelho;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
@@ -16,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class AparelhoTableModel extends DefaultTableModel{
     
-    private List<UsoAparelho> aparelhos;
+    private List<UsoAparelho> aparelhos = new ArrayList<UsoAparelho>();
 
     public AparelhoTableModel(List<UsoAparelho> aparelhos) {
         this.aparelhos = aparelhos;

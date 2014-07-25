@@ -1,5 +1,6 @@
 package energyDown.gui;
 
+import energyDown.cenario.cenarioFacil.CenarioFacil;
 import energyDown.modelo.UsoAparelho;
 import energyDown.modelo.unidade.Tempo;
 import java.util.List;
@@ -22,8 +23,8 @@ public class DialogEdicaoAparelhosComodo extends javax.swing.JDialog {
     public DialogEdicaoAparelhosComodo(List<UsoAparelho> aparelhos) {
         super();
         setTitle("Alterar Uso do Aparelho");
-        tableModel = new AparelhoTableModel(aparelhos);
         initComponents();
+        tableModel = new AparelhoTableModel(aparelhos);
         tabelaAparelhosComodo.setModel(tableModel);
         /*labelDescricao.setText(aparelho.getDescricao());
         txtPotencia.setText(String.valueOf(aparelho.getPotencia()));
@@ -103,7 +104,7 @@ public class DialogEdicaoAparelhosComodo extends javax.swing.JDialog {
         txtPotencia.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         txtPotencia.setText("80");
 
-        botaoOK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication1/ok01.png"))); // NOI18N
+        botaoOK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/energyDown/gui/iconOK.png"))); // NOI18N
         botaoOK.setText("CONFIRMAR");
         botaoOK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -222,7 +223,8 @@ public class DialogEdicaoAparelhosComodo extends javax.swing.JDialog {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                DialogEdicaoAparelhosComodo dialog = new DialogEdicaoAparelhosComodo();
+                DialogEdicaoAparelhosComodo dialog = new DialogEdicaoAparelhosComodo(CenarioFacil.getCenario().getUsoAparelhos());
+                
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
 
                     @Override

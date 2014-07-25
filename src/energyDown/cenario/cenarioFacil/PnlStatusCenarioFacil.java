@@ -1,8 +1,10 @@
 package energyDown.cenario.cenarioFacil;
 
-import energyDown.gui.PainelStatusCenarios;
 import energyDown.modelo.Cenario;
+import energyDown.modelo.unidade.Conforto;
 import java.text.DecimalFormat; 
+import java.util.HashMap;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -12,17 +14,35 @@ public class PnlStatusCenarioFacil extends javax.swing.JPanel {
 
     private Cenario cenario;
     private DecimalFormat fmt = new DecimalFormat("#,##0.00");
+    private HashMap<Conforto, ImageIcon> mapaConfortoIcone = new HashMap<Conforto, ImageIcon>();
     
     public PnlStatusCenarioFacil() {
         initComponents();
+        
+        ImageIcon imgOtimo = new ImageIcon(getClass().getResource("/energyDown/gui/iconOtimo.png"));
+        mapaConfortoIcone.put(Conforto.OTIMO, imgOtimo);
+        ImageIcon imgBom = new ImageIcon(getClass().getResource("/energyDown/gui/iconBom.png"));
+        mapaConfortoIcone.put(Conforto.BOM, imgBom);
+        ImageIcon imgRegular = new ImageIcon(getClass().getResource("/energyDown/gui/iconRegular.png"));
+        mapaConfortoIcone.put(Conforto.REGULAR, imgRegular);
+        ImageIcon imgRuim = new ImageIcon(getClass().getResource("/energyDown/gui/iconRuim.png"));
+        mapaConfortoIcone.put(Conforto.RUIM, imgRuim);
+        ImageIcon imgPessimo = new ImageIcon(getClass().getResource("/energyDown/gui/iconPessimo.png"));
+        mapaConfortoIcone.put(Conforto.PESSIMO, imgPessimo);
     }
     
     public void setCenario(Cenario cenario) {
         this.cenario = cenario;
-        atualizar();
+        painelStatusCenarios.setCenario(cenario);
     }
        
     public void atualizar() { 
+        Conforto confortoAna = cenario.getConfortoPersonagem("Ana");
+        labelAna.setIcon(mapaConfortoIcone.get(confortoAna));
+        Conforto confortoRafael = cenario.getConfortoPersonagem("Rafael");
+        labelRafael.setIcon(mapaConfortoIcone.get(confortoRafael));
+        Conforto confortoAlexandre = cenario.getConfortoPersonagem("Alexandre");
+        labelAlexandre.setIcon(mapaConfortoIcone.get(confortoAlexandre));
         painelStatusCenarios.atualizar();
     }
    
@@ -133,7 +153,9 @@ public class PnlStatusCenarioFacil extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoAvancarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAvancarActionPerformed
-        // TODO add your handling code here:
+        cenario.avancar();
+        atualizar();
+        //TODO verificar se o jogo terminou
     }//GEN-LAST:event_botaoAvancarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

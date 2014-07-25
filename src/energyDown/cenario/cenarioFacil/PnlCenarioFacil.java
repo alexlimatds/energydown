@@ -23,7 +23,6 @@ public class PnlCenarioFacil extends javax.swing.JPanel implements MouseListener
 
     private Cenario cenario;
     private JFrame rootFrame;
-    private HashMap<Conforto, ImageIcon> mapaConfortoIcone = new HashMap<Conforto, ImageIcon>();
 
     /**
      * Creates new form PnlCenarioFacil
@@ -31,19 +30,10 @@ public class PnlCenarioFacil extends javax.swing.JPanel implements MouseListener
     public PnlCenarioFacil(JFrame rootFrame) {
         iniciarInterface();
         initComponents();
+        pnlStatusCenario.setCenario(cenario);
         iniciarMouseListeners();
         this.rootFrame = rootFrame;
         
-        ImageIcon imgOtimo = new ImageIcon(getClass().getResource("/energyDown/gui/iconOtimo.png"));
-        mapaConfortoIcone.put(Conforto.OTIMO, imgOtimo);
-        ImageIcon imgBom = new ImageIcon(getClass().getResource("/energyDown/gui/iconBom.png"));
-        mapaConfortoIcone.put(Conforto.BOM, imgBom);
-        ImageIcon imgRegular = new ImageIcon(getClass().getResource("/energyDown/gui/iconRegular.png"));
-        mapaConfortoIcone.put(Conforto.REGULAR, imgRegular);
-        ImageIcon imgRuim = new ImageIcon(getClass().getResource("/energyDown/gui/iconRuim.png"));
-        mapaConfortoIcone.put(Conforto.RUIM, imgRuim);
-        ImageIcon imgPessimo = new ImageIcon(getClass().getResource("/energyDown/gui/iconPessimo.png"));
-        mapaConfortoIcone.put(Conforto.PESSIMO, imgPessimo);
         atualizarLabelRosto();
     }
 
@@ -57,9 +47,7 @@ public class PnlCenarioFacil extends javax.swing.JPanel implements MouseListener
     }
     
     private void atualizarLabelRosto(){
-        Conforto confortoAna = cenario.getConfortoPersonagem("Ana");
-        Conforto confortoRafael = cenario.getConfortoPersonagem("Rafael");
-        Conforto confortoAlexandre = cenario.getConfortoPersonagem("Alexandre");
+        pnlStatusCenario.atualizar();
     }
 
     public static void main(String[] args) {
