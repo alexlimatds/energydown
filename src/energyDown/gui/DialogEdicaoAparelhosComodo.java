@@ -3,6 +3,9 @@ package energyDown.gui;
 import energyDown.cenario.cenarioFacil.CenarioFacil;
 import energyDown.modelo.UsoAparelho;
 import energyDown.modelo.unidade.Tempo;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -12,7 +15,7 @@ import java.util.List;
  */
 public class DialogEdicaoAparelhosComodo extends javax.swing.JDialog {
     
-    private AparelhoTableModel tableModel;
+    private EdicaoAparelhosComodoPM model;
 
     public DialogEdicaoAparelhosComodo() {
     }
@@ -22,25 +25,17 @@ public class DialogEdicaoAparelhosComodo extends javax.swing.JDialog {
      */
     public DialogEdicaoAparelhosComodo(List<UsoAparelho> aparelhos) {
         super();
+        model = new EdicaoAparelhosComodoPM(aparelhos);
         setTitle("Alterar Uso do Aparelho");
         initComponents();
-        tableModel = new AparelhoTableModel(aparelhos);
-        tabelaAparelhosComodo.setModel(tableModel);
-        /*labelDescricao.setText(aparelho.getDescricao());
-        txtPotencia.setText(String.valueOf(aparelho.getPotencia()));
-        spnTempoUso.setValue(aparelho.getTempoUso());
-        
-        cbxUnidadeTempo.removeAllItems();
-        for (Tempo unidade : Tempo.values()) {
-            cbxUnidadeTempo.addItem(unidade);
-        }
-        cbxUnidadeTempo.setSelectedItem(aparelho.getUnidadeDeTempo());*/
     }
     
     private UsoAparelho getAparelhoSelecionado(){
-        int linhaTabela = tabelaAparelhosComodo.getSelectedRow();
-        int indiceLista = tabelaAparelhosComodo.convertRowIndexToModel(linhaTabela);
-        return tableModel.getUsoAparelho(indiceLista);
+        return getModel().getUsoAparelhoSelecionado();
+    }
+    
+    public List<Tempo> getUnidadesDeTempo(){
+        return Arrays.asList(Tempo.values());
     }
 
     /**
@@ -51,6 +46,7 @@ public class DialogEdicaoAparelhosComodo extends javax.swing.JDialog {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelaAparelhosComodo = new javax.swing.JTable();
@@ -67,30 +63,26 @@ public class DialogEdicaoAparelhosComodo extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Sala");
 
-        tabelaAparelhosComodo.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"TV de tubo 29\""},
-                {"Home theater"},
-                {"Lâmpada incandescente 80W"}
-            },
-            new String [] {
-                "APARELHOS"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class
-            };
+        tabelaAparelhosComodo.setColumnSelectionAllowed(true);
 
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
+        org.jdesktop.beansbinding.ELProperty eLProperty = org.jdesktop.beansbinding.ELProperty.create("${model.usoAparelhosVisualizados}");
+        org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, eLProperty, tabelaAparelhosComodo);
+        org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${descricao}"));
+        columnBinding.setColumnName("Descricao");
+        columnBinding.setColumnClass(String.class);
+        bindingGroup.addBinding(jTableBinding);
+        jTableBinding.bind();org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${model.usoAparelhoSelecionado}"), tabelaAparelhosComodo, org.jdesktop.beansbinding.BeanProperty.create("selectedElement"));
+        bindingGroup.addBinding(binding);
+
         jScrollPane1.setViewportView(tabelaAparelhosComodo);
+        tabelaAparelhosComodo.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         labelDescricao.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        labelDescricao.setText("TV de tubo 29\"");
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${usoAparelhoSelecionado.descricao}"), labelDescricao, org.jdesktop.beansbinding.BeanProperty.create("text"));
+        bindingGroup.addBinding(binding);
 
         labelPotencia.setText("Potência (W)");
 
@@ -100,9 +92,20 @@ public class DialogEdicaoAparelhosComodo extends javax.swing.JDialog {
 
         cbxUnidadeTempo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "HORAS/DIA" }));
 
+        eLProperty = org.jdesktop.beansbinding.ELProperty.create("${unidadesDeTempo}");
+        org.jdesktop.swingbinding.JComboBoxBinding jComboBoxBinding = org.jdesktop.swingbinding.SwingBindings.createJComboBoxBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, eLProperty, cbxUnidadeTempo);
+        bindingGroup.addBinding(jComboBoxBinding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${model.usoAparelhoSelecionado.unidadeDeTempo}"), cbxUnidadeTempo, org.jdesktop.beansbinding.BeanProperty.create("selectedItem"));
+        bindingGroup.addBinding(binding);
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${model.usoAparelhoSelecionado.tempoUso}"), spnTempoUso, org.jdesktop.beansbinding.BeanProperty.create("value"));
+        bindingGroup.addBinding(binding);
+
         txtPotencia.setEditable(false);
         txtPotencia.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        txtPotencia.setText("80");
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${model.usoAparelhoSelecionado.potencia}"), txtPotencia, org.jdesktop.beansbinding.BeanProperty.create("text"));
+        bindingGroup.addBinding(binding);
 
         botaoOK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/energyDown/gui/iconOK.png"))); // NOI18N
         botaoOK.setText("CONFIRMAR");
@@ -172,10 +175,12 @@ public class DialogEdicaoAparelhosComodo extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        bindingGroup.bind();
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -248,6 +253,15 @@ public class DialogEdicaoAparelhosComodo extends javax.swing.JDialog {
     private javax.swing.JSpinner spnTempoUso;
     private javax.swing.JTable tabelaAparelhosComodo;
     private javax.swing.JTextField txtPotencia;
+    private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     * @return the model
+     */
+    public EdicaoAparelhosComodoPM getModel() {
+        return model;
+    }
+
+    
 }
