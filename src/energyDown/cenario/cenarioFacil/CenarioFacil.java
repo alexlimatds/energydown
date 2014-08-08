@@ -23,16 +23,26 @@ public class CenarioFacil {
         
         Cenario cenarioFacil = new Cenario(1000, "CenarioFacil", 10, 150, metaCenario, 0.50);
 
-        cenarioFacil.addUsoAparelho(new UsoAparelho(1125, "Ar Condicionado - Janela 12.000btus", 1200, 5, Tempo.HORAS_DIA));
-        cenarioFacil.addUsoAparelho(new UsoAparelho(140, "TV 21\"", 780, 10, Tempo.HORAS_DIA));
-        cenarioFacil.addUsoAparelho(new UsoAparelho(10, "DVD", 110, 2, Tempo.HORAS_SEMANA));
-        cenarioFacil.addUsoAparelho(new UsoAparelho(40, "MicroSystem", 250, 1, Tempo.HORAS_MES));
-        cenarioFacil.addUsoAparelho(new UsoAparelho(220, "Máquina de Lavar", 900, 6, Tempo.HORAS_SEMANA));
-        cenarioFacil.addUsoAparelho(new UsoAparelho(1000, "Microondas 30L", 400, 20, Tempo.MINUTOS_DIA));
-        cenarioFacil.addUsoAparelho(new UsoAparelho(4000, "Chuveiro Elétrico", 100, 25, Tempo.MINUTOS_DIA));
-        cenarioFacil.addUsoAparelho(new UsoAparelho(265, "Geladeira Duplex", 4300, 10, Tempo.HORAS_DIA));
-        cenarioFacil.addUsoAparelho(new UsoAparelho(1200, "Ferro à Vapor", 70, 4, Tempo.HORAS_SEMANA));
-        cenarioFacil.addUsoAparelho(new UsoAparelho(1200, "VideoGame", 70, 4, Tempo.HORAS_SEMANA));
+        cenarioFacil.addUsoAparelho(new UsoAparelho(1125, "Ar Condicionado - Janela 12.000btus", 
+                1200, 5, Tempo.HORAS_DIA, "quarto_casal"));
+        cenarioFacil.addUsoAparelho(new UsoAparelho(140, "TV 21\"", 780, 10, 
+                Tempo.HORAS_DIA, "sala"));
+        cenarioFacil.addUsoAparelho(new UsoAparelho(10, "DVD", 110, 2, 
+                Tempo.HORAS_SEMANA, "sala"));
+        cenarioFacil.addUsoAparelho(new UsoAparelho(40, "MicroSystem", 250, 1, 
+                Tempo.HORAS_MES, "sala"));
+        cenarioFacil.addUsoAparelho(new UsoAparelho(220, "Máquina de Lavar", 900, 
+                6, Tempo.HORAS_SEMANA, "cozinha"));
+        cenarioFacil.addUsoAparelho(new UsoAparelho(1000, "Microondas 30L", 400, 
+                20, Tempo.MINUTOS_DIA, "cozinha"));
+        cenarioFacil.addUsoAparelho(new UsoAparelho(4000, "Chuveiro Elétrico", 100, 
+                25, Tempo.MINUTOS_DIA, "banheiro"));
+        cenarioFacil.addUsoAparelho(new UsoAparelho(265, "Geladeira Duplex", 4300, 
+                10, Tempo.HORAS_DIA, "cozinha"));
+        cenarioFacil.addUsoAparelho(new UsoAparelho(1200, "Ferro à Vapor", 70, 4, 
+                Tempo.HORAS_SEMANA, "cozinha"));
+        cenarioFacil.addUsoAparelho(new UsoAparelho(1200, "VideoGame", 70, 4, 
+                Tempo.HORAS_SEMANA, "quarto_filho"));
         
         return cenarioFacil;
     }

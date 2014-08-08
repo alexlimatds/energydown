@@ -86,7 +86,7 @@ public class PnlCenarioFacil extends javax.swing.JPanel implements MouseListener
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 203, 140, 110));
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 203, 190, 110));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("EnergyDown - Cenário Fácil");
@@ -123,7 +123,9 @@ public class PnlCenarioFacil extends javax.swing.JPanel implements MouseListener
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        DialogEdicaoAparelhosComodo dialog = new DialogEdicaoAparelhosComodo(cenario.getUsoAparelhos());
+        DialogEdicaoAparelhosComodo dialog = new DialogEdicaoAparelhosComodo(
+                cenario.getUsoAparelhos("quarto_filho"));
+        dialog.setTitle("Quarto");
         dialog.setLocationRelativeTo(this);
         dialog.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed

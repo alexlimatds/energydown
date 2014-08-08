@@ -13,6 +13,7 @@ public class Aparelho {
     private int potencia;
     private String descricao;
     private double preco;
+    private String comodo;
 
     /**
      *
@@ -24,6 +25,13 @@ public class Aparelho {
         this.potencia = potencia;
         this.descricao = descricao;
         this.preco = preco;
+    }
+    
+    public Aparelho(int potencia, String descricao, double preco, String comodo) {
+        this.potencia = potencia;
+        this.descricao = descricao;
+        this.preco = preco;
+        this.comodo = comodo;
     }
 
     public int getPotencia() {
@@ -48,5 +56,19 @@ public class Aparelho {
 
     public void setPreco(double preco) {
         this.preco = preco;
+    }
+
+    /**
+     * @return the comodo
+     */
+    public String getComodo() {
+        return comodo;
+    }
+
+    /**
+     * @param comodo the comodo to set
+     */
+    public void setComodo(String comodo) {
+        this.comodo = comodo;
     }
 }

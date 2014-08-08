@@ -286,4 +286,15 @@ public class Cenario {
         }
         return null;
     }
+    
+    public List<UsoAparelho> getUsoAparelhos(String comodo){
+        ArrayList<UsoAparelho> encontrados = new ArrayList<UsoAparelho>();
+        for(UsoAparelho u : usoAparelhos){
+            if(comodo.equals(u.getAparelho().getComodo())){
+                encontrados.add(u);
+            }
+        }
+        
+        return encontrados;
+    }
 }

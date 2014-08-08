@@ -29,6 +29,7 @@ public class PainelStatusCenarios extends javax.swing.JPanel {
         txtConsumoAtual.setText(fmt.format(cenario.getUltimoConsumo()));
         txtDespesaAtual.setText(fmt.format(cenario.getUltimaDespesa()));
         txtMetaDespesa.setText(fmt.format(cenario.getMetaDespesa()));
+        txtOrcamento.setText(fmt.format(cenario.getOrcamento()));
     }
 
     /**
@@ -49,7 +50,7 @@ public class PainelStatusCenarios extends javax.swing.JPanel {
         txtMetaDespesa = new javax.swing.JTextField();
         txtMesAtual = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        txtMetaDespesa1 = new javax.swing.JTextField();
+        txtOrcamento = new javax.swing.JTextField();
 
         jLabel1.setText("Mês atual");
 
@@ -73,8 +74,8 @@ public class PainelStatusCenarios extends javax.swing.JPanel {
 
         jLabel5.setText("Orçamento (R$)");
 
-        txtMetaDespesa1.setEditable(false);
-        txtMetaDespesa1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txtOrcamento.setEditable(false);
+        txtOrcamento.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -94,7 +95,7 @@ public class PainelStatusCenarios extends javax.swing.JPanel {
                     .addComponent(txtDespesaAtual)
                     .addComponent(txtMetaDespesa, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
                     .addComponent(txtMesAtual)
-                    .addComponent(txtMetaDespesa1))
+                    .addComponent(txtOrcamento))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -119,7 +120,7 @@ public class PainelStatusCenarios extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(txtMetaDespesa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtOrcamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -133,6 +134,6 @@ public class PainelStatusCenarios extends javax.swing.JPanel {
     private javax.swing.JTextField txtDespesaAtual;
     private javax.swing.JTextField txtMesAtual;
     private javax.swing.JTextField txtMetaDespesa;
-    private javax.swing.JTextField txtMetaDespesa1;
+    private javax.swing.JTextField txtOrcamento;
     // End of variables declaration//GEN-END:variables
 }

@@ -48,10 +48,18 @@ public class UsoAparelho {
      * @param preco
      * @param tempoDeUso
      * @param unidade
+     * @param comodo
      */
     public UsoAparelho(int potencia, String descricao, double preco, int tempoDeUso,
+            Tempo unidade, String comodo) {
+        this.aparelho = new Aparelho(potencia, descricao, preco, comodo);
+        this.tempoUso = tempoDeUso;
+        this.unidadeDeTempo = unidade;
+    }
+    
+    public UsoAparelho(int potencia, String descricao, double preco, int tempoDeUso,
             Tempo unidade) {
-        this.aparelho = new Aparelho(potencia, descricao, preco);
+        this.aparelho = new Aparelho(potencia, descricao, preco, null);
         this.tempoUso = tempoDeUso;
         this.unidadeDeTempo = unidade;
     }

@@ -61,7 +61,6 @@ public class DialogEdicaoAparelhosComodo extends javax.swing.JDialog {
         botaoOK = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Sala");
 
         tabelaAparelhosComodo.setColumnSelectionAllowed(true);
 
