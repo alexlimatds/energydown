@@ -42,7 +42,7 @@ public class CenarioFacil {
         cenarioFacil.addUsoAparelho(new UsoAparelho(1200, "Ferro à Vapor", 70, 4, 
                 Tempo.HORAS_SEMANA, "cozinha"));
         cenarioFacil.addUsoAparelho(new UsoAparelho(1200, "VideoGame", 70, 4, 
-                Tempo.HORAS_SEMANA, "quarto_filho"));
+                Tempo.HORAS_DIA, "quarto_filho"));
         
         return cenarioFacil;
     }

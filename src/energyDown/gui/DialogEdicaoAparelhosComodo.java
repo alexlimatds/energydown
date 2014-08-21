@@ -58,7 +58,6 @@ public class DialogEdicaoAparelhosComodo extends javax.swing.JDialog {
         cbxUnidadeTempo = new javax.swing.JComboBox();
         spnTempoUso = new javax.swing.JSpinner();
         txtPotencia = new javax.swing.JTextField();
-        botaoOK = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -106,14 +105,6 @@ public class DialogEdicaoAparelhosComodo extends javax.swing.JDialog {
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${model.usoAparelhoSelecionado.potencia}"), txtPotencia, org.jdesktop.beansbinding.BeanProperty.create("text"));
         bindingGroup.addBinding(binding);
 
-        botaoOK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/energyDown/gui/iconOK.png"))); // NOI18N
-        botaoOK.setText("CONFIRMAR");
-        botaoOK.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoOKActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -132,8 +123,7 @@ public class DialogEdicaoAparelhosComodo extends javax.swing.JDialog {
                             .addComponent(cbxUnidadeTempo, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(spnTempoUso, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
-                                .addComponent(txtPotencia, javax.swing.GroupLayout.Alignment.LEADING))))
-                    .addComponent(botaoOK, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addComponent(txtPotencia, javax.swing.GroupLayout.Alignment.LEADING)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -153,9 +143,7 @@ public class DialogEdicaoAparelhosComodo extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelUnidadeTempo)
                     .addComponent(cbxUnidadeTempo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botaoOK)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -183,12 +171,6 @@ public class DialogEdicaoAparelhosComodo extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void botaoOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoOKActionPerformed
-        UsoAparelho aparelho = getAparelhoSelecionado();
-        aparelho.setUnidadeDeTempo((Tempo) cbxUnidadeTempo.getSelectedItem());
-        aparelho.setTempoUso((Integer) spnTempoUso.getValue());
-    }//GEN-LAST:event_botaoOKActionPerformed
 
     /**
      * @param args the command line arguments
@@ -241,7 +223,6 @@ public class DialogEdicaoAparelhosComodo extends javax.swing.JDialog {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botaoOK;
     private javax.swing.JComboBox cbxUnidadeTempo;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

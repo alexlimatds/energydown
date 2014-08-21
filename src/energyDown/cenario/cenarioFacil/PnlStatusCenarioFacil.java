@@ -2,9 +2,11 @@ package energyDown.cenario.cenarioFacil;
 
 import energyDown.modelo.Cenario;
 import energyDown.modelo.unidade.Conforto;
+import energyDown.modelo.unidade.FimDeJogo;
 import java.text.DecimalFormat; 
 import java.util.HashMap;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -155,7 +157,27 @@ public class PnlStatusCenarioFacil extends javax.swing.JPanel {
     private void botaoAvancarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAvancarActionPerformed
         cenario.avancar();
         atualizar();
-        //TODO verificar se o jogo terminou
+          
+        if (cenario.getFimDeJogo() == FimDeJogo.METAS_ATINGIDAS) {
+
+            JOptionPane.showMessageDialog(this, "Parabéns! Você atingiu as metas! :D\n"
+                    + "Consumo do cenário em KWh =  " + fmt.format(cenario.calcularConsumoEmKWh()) + " KWh.\n"
+                    + "Consumo atual do cenário = R$ " + fmt.format(cenario.getUltimaDespesa()),
+                    "Resultado do Cenário", JOptionPane.INFORMATION_MESSAGE);
+            CenarioFacil.getCenario();
+                                
+
+        } else if (cenario.getFimDeJogo() == FimDeJogo.FIM_DO_PRAZO) {
+
+            JOptionPane.showMessageDialog(this, "Você não atingiu as metas... :(\n"
+                    + "Consumo do cenário em KWh =  " + fmt.format(cenario.calcularConsumoEmKWh()) + " KWh.\n"
+                    + "Consumo atual do cenário = R$ " + fmt.format(cenario.getUltimaDespesa()),
+                    "Resultado do Cenário", JOptionPane.INFORMATION_MESSAGE);
+            CenarioFacil.getCenario();
+
+        }
+        // TODO o botão OK do MessageDialog deve encerrar o jogo ou abrir um cenário novo? 
+        // TODO poderia oferecer duas oções: jogar novamente e sair
     }//GEN-LAST:event_botaoAvancarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
