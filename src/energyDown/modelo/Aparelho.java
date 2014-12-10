@@ -1,12 +1,8 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package energyDown.modelo;
 
 /**
  *
- * @author lobao
+ * @author Ana Meireles
  */
 public class Aparelho {
 

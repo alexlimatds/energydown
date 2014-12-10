@@ -1,5 +1,7 @@
 package energyDown.cenario.cenarioFacil;
 
+import energyDown.gui.DialogResultDerrota;
+import energyDown.gui.DialogResultVitoria;
 import energyDown.modelo.Cenario;
 import energyDown.modelo.unidade.Conforto;
 import energyDown.modelo.unidade.FimDeJogo;
@@ -87,7 +89,7 @@ public class PnlStatusCenarioFacil extends javax.swing.JPanel {
                     .addComponent(labelAna, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(IconRostoAlexandre)
-                .addContainerGap(164, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -116,7 +118,7 @@ public class PnlStatusCenarioFacil extends javax.swing.JPanel {
             }
         });
 
-        botaoHistorico.setText("Ver Histórico");
+        botaoHistorico.setText("Histórico");
 
         painelStatusCenarios.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -126,18 +128,15 @@ public class PnlStatusCenarioFacil extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(botaoAvancar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(botaoHistorico)
-                        .addGap(38, 38, 38))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(painelStatusCenarios, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(30, Short.MAX_VALUE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(botaoHistorico, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(painelStatusCenarios, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,25 +156,42 @@ public class PnlStatusCenarioFacil extends javax.swing.JPanel {
     private void botaoAvancarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAvancarActionPerformed
         cenario.avancar();
         atualizar();
-          
-        if (cenario.getFimDeJogo() == FimDeJogo.METAS_ATINGIDAS) {
-
-            JOptionPane.showMessageDialog(this, "Parabéns! Você atingiu as metas! :D\n"
-                    + "Consumo do cenário em KWh =  " + fmt.format(cenario.calcularConsumoEmKWh()) + " KWh.\n"
-                    + "Consumo atual do cenário = R$ " + fmt.format(cenario.getUltimaDespesa()),
-                    "Resultado do Cenário", JOptionPane.INFORMATION_MESSAGE);
-            CenarioFacil.getCenario();
-                                
-
-        } else if (cenario.getFimDeJogo() == FimDeJogo.FIM_DO_PRAZO) {
-
-            JOptionPane.showMessageDialog(this, "Você não atingiu as metas... :(\n"
-                    + "Consumo do cenário em KWh =  " + fmt.format(cenario.calcularConsumoEmKWh()) + " KWh.\n"
-                    + "Consumo atual do cenário = R$ " + fmt.format(cenario.getUltimaDespesa()),
-                    "Resultado do Cenário", JOptionPane.INFORMATION_MESSAGE);
-            CenarioFacil.getCenario();
-
+        
+        if(cenario.getFimDeJogo() == FimDeJogo.METAS_ATINGIDAS){
+            
+            DialogResultVitoria dialog = new DialogResultVitoria(cenario);
+            dialog.setTitle("Venceu!!!");
+            dialog.setLocationRelativeTo(this);
+            dialog.setVisible(true);       
+            
+        } else if (cenario.getFimDeJogo() == FimDeJogo.FIM_DO_PRAZO){
+            
+            DialogResultDerrota dialog = new DialogResultDerrota(cenario);
+            dialog.setTitle("Perdeu!");
+            dialog.setLocationRelativeTo(this);
+            dialog.setVisible(true);
         }
+                  
+//        if (cenario.getFimDeJogo() == FimDeJogo.METAS_ATINGIDAS) {
+//
+//            JOptionPane.showMessageDialog(this, "Parabéns! Você atingiu as metas! :D\n"
+//                    + "Consumo do cenário em KWh =  " + fmt.format(cenario.calcularConsumoEmKWh()) + " KWh.\n"
+//                    + "Consumo atual do cenário = R$ " + fmt.format(cenario.getUltimaDespesa()),
+//                    "Resultado do Cenário", JOptionPane.INFORMATION_MESSAGE);
+//            CenarioFacil.getCenario();
+//                                
+//
+//        } else if (cenario.getFimDeJogo() == FimDeJogo.FIM_DO_PRAZO) {
+//
+//            JOptionPane.showMessageDialog(this, "Você não conseguiu atingir as metas deste cenário... \n "
+//                    + ": (   : (    : (    : (   \n \n"
+//                    + "Meta de despesa do Cenário =  R$ " + fmt.format(cenario.getMetaDespesa()) + "\n"
+//                    + "Despesa atual do Cenário = R$ " + fmt.format(cenario.getUltimaDespesa()) + "\n"
+//                    + "Consumo atual do Cenário =  " + fmt.format(cenario.calcularConsumoEmKWh()) + " KWh.\n"
+//                    , "Resultado do Cenário", JOptionPane.INFORMATION_MESSAGE);
+//            CenarioFacil.getCenario();
+//
+//        }
         // TODO o botão OK do MessageDialog deve encerrar o jogo ou abrir um cenário novo? 
         // TODO poderia oferecer duas oções: jogar novamente e sair
     }//GEN-LAST:event_botaoAvancarActionPerformed

@@ -1,62 +1,42 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
 package energyDown.cenario.cenarioFacil;
 
-import energyDown.gui.DialogEdicaoAparelho;
 import energyDown.gui.DialogEdicaoAparelhosComodo;
-import energyDown.gui.LabelAparelho;
-import energyDown.gui.PainelStatusCenarios;
 import energyDown.modelo.Cenario;
-import energyDown.modelo.unidade.Conforto;
-import energyDown.modelo.unidade.FimDeJogo;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.util.HashMap;
-import java.util.Locale;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
- * @author Ana Meireles
+ * @author ANA PRISCILA
  */
-public class PnlCenarioFacil extends javax.swing.JPanel implements MouseListener {
-
+public class PnlCenarioFacil extends javax.swing.JPanel {
+    
+    private JPanel rootContainer;
     private Cenario cenario;
-    private JFrame rootFrame;
-
+    
     /**
      * Creates new form PnlCenarioFacil
      */
-    public PnlCenarioFacil(JFrame rootFrame) {
+    public PnlCenarioFacil(JPanel root) {
         iniciarInterface();
         initComponents();
         pnlStatusCenario.setCenario(cenario);
-        iniciarMouseListeners();
-        this.rootFrame = rootFrame;
-        
-        atualizarLabelRosto();
+        this.rootContainer = root;
+        atualizarLabelRosto();   
     }
-
+    
     private void iniciarInterface() {
         cenario = CenarioFacil.getCenario();
                
     }
-
-    private void iniciarMouseListeners() {
-        
-    }
-    
+     
     private void atualizarLabelRosto(){
         pnlStatusCenario.atualizar();
-    }
-
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("EnergyDownNow - Cenário Fácil");
-        PnlCenarioFacil painel = new PnlCenarioFacil(frame);
-        frame.add(painel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
     }
 
     /**
@@ -69,33 +49,90 @@ public class PnlCenarioFacil extends javax.swing.JPanel implements MouseListener
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        botao_quartoFilho_ = new javax.swing.JButton();
+        botao_quartoCasal_ = new javax.swing.JButton();
+        botao_sala_ = new javax.swing.JButton();
+        botao_cozinha_ = new javax.swing.JButton();
+        botao_banheiroSuite_ = new javax.swing.JButton();
+        botao_banheiroSocial_ = new javax.swing.JButton();
+        labelCenarioFacil = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         pnlStatusCenario = new energyDown.cenario.cenarioFacil.PnlStatusCenarioFacil();
 
-        setBorder(javax.swing.BorderFactory.createEtchedBorder());
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setPreferredSize(new java.awt.Dimension(1005, 415));
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        botao_quartoFilho_.setBorderPainted(false);
+        botao_quartoFilho_.setContentAreaFilled(false);
+        botao_quartoFilho_.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botao_quartoFilho_.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                botao_quartoFilho_ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 190, 140));
+        jPanel2.add(botao_quartoFilho_, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 180, 130));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel2.setText("EnergyDown - Cenário Fácil");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, 250, 30));
+        botao_quartoCasal_.setBorder(null);
+        botao_quartoCasal_.setBorderPainted(false);
+        botao_quartoCasal_.setContentAreaFilled(false);
+        botao_quartoCasal_.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botao_quartoCasal_.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botao_quartoCasal_ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(botao_quartoCasal_, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 180, 170, 130));
+
+        botao_sala_.setBorderPainted(false);
+        botao_sala_.setContentAreaFilled(false);
+        botao_sala_.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botao_sala_.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botao_sala_ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(botao_sala_, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 220, 80));
+
+        botao_cozinha_.setBorderPainted(false);
+        botao_cozinha_.setContentAreaFilled(false);
+        botao_cozinha_.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botao_cozinha_.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botao_cozinha_ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(botao_cozinha_, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 130, 80));
+
+        botao_banheiroSuite_.setBorderPainted(false);
+        botao_banheiroSuite_.setContentAreaFilled(false);
+        botao_banheiroSuite_.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botao_banheiroSuite_.setDefaultCapable(false);
+        botao_banheiroSuite_.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botao_banheiroSuite_ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(botao_banheiroSuite_, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, 80, 120));
+
+        botao_banheiroSocial_.setBorderPainted(false);
+        botao_banheiroSocial_.setContentAreaFilled(false);
+        botao_banheiroSocial_.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botao_banheiroSocial_.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botao_banheiroSocial_ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(botao_banheiroSocial_, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, 70, 120));
+
+        labelCenarioFacil.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        labelCenarioFacil.setText("EnergyDown - Cenário Fácil");
+        jPanel2.add(labelCenarioFacil, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, 250, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/energyDown/gui/EnergyDownNow_cenarioFacil.jpg"))); // NOI18N
         jLabel1.setText("EnergyDown");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 690, 400));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 690, 400));
 
         pnlStatusCenario.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -103,66 +140,84 @@ public class PnlCenarioFacil extends javax.swing.JPanel implements MouseListener
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pnlStatusCenario, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
+                .addComponent(pnlStatusCenario, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 462, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
                         .addComponent(pnlStatusCenario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void botao_quartoFilho_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_quartoFilho_ActionPerformed
         DialogEdicaoAparelhosComodo dialog = new DialogEdicaoAparelhosComodo(
-                cenario.getUsoAparelhos("quarto_filho"));
+            cenario.getUsoAparelhos("quarto_filho"));
         dialog.setTitle("Quarto");
         dialog.setLocationRelativeTo(this);
         dialog.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_botao_quartoFilho_ActionPerformed
+
+    private void botao_quartoCasal_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_quartoCasal_ActionPerformed
+        DialogEdicaoAparelhosComodo dialog = new DialogEdicaoAparelhosComodo(
+            cenario.getUsoAparelhos("quarto_casal"));
+        dialog.setTitle("Suíte");
+        dialog.setLocationRelativeTo(this);
+        dialog.setVisible(true);
+    }//GEN-LAST:event_botao_quartoCasal_ActionPerformed
+
+    private void botao_sala_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_sala_ActionPerformed
+        DialogEdicaoAparelhosComodo dialog = new DialogEdicaoAparelhosComodo(
+            cenario.getUsoAparelhos("sala"));
+        dialog.setTitle("Sala de Estar / Jantar");
+        dialog.setLocationRelativeTo(this);
+        dialog.setVisible(true);
+    }//GEN-LAST:event_botao_sala_ActionPerformed
+
+    private void botao_cozinha_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_cozinha_ActionPerformed
+        DialogEdicaoAparelhosComodo dialog = new DialogEdicaoAparelhosComodo(
+            cenario.getUsoAparelhos("cozinha"));
+        dialog.setTitle("Cozinha");
+        dialog.setLocationRelativeTo(this);
+        dialog.setVisible(true);
+    }//GEN-LAST:event_botao_cozinha_ActionPerformed
+
+    private void botao_banheiroSuite_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_banheiroSuite_ActionPerformed
+        DialogEdicaoAparelhosComodo dialog = new DialogEdicaoAparelhosComodo(
+            cenario.getUsoAparelhos("banheiroSuite"));
+        dialog.setTitle("Banheiro Suíte");
+        dialog.setLocationRelativeTo(this);
+        dialog.setVisible(true);
+    }//GEN-LAST:event_botao_banheiroSuite_ActionPerformed
+
+    private void botao_banheiroSocial_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_banheiroSocial_ActionPerformed
+        DialogEdicaoAparelhosComodo dialog = new DialogEdicaoAparelhosComodo(
+            cenario.getUsoAparelhos("banheiroSocial"));
+        dialog.setTitle("Banheiro Social");
+        dialog.setLocationRelativeTo(this);
+        dialog.setVisible(true);
+    }//GEN-LAST:event_botao_banheiroSocial_ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton botao_banheiroSocial_;
+    private javax.swing.JButton botao_banheiroSuite_;
+    private javax.swing.JButton botao_cozinha_;
+    private javax.swing.JButton botao_quartoCasal_;
+    private javax.swing.JButton botao_quartoFilho_;
+    private javax.swing.JButton botao_sala_;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel labelCenarioFacil;
     private energyDown.cenario.cenarioFacil.PnlStatusCenarioFacil pnlStatusCenario;
     // End of variables declaration//GEN-END:variables
-
-    @Override
-    public void mouseClicked(MouseEvent e) {
-        Object origem = e.getSource();
-        if (origem instanceof LabelAparelho) {
-            LabelAparelho label = (LabelAparelho) origem;
-            DialogEdicaoAparelho dialog = new DialogEdicaoAparelho(rootFrame, label.getAparelho());
-            dialog.setLocationRelativeTo(rootFrame);
-            dialog.setVisible(true);
-        }
-    }
-
-    @Override
-    public void mousePressed(MouseEvent e) {
-    }
-
-    @Override
-    public void mouseReleased(MouseEvent e) {
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent e) {
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
-    }
 }

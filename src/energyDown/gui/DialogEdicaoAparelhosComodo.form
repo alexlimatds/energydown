@@ -94,11 +94,11 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="labelDescricao" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
+                      <Component id="labelDescricao" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="labelUnidadeTempo" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="labelTempoUso" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -112,9 +112,10 @@
                                   <Component id="txtPotencia" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -122,7 +123,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="labelDescricao" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelDescricao" min="-2" pref="14" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="labelPotencia" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -151,7 +152,7 @@
             </Property>
           </Properties>
           <BindingProperties>
-            <BindingProperty name="text" source="Form" sourcePath="${usoAparelhoSelecionado.descricao}" target="labelDescricao" targetPath="text" updateStrategy="0" immediately="false"/>
+            <BindingProperty name="text" source="Form" sourcePath="${model.usoAparelhoSelecionado.descricao}" target="labelDescricao" targetPath="text" updateStrategy="0" immediately="false"/>
           </BindingProperties>
         </Component>
         <Component class="javax.swing.JLabel" name="labelPotencia">
@@ -185,6 +186,7 @@
         <Component class="javax.swing.JSpinner" name="spnTempoUso">
           <BindingProperties>
             <BindingProperty name="value" source="Form" sourcePath="${model.usoAparelhoSelecionado.tempoUso}" target="spnTempoUso" targetPath="value" updateStrategy="0" immediately="false"/>
+            <BindingProperty name="enabled" source="Form" sourcePath="${model.usoAparelhoSelecionado != null}" target="spnTempoUso" targetPath="enabled" updateStrategy="0" immediately="false"/>
           </BindingProperties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtPotencia">
