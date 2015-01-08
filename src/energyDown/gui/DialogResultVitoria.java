@@ -5,7 +5,6 @@
 package energyDown.gui;
 
 import energyDown.cenario.cenarioFacil.CenarioFacil;
-import energyDown.cenario.cenarioFacil.PnlCenarioFacil;
 import energyDown.modelo.Cenario;
 import java.text.DecimalFormat;
 

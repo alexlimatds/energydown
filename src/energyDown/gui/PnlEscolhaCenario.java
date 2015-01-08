@@ -2,130 +2,96 @@ package energyDown.gui;
 
 import energyDown.cenario.cenarioFacil.PnlCenarioFacil;
 import java.awt.BorderLayout;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import javax.swing.JPanel;
-
 /**
  *
  * @author ANA PRISCILA
  */
-public class PnlEscolhaCenario extends javax.swing.JPanel implements MouseListener {
-    
+public class PnlEscolhaCenario extends javax.swing.JPanel {
+
     private JPanel rootContainer;
     
-     public PnlEscolhaCenario(JPanel rootPanel) {
+     public PnlEscolhaCenario (JPanel rootPanel) {
         initComponents();
         this.rootContainer = rootPanel;
     }
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel_Logo = new javax.swing.JLabel();
-        jLabel_EscolhaNivel = new javax.swing.JLabel();
-        jButtonCenarioFacil = new javax.swing.JButton();
-        jButtonCenarioIntermediario = new javax.swing.JButton();
-        jButtonCenarioAvancado = new javax.swing.JButton();
-        jLabel_Logo1 = new javax.swing.JLabel();
+        jButton_Facil = new javax.swing.JButton();
+        jButton_Intermediario = new javax.swing.JButton();
+        jButton_Avancado = new javax.swing.JButton();
+        jLabel_Background = new javax.swing.JLabel();
 
-        jLabel_Logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel_Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/energyDown/gui/energyDownLogo.jpg"))); // NOI18N
-        jLabel_Logo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
+        setBackground(new java.awt.Color(204, 204, 204));
         setMinimumSize(new java.awt.Dimension(1005, 410));
         setPreferredSize(new java.awt.Dimension(1005, 410));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel_EscolhaNivel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel_EscolhaNivel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel_EscolhaNivel.setText("Escolha um nível de dificuldade");
-        add(jLabel_EscolhaNivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 60, -1, 30));
-
-        jButtonCenarioFacil.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButtonCenarioFacil.setText("Fácil");
-        jButtonCenarioFacil.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCenarioFacilActionPerformed(evt);
+        jButton_Facil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/energyDown/gui/imagens/CenFácilLampadaApagada.png"))); // NOI18N
+        jButton_Facil.setBorder(null);
+        jButton_Facil.setBorderPainted(false);
+        jButton_Facil.setContentAreaFilled(false);
+        jButton_Facil.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton_Facil.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton_FacilMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton_FacilMouseExited(evt);
             }
         });
-        add(jButtonCenarioFacil, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 100, 210, 60));
-
-        jButtonCenarioIntermediario.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButtonCenarioIntermediario.setText("Intermediário");
-        jButtonCenarioIntermediario.setPreferredSize(new java.awt.Dimension(57, 23));
-        jButtonCenarioIntermediario.addActionListener(new java.awt.event.ActionListener() {
+        jButton_Facil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCenarioIntermediarioActionPerformed(evt);
+                jButton_FacilActionPerformed(evt);
             }
         });
-        add(jButtonCenarioIntermediario, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 170, 210, 70));
+        add(jButton_Facil, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 191, 62));
 
-        jButtonCenarioAvancado.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButtonCenarioAvancado.setText("Avançado");
-        jButtonCenarioAvancado.setPreferredSize(new java.awt.Dimension(57, 23));
-        jButtonCenarioAvancado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCenarioAvancadoActionPerformed(evt);
-            }
-        });
-        add(jButtonCenarioAvancado, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 250, 210, 70));
+        jButton_Intermediario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/energyDown/gui/imagens/CenIntermediárioLampadaApagada.png"))); // NOI18N
+        jButton_Intermediario.setBorder(null);
+        jButton_Intermediario.setBorderPainted(false);
+        jButton_Intermediario.setContentAreaFilled(false);
+        jButton_Intermediario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton_Intermediario.setOpaque(false);
+        add(jButton_Intermediario, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 190, 191, 62));
 
-        jLabel_Logo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel_Logo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/energyDown/gui/energyDownLogo.jpg"))); // NOI18N
-        jLabel_Logo1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        add(jLabel_Logo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, -1, -1));
+        jButton_Avancado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/energyDown/gui/imagens/CenAvançadoLampadaApagada.png"))); // NOI18N
+        jButton_Avancado.setBorderPainted(false);
+        jButton_Avancado.setContentAreaFilled(false);
+        jButton_Avancado.setMaximumSize(new java.awt.Dimension(191, 63));
+        jButton_Avancado.setMinimumSize(new java.awt.Dimension(191, 63));
+        jButton_Avancado.setPreferredSize(new java.awt.Dimension(191, 63));
+        add(jButton_Avancado, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 260, 191, 62));
+
+        jLabel_Background.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/energyDown/gui/imagens/energydownEscolhaNivel.png"))); // NOI18N
+        jLabel_Background.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        add(jLabel_Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 410));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonCenarioFacilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCenarioFacilActionPerformed
+    private void jButton_FacilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_FacilActionPerformed
         PnlCenarioFacil pnl = new PnlCenarioFacil(rootContainer);
         rootContainer.removeAll();
         rootContainer.add(pnl, BorderLayout.CENTER);
         rootContainer.revalidate();
         rootContainer.repaint();
-    }//GEN-LAST:event_jButtonCenarioFacilActionPerformed
+    }//GEN-LAST:event_jButton_FacilActionPerformed
 
-    private void jButtonCenarioIntermediarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCenarioIntermediarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonCenarioIntermediarioActionPerformed
+    private void jButton_FacilMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_FacilMouseEntered
+        jButton_Facil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/energyDown/gui/imagens/CenFácilLampadaAcesa.png")));
+    }//GEN-LAST:event_jButton_FacilMouseEntered
 
-    private void jButtonCenarioAvancadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCenarioAvancadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonCenarioAvancadoActionPerformed
+    private void jButton_FacilMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_FacilMouseExited
+        jButton_Facil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/energyDown/gui/imagens/CenFácilLampadaApagada.png")));
+    }//GEN-LAST:event_jButton_FacilMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonCenarioAvancado;
-    private javax.swing.JButton jButtonCenarioFacil;
-    private javax.swing.JButton jButtonCenarioIntermediario;
-    private javax.swing.JLabel jLabel_EscolhaNivel;
-    private javax.swing.JLabel jLabel_Logo;
-    private javax.swing.JLabel jLabel_Logo1;
+    private javax.swing.JButton jButton_Avancado;
+    private javax.swing.JButton jButton_Facil;
+    private javax.swing.JButton jButton_Intermediario;
+    private javax.swing.JLabel jLabel_Background;
     // End of variables declaration//GEN-END:variables
-
-    @Override
-    public void mouseClicked(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void mousePressed(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void mouseReleased(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

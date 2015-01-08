@@ -7,7 +7,9 @@ package energyDown.gui;
 import energyDown.cenario.cenarioFacil.CenarioFacil;
 import energyDown.cenario.cenarioFacil.PnlCenarioFacil;
 import energyDown.modelo.Cenario;
+import java.awt.BorderLayout;
 import java.text.DecimalFormat;
+import javax.swing.JPanel;
 
 /**
  *
@@ -17,21 +19,25 @@ public class DialogResultDerrota extends javax.swing.JDialog {
 
     private Cenario cenario;
     private DecimalFormat fmt = new DecimalFormat("#,##0.00");
+    private JPanel rootContainer;
 
     /**
      * Creates new form DialogEdicaoAparelho
      */
-    public DialogResultDerrota(Cenario cenario) {
+    public DialogResultDerrota(Cenario cenario, JPanel rootPanel) {
         super();
+        setModal(true);
         this.cenario = cenario;
+        this.rootContainer = rootPanel;
+        
         initComponents();
+        
                       
         jLabelResultado.setText("Você não atingiu as metas deste cenário! :\\(");
         jLabelMetaDespesa.setText("Meta de despesa do Cenário =  R$ " + fmt.format(cenario.getMetaDespesa()));
         jLabelUltimaDespesa.setText("Despesa atual do Cenário = R$ " + fmt.format(cenario.getUltimaDespesa()) );
         jLabelConsumo.setText("Consumo atual do Cenário =  " + fmt.format(cenario.calcularConsumoEmKWh()) + " KWh.\n");
             
-        CenarioFacil.getCenario();                       
     }
     
         
@@ -52,9 +58,11 @@ public class DialogResultDerrota extends javax.swing.JDialog {
         jLabelUltimaDespesa = new javax.swing.JLabel();
         jLabelConsumo = new javax.swing.JLabel();
         jLabelMensagem = new javax.swing.JLabel();
+        jLabelLampada = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        jLabelResultado.setText("resultado");
         jLabelResultado.setOpaque(true);
 
         btnNão.setText("Não");
@@ -71,64 +79,85 @@ public class DialogResultDerrota extends javax.swing.JDialog {
             }
         });
 
+        jLabelMetaDespesa.setText("meta");
+
+        jLabelUltimaDespesa.setText("despesa");
+
+        jLabelConsumo.setText("consumo");
+
         jLabelMensagem.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabelMensagem.setText("Quer tentar novamente?");
+
+        jLabelLampada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/energyDown/gui/imagens/LampadaApagada-GameOver.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 88, Short.MAX_VALUE)
-                .addComponent(jLabelResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(107, 107, 107))
             .addGroup(layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jLabelLampada)
+                .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(59, 59, 59)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabelMetaDespesa, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelConsumo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabelUltimaDespesa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabelConsumo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(39, 39, 39)
+                                .addComponent(jLabelResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelMetaDespesa, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(110, 110, 110)
-                        .addComponent(btnSim, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(57, 57, 57)
-                        .addComponent(btnNão, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(135, 135, 135)
-                        .addComponent(jLabelMensagem)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(58, 58, 58)
+                                .addComponent(jLabelMensagem))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnSim, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(93, 93, 93)
+                                .addComponent(btnNão, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(169, 169, 169)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(52, 52, 52)
                 .addComponent(jLabelResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7)
+                .addGap(18, 18, 18)
                 .addComponent(jLabelMetaDespesa, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelUltimaDespesa, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelConsumo, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabelMensagem)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSim)
                     .addComponent(btnNão))
-                .addGap(21, 21, 21))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jLabelLampada, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnNãoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNãoActionPerformed
-        dispose();
+        System.exit(0);       
     }//GEN-LAST:event_btnNãoActionPerformed
 
     private void btnSimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimActionPerformed
-        CenarioFacil.getCenario();
+        PnlCenarioFacil pnl = new PnlCenarioFacil(rootContainer);
+        rootContainer.removeAll();
+        rootContainer.add(pnl, BorderLayout.CENTER);
+        rootContainer.revalidate();
+        rootContainer.repaint();
     }//GEN-LAST:event_btnSimActionPerformed
 
     /**
@@ -175,6 +204,7 @@ public class DialogResultDerrota extends javax.swing.JDialog {
     private javax.swing.JButton btnNão;
     private javax.swing.JButton btnSim;
     private javax.swing.JLabel jLabelConsumo;
+    private javax.swing.JLabel jLabelLampada;
     private javax.swing.JLabel jLabelMensagem;
     private javax.swing.JLabel jLabelMetaDespesa;
     private javax.swing.JLabel jLabelResultado;

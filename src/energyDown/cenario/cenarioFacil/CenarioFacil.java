@@ -23,20 +23,22 @@ public class CenarioFacil {
         
         Cenario cenarioFacil = new Cenario(1000, "CenarioFacil", 10, 300, metaCenario, 0.50);
 
-       //Aparelhos do quarto casal
+       //Aparelhos da suíte casal
         
         cenarioFacil.addUsoAparelho(new UsoAparelho(1125, "Ar Condicionado - Janela 12.000btus", 
-                1000, 5, Tempo.HORAS_DIA, "quarto_casal"));
-        cenarioFacil.addUsoAparelho(new UsoAparelho(140, "TV 21\"", 780, 3, 
-                Tempo.HORAS_DIA, "quarto_casal"));
-        cenarioFacil.addUsoAparelho(new UsoAparelho(60, "Lâmpada Fluorescente", 7, 5, 
-                Tempo.HORAS_DIA, "quarto_casal"));
-        cenarioFacil.addUsoAparelho(new UsoAparelho(8, "Carregador de Bateria Celular", 5, 20, 
-                Tempo.HORAS_SEMANA, "quarto_casal"));
-        cenarioFacil.addUsoAparelho(new UsoAparelho(4, "Rádio relógio", 59, 24, 
-                Tempo.HORAS_DIA, "quarto_casal"));
+                1000, 9, Tempo.HORAS_DIA, "quarto_casal"));
+        cenarioFacil.addUsoAparelho(new UsoAparelho(140, "TV 21\"",
+                780, 5, Tempo.HORAS_DIA, "quarto_casal"));
+        cenarioFacil.addUsoAparelho(new UsoAparelho(60, "Lâmpada Fluorescente", 
+                7, 5, Tempo.HORAS_DIA, "quarto_casal"));
+        cenarioFacil.addUsoAparelho(new UsoAparelho(90, "Abajur", 
+                60, 5, Tempo.HORAS_DIA, "quarto_casal"));
+        cenarioFacil.addUsoAparelho(new UsoAparelho(8, "Carregador de Bateria Celular", 
+                5, 18, Tempo.HORAS_SEMANA, "quarto_casal"));
+        cenarioFacil.addUsoAparelho(new UsoAparelho(4, "Rádio relógio", 
+                59, 24, Tempo.HORAS_DIA, "quarto_casal"));
        
-        //Aparelhos do banheiro suíte
+        //Aparelhos do banheiro suíte casal
         
          cenarioFacil.addUsoAparelho(new UsoAparelho(4000, "Chuveiro Elétrico", 100, 
                 25, Tempo.MINUTOS_DIA, "banheiroSuite"));
@@ -47,7 +49,7 @@ public class CenarioFacil {
          cenarioFacil.addUsoAparelho(new UsoAparelho(1200, "Secador de cabelos", 180, 1, 
                 Tempo.HORAS_SEMANA, "banheiroSuite"));
        
-        //Aparelhos do quarto filho
+        //Aparelhos do quarto solteiro
         
         cenarioFacil.addUsoAparelho(new UsoAparelho(1200, "VideoGame", 70, 4, 
                 Tempo.HORAS_DIA, "quarto_filho"));
@@ -55,6 +57,8 @@ public class CenarioFacil {
                 Tempo.HORAS_DIA, "quarto_filho"));
         cenarioFacil.addUsoAparelho(new UsoAparelho(60, "Lâmpada Fluorescente", 7, 5, 
                 Tempo.HORAS_DIA, "quarto_filho"));
+        cenarioFacil.addUsoAparelho(new UsoAparelho(139, "Aparelho DVD", 50, 4, 
+                Tempo.HORAS_SEMANA, "quarto_filho"));
         
         //Aparelhos do banheiro social
         
@@ -82,8 +86,8 @@ public class CenarioFacil {
                 6, Tempo.HORAS_SEMANA, "cozinha"));
         cenarioFacil.addUsoAparelho(new UsoAparelho(1000, "Microondas 30L", 400, 
                 20, Tempo.MINUTOS_DIA, "cozinha"));
-        cenarioFacil.addUsoAparelho(new UsoAparelho(265, "Geladeira Duplex", 4300, 
-                10, Tempo.HORAS_DIA, "cozinha"));
+        cenarioFacil.addUsoAparelho(new UsoAparelho(265, "Geladeira", 4300, 
+                24, Tempo.HORAS_DIA, "cozinha"));
         cenarioFacil.addUsoAparelho(new UsoAparelho(600, "Liquidificador", 90, 1, 
                 Tempo.HORAS_SEMANA, "cozinha"));
         cenarioFacil.addUsoAparelho(new UsoAparelho(700, "Sanduicheira", 60, 1, 

@@ -9,6 +9,7 @@ import java.text.DecimalFormat;
 import java.util.HashMap;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
@@ -19,19 +20,20 @@ public class PnlStatusCenarioFacil extends javax.swing.JPanel {
     private Cenario cenario;
     private DecimalFormat fmt = new DecimalFormat("#,##0.00");
     private HashMap<Conforto, ImageIcon> mapaConfortoIcone = new HashMap<Conforto, ImageIcon>();
+    private JPanel rootContainer;
     
     public PnlStatusCenarioFacil() {
         initComponents();
         
-        ImageIcon imgOtimo = new ImageIcon(getClass().getResource("/energyDown/gui/iconOtimo.png"));
+        ImageIcon imgOtimo = new ImageIcon(getClass().getResource("/energyDown/gui/imagens/iconOtimo.png"));
         mapaConfortoIcone.put(Conforto.OTIMO, imgOtimo);
-        ImageIcon imgBom = new ImageIcon(getClass().getResource("/energyDown/gui/iconBom.png"));
+        ImageIcon imgBom = new ImageIcon(getClass().getResource("/energyDown/gui/imagens/iconBom.png"));
         mapaConfortoIcone.put(Conforto.BOM, imgBom);
-        ImageIcon imgRegular = new ImageIcon(getClass().getResource("/energyDown/gui/iconRegular.png"));
+        ImageIcon imgRegular = new ImageIcon(getClass().getResource("/energyDown/gui/imagens/iconRegular.png"));
         mapaConfortoIcone.put(Conforto.REGULAR, imgRegular);
-        ImageIcon imgRuim = new ImageIcon(getClass().getResource("/energyDown/gui/iconRuim.png"));
+        ImageIcon imgRuim = new ImageIcon(getClass().getResource("/energyDown/gui/imagens/iconRuim.png"));
         mapaConfortoIcone.put(Conforto.RUIM, imgRuim);
-        ImageIcon imgPessimo = new ImageIcon(getClass().getResource("/energyDown/gui/iconPessimo.png"));
+        ImageIcon imgPessimo = new ImageIcon(getClass().getResource("/energyDown/gui/imagens/iconPessimo.png"));
         mapaConfortoIcone.put(Conforto.PESSIMO, imgPessimo);
     }
     
@@ -149,7 +151,7 @@ public class PnlStatusCenarioFacil extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoAvancar)
                     .addComponent(botaoHistorico))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -161,39 +163,17 @@ public class PnlStatusCenarioFacil extends javax.swing.JPanel {
             
             DialogResultVitoria dialog = new DialogResultVitoria(cenario);
             dialog.setTitle("Venceu!!!");
-            dialog.setLocationRelativeTo(this);
+            dialog.setLocationRelativeTo(this.getRootPane());
             dialog.setVisible(true);       
-            
+                        
         } else if (cenario.getFimDeJogo() == FimDeJogo.FIM_DO_PRAZO){
             
-            DialogResultDerrota dialog = new DialogResultDerrota(cenario);
+            DialogResultDerrota dialog = new DialogResultDerrota(cenario, rootContainer);
             dialog.setTitle("Perdeu!");
-            dialog.setLocationRelativeTo(this);
-            dialog.setVisible(true);
+            dialog.setLocationRelativeTo(this.getRootPane());
+            dialog.setVisible(true);           
         }
                   
-//        if (cenario.getFimDeJogo() == FimDeJogo.METAS_ATINGIDAS) {
-//
-//            JOptionPane.showMessageDialog(this, "Parabéns! Você atingiu as metas! :D\n"
-//                    + "Consumo do cenário em KWh =  " + fmt.format(cenario.calcularConsumoEmKWh()) + " KWh.\n"
-//                    + "Consumo atual do cenário = R$ " + fmt.format(cenario.getUltimaDespesa()),
-//                    "Resultado do Cenário", JOptionPane.INFORMATION_MESSAGE);
-//            CenarioFacil.getCenario();
-//                                
-//
-//        } else if (cenario.getFimDeJogo() == FimDeJogo.FIM_DO_PRAZO) {
-//
-//            JOptionPane.showMessageDialog(this, "Você não conseguiu atingir as metas deste cenário... \n "
-//                    + ": (   : (    : (    : (   \n \n"
-//                    + "Meta de despesa do Cenário =  R$ " + fmt.format(cenario.getMetaDespesa()) + "\n"
-//                    + "Despesa atual do Cenário = R$ " + fmt.format(cenario.getUltimaDespesa()) + "\n"
-//                    + "Consumo atual do Cenário =  " + fmt.format(cenario.calcularConsumoEmKWh()) + " KWh.\n"
-//                    , "Resultado do Cenário", JOptionPane.INFORMATION_MESSAGE);
-//            CenarioFacil.getCenario();
-//
-//        }
-        // TODO o botão OK do MessageDialog deve encerrar o jogo ou abrir um cenário novo? 
-        // TODO poderia oferecer duas oções: jogar novamente e sair
     }//GEN-LAST:event_botaoAvancarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -85,47 +85,47 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="energyDown.gui.LabelAparelho" name="labelAparelho1">
+    <Component class="energyDown.cenario.validacao.LabelAparelho" name="labelAparelho1">
       <Properties>
         <Property name="text" type="java.lang.String" value="Aparelho1"/>
       </Properties>
     </Component>
-    <Component class="energyDown.gui.LabelAparelho" name="labelAparelho2">
+    <Component class="energyDown.cenario.validacao.LabelAparelho" name="labelAparelho2">
       <Properties>
         <Property name="text" type="java.lang.String" value="Aparelho2"/>
       </Properties>
     </Component>
-    <Component class="energyDown.gui.LabelAparelho" name="labelAparelho3">
+    <Component class="energyDown.cenario.validacao.LabelAparelho" name="labelAparelho3">
       <Properties>
         <Property name="text" type="java.lang.String" value="Aparelho3"/>
       </Properties>
     </Component>
-    <Component class="energyDown.gui.LabelAparelho" name="labelAparelho4">
+    <Component class="energyDown.cenario.validacao.LabelAparelho" name="labelAparelho4">
       <Properties>
         <Property name="text" type="java.lang.String" value="Aparelho4"/>
       </Properties>
     </Component>
-    <Component class="energyDown.gui.LabelAparelho" name="labelAparelho5">
+    <Component class="energyDown.cenario.validacao.LabelAparelho" name="labelAparelho5">
       <Properties>
         <Property name="text" type="java.lang.String" value="Aparelho5"/>
       </Properties>
     </Component>
-    <Component class="energyDown.gui.LabelAparelho" name="labelAparelho6">
+    <Component class="energyDown.cenario.validacao.LabelAparelho" name="labelAparelho6">
       <Properties>
         <Property name="text" type="java.lang.String" value="Aparelho6"/>
       </Properties>
     </Component>
-    <Component class="energyDown.gui.LabelAparelho" name="labelAparelho7">
+    <Component class="energyDown.cenario.validacao.LabelAparelho" name="labelAparelho7">
       <Properties>
         <Property name="text" type="java.lang.String" value="Aparelho7"/>
       </Properties>
     </Component>
-    <Component class="energyDown.gui.LabelAparelho" name="labelAparelho8">
+    <Component class="energyDown.cenario.validacao.LabelAparelho" name="labelAparelho8">
       <Properties>
         <Property name="text" type="java.lang.String" value="Aparelho8"/>
       </Properties>
     </Component>
-    <Component class="energyDown.gui.LabelAparelho" name="labelAparelho9">
+    <Component class="energyDown.cenario.validacao.LabelAparelho" name="labelAparelho9">
       <Properties>
         <Property name="text" type="java.lang.String" value="Aparelho9"/>
       </Properties>

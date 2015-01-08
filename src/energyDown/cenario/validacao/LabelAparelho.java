@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package energyDown.gui;
+package energyDown.cenario.validacao;
 
 import energyDown.modelo.UsoAparelho;
 import javax.swing.JLabel;

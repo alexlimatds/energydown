@@ -25,11 +25,20 @@ public class PainelStatusCenarios extends javax.swing.JPanel {
     }
 
     public void atualizar() {
-        txtMesAtual.setText(String.valueOf(cenario.getMesAtual()));
-        txtConsumoAtual.setText(fmt.format(cenario.getUltimoConsumo()));
-        txtDespesaAtual.setText(fmt.format(cenario.getUltimaDespesa()));
-        txtMetaDespesa.setText(fmt.format(cenario.getMetaDespesa()));
-        txtOrcamento.setText(fmt.format(cenario.getOrcamento()));
+        
+        if (cenario.getMesAtual() == 11){
+            txtMesAtual.setText("10");
+            txtConsumoAtual.setText(fmt.format(cenario.getUltimoConsumo()));
+            txtDespesaAtual.setText(fmt.format(cenario.getUltimaDespesa()));
+            txtMetaDespesa.setText(fmt.format(cenario.getMetaDespesa()));
+            txtOrcamento.setText(fmt.format(cenario.getOrcamento()));
+        }else{
+            txtMesAtual.setText(String.valueOf(cenario.getMesAtual()));
+            txtConsumoAtual.setText(fmt.format(cenario.getUltimoConsumo()));
+            txtDespesaAtual.setText(fmt.format(cenario.getUltimaDespesa()));
+            txtMetaDespesa.setText(fmt.format(cenario.getMetaDespesa()));
+            txtOrcamento.setText(fmt.format(cenario.getOrcamento()));
+        }       
     }
 
     /**
@@ -58,6 +67,7 @@ public class PainelStatusCenarios extends javax.swing.JPanel {
 
         jLabel3.setText("Despesa Atual (R$)");
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel4.setText("Meta Despesa (R$)");
 
         txtConsumoAtual.setEditable(false);
@@ -67,6 +77,7 @@ public class PainelStatusCenarios extends javax.swing.JPanel {
         txtDespesaAtual.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
 
         txtMetaDespesa.setEditable(false);
+        txtMetaDespesa.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         txtMetaDespesa.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
 
         txtMesAtual.setEditable(false);
@@ -96,12 +107,16 @@ public class PainelStatusCenarios extends javax.swing.JPanel {
                     .addComponent(txtMetaDespesa, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
                     .addComponent(txtMesAtual)
                     .addComponent(txtOrcamento))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(txtOrcamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtMesAtual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -117,13 +132,10 @@ public class PainelStatusCenarios extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(txtMetaDespesa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(txtOrcamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

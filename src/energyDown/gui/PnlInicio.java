@@ -45,33 +45,31 @@ public class PnlInicio extends javax.swing.JPanel{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel_Logo = new javax.swing.JLabel();
-        jLabelTitulo = new javax.swing.JLabel();
         jButtonIniciar = new javax.swing.JButton();
+        jLabel_Background = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 204, 204));
-        setMinimumSize(new java.awt.Dimension(995, 412));
-        setPreferredSize(new java.awt.Dimension(995, 412));
+        setMinimumSize(new java.awt.Dimension(1005, 410));
+        setPreferredSize(new java.awt.Dimension(1005, 410));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel_Logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel_Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/energyDown/gui/energyDownLogo.jpg"))); // NOI18N
-        jLabel_Logo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        add(jLabel_Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 50, -1, -1));
-
-        jLabelTitulo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabelTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelTitulo.setText("Aprendendo Física através de um jogo para controle de consumo elétrico");
-        add(jLabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 670, 30));
-
         jButtonIniciar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButtonIniciar.setText("Iniciar");
+        jButtonIniciar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/energyDown/gui/imagens/energyDownIniciar+porta.png"))); // NOI18N
+        jButtonIniciar.setBorder(null);
+        jButtonIniciar.setBorderPainted(false);
+        jButtonIniciar.setContentAreaFilled(false);
+        jButtonIniciar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonIniciar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonIniciarActionPerformed(evt);
             }
         });
-        add(jButtonIniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 330, 130, 30));
+        add(jButtonIniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 200, 190));
+
+        jLabel_Background.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/energyDown/gui/imagens/energydownInicial.png"))); // NOI18N
+        jLabel_Background.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        add(jLabel_Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 410));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIniciarActionPerformed
@@ -85,8 +83,7 @@ public class PnlInicio extends javax.swing.JPanel{
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonIniciar;
-    private javax.swing.JLabel jLabelTitulo;
-    private javax.swing.JLabel jLabel_Logo;
+    private javax.swing.JLabel jLabel_Background;
     // End of variables declaration//GEN-END:variables
 
 }

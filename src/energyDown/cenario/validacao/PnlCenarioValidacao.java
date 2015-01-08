@@ -5,7 +5,6 @@
 package energyDown.cenario.validacao;
 
 import energyDown.gui.DialogEdicaoAparelho;
-import energyDown.gui.LabelAparelho;
 import energyDown.modelo.Cenario;
 import energyDown.modelo.unidade.Conforto;
 import energyDown.modelo.unidade.FimDeJogo;
@@ -102,15 +101,15 @@ public class PnlCenarioValidacao extends javax.swing.JPanel implements MouseList
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        labelAparelho1 = new energyDown.gui.LabelAparelho();
-        labelAparelho2 = new energyDown.gui.LabelAparelho();
-        labelAparelho3 = new energyDown.gui.LabelAparelho();
-        labelAparelho4 = new energyDown.gui.LabelAparelho();
-        labelAparelho5 = new energyDown.gui.LabelAparelho();
-        labelAparelho6 = new energyDown.gui.LabelAparelho();
-        labelAparelho7 = new energyDown.gui.LabelAparelho();
-        labelAparelho8 = new energyDown.gui.LabelAparelho();
-        labelAparelho9 = new energyDown.gui.LabelAparelho();
+        labelAparelho1 = new energyDown.cenario.validacao.LabelAparelho();
+        labelAparelho2 = new energyDown.cenario.validacao.LabelAparelho();
+        labelAparelho3 = new energyDown.cenario.validacao.LabelAparelho();
+        labelAparelho4 = new energyDown.cenario.validacao.LabelAparelho();
+        labelAparelho5 = new energyDown.cenario.validacao.LabelAparelho();
+        labelAparelho6 = new energyDown.cenario.validacao.LabelAparelho();
+        labelAparelho7 = new energyDown.cenario.validacao.LabelAparelho();
+        labelAparelho8 = new energyDown.cenario.validacao.LabelAparelho();
+        labelAparelho9 = new energyDown.cenario.validacao.LabelAparelho();
         painelStatusCenario1 = new energyDown.gui.PainelStatusCenarios();
         jButton1 = new javax.swing.JButton();
         lblRosto = new javax.swing.JLabel();
@@ -230,15 +229,15 @@ public class PnlCenarioValidacao extends javax.swing.JPanel implements MouseList
     }//GEN-LAST:event_jButton1ActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private energyDown.gui.LabelAparelho labelAparelho1;
-    private energyDown.gui.LabelAparelho labelAparelho2;
-    private energyDown.gui.LabelAparelho labelAparelho3;
-    private energyDown.gui.LabelAparelho labelAparelho4;
-    private energyDown.gui.LabelAparelho labelAparelho5;
-    private energyDown.gui.LabelAparelho labelAparelho6;
-    private energyDown.gui.LabelAparelho labelAparelho7;
-    private energyDown.gui.LabelAparelho labelAparelho8;
-    private energyDown.gui.LabelAparelho labelAparelho9;
+    private energyDown.cenario.validacao.LabelAparelho labelAparelho1;
+    private energyDown.cenario.validacao.LabelAparelho labelAparelho2;
+    private energyDown.cenario.validacao.LabelAparelho labelAparelho3;
+    private energyDown.cenario.validacao.LabelAparelho labelAparelho4;
+    private energyDown.cenario.validacao.LabelAparelho labelAparelho5;
+    private energyDown.cenario.validacao.LabelAparelho labelAparelho6;
+    private energyDown.cenario.validacao.LabelAparelho labelAparelho7;
+    private energyDown.cenario.validacao.LabelAparelho labelAparelho8;
+    private energyDown.cenario.validacao.LabelAparelho labelAparelho9;
     private javax.swing.JLabel lblRosto;
     private energyDown.gui.PainelStatusCenarios painelStatusCenario1;
     // End of variables declaration//GEN-END:variables
