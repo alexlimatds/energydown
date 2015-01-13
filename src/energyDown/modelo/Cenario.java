@@ -14,12 +14,11 @@ public class Cenario {
     private double metaDespesa;
     private MetaConforto metaConforto;
     private double valorKwh = 0.55;
-    private List<Double> historicoDespesa = new ArrayList<Double>();
-    private List<Double> historicoConsumo = new ArrayList<Double>();
+    private List<RegistroConsumo> historicoConsumo = new ArrayList<RegistroConsumo>();
     private List<Aparelho> aparelhosAtuais = new ArrayList<Aparelho>();
     private List<UsoAparelho> usoAparelhos = new ArrayList<UsoAparelho>();
     private List<Aparelho> aparelhosParaCompra = new ArrayList<Aparelho>();
-
+    
     /**
      *
      * @param orcamento
@@ -127,14 +126,11 @@ public class Cenario {
     }
 
     public void avancar() {
-
-        int indiceMesAtual = mesAtual - 1;
-
         double ultimoConsumo = calcularConsumoEmKWh();
-        historicoConsumo.add(indiceMesAtual, ultimoConsumo);
-
         double ultimaDespesa = calcularDespesa(ultimoConsumo);
-        historicoDespesa.add(indiceMesAtual, ultimaDespesa);
+        RegistroConsumo registro = new RegistroConsumo(mesAtual, ultimoConsumo, 
+                ultimaDespesa);
+        getHistoricoConsumo().add(registro);
 
         mesAtual++;
     }
@@ -200,14 +196,14 @@ public class Cenario {
             double consumo = getUltimoConsumo();
             return calcularDespesa(consumo);
         }
-        return historicoDespesa.get(mesAtual - 2);
+        return getHistoricoConsumo().get(mesAtual - 2).getConsumoEmReais();
     }
 
     public double getUltimoConsumo() {
         if (mesAtual == 1) {
             return calcularConsumoEmKWh();
         }
-        return historicoConsumo.get(mesAtual - 2);
+        return getHistoricoConsumo().get(mesAtual - 2).getConsumoEmKWh();
     }
 
     public int getUltimoMes() {
@@ -296,5 +292,12 @@ public class Cenario {
         }
         
         return encontrados;
+    }
+
+    /**
+     * @return the historicoConsumo
+     */
+    public List<RegistroConsumo> getHistoricoConsumo() {
+        return historicoConsumo;
     }
 }

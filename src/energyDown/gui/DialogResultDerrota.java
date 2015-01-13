@@ -158,6 +158,7 @@ public class DialogResultDerrota extends javax.swing.JDialog {
         rootContainer.add(pnl, BorderLayout.CENTER);
         rootContainer.revalidate();
         rootContainer.repaint();
+        this.dispose();
     }//GEN-LAST:event_btnSimActionPerformed
 
     /**

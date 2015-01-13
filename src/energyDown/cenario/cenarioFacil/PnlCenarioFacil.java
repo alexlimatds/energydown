@@ -25,7 +25,7 @@ public class PnlCenarioFacil extends javax.swing.JPanel {
     public PnlCenarioFacil(JPanel root) {
         iniciarInterface();
         initComponents();
-        pnlStatusCenario.setCenario(cenario);
+        pnlStatusCenario.setCenario(cenario, root);
         this.rootContainer = root;
         atualizarLabelRosto();   
     }

@@ -1,5 +1,6 @@
 package energyDown.cenario.cenarioFacil;
 
+import energyDown.gui.DialogHistorico;
 import energyDown.gui.DialogResultDerrota;
 import energyDown.gui.DialogResultVitoria;
 import energyDown.modelo.Cenario;
@@ -37,9 +38,10 @@ public class PnlStatusCenarioFacil extends javax.swing.JPanel {
         mapaConfortoIcone.put(Conforto.PESSIMO, imgPessimo);
     }
     
-    public void setCenario(Cenario cenario) {
+    public void setCenario(Cenario cenario, JPanel rootContainer) {
         this.cenario = cenario;
         painelStatusCenarios.setCenario(cenario);
+        this.rootContainer = rootContainer;
     }
        
     public void atualizar() { 
@@ -121,6 +123,11 @@ public class PnlStatusCenarioFacil extends javax.swing.JPanel {
         });
 
         botaoHistorico.setText("Histórico");
+        botaoHistorico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoHistoricoActionPerformed(evt);
+            }
+        });
 
         painelStatusCenarios.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -175,6 +182,11 @@ public class PnlStatusCenarioFacil extends javax.swing.JPanel {
         }
                   
     }//GEN-LAST:event_botaoAvancarActionPerformed
+
+    private void botaoHistoricoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoHistoricoActionPerformed
+        DialogHistorico dlg = new DialogHistorico(cenario);
+        dlg.setVisible(true);
+    }//GEN-LAST:event_botaoHistoricoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel IconRostoAlexandre;
