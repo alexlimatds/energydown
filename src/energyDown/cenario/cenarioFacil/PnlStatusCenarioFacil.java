@@ -185,6 +185,8 @@ public class PnlStatusCenarioFacil extends javax.swing.JPanel {
 
     private void botaoHistoricoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoHistoricoActionPerformed
         DialogHistorico dlg = new DialogHistorico(cenario);
+        dlg.setTitle("Visualização de Histórico");
+        dlg.setLocationRelativeTo(this.getRootPane());
         dlg.setVisible(true);
     }//GEN-LAST:event_botaoHistoricoActionPerformed
 

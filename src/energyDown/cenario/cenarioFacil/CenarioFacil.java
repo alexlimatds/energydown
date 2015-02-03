@@ -21,7 +21,7 @@ public class CenarioFacil {
         metaCenario.addPersonagem(personagem2);
         metaCenario.addPersonagem(personagem3);
         
-        Cenario cenarioFacil = new Cenario(1000, "CenarioFacil", 10, 300, metaCenario, 0.50);
+        Cenario cenarioFacil = new Cenario(1000, "CenarioFacil", 10, 400, metaCenario, 0.50);
 
        //Aparelhos da suíte casal
         

@@ -134,9 +134,9 @@ public class PnlCenarioFacil extends javax.swing.JPanel {
         });
         jPanel2.add(botao_banheiroSocial_, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 70, 120));
 
-        labelTitulol.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        labelTitulol.setFont(new java.awt.Font("Elephant", 1, 18)); // NOI18N
         labelTitulol.setText("EnergyDown - Cenário Fácil");
-        jPanel2.add(labelTitulol, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, -1, 30));
+        jPanel2.add(labelTitulol, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, -1, 30));
 
         jLabelCenarioIcon.setBackground(java.awt.Color.lightGray);
         jLabelCenarioIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/energyDown/gui/imagens/image_cenarioFacil.jpg"))); // NOI18N

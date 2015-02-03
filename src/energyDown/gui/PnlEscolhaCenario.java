@@ -54,7 +54,19 @@ public class PnlEscolhaCenario extends javax.swing.JPanel {
         jButton_Intermediario.setBorderPainted(false);
         jButton_Intermediario.setContentAreaFilled(false);
         jButton_Intermediario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_Intermediario.setOpaque(false);
+        jButton_Intermediario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton_IntermediarioMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton_IntermediarioMouseExited(evt);
+            }
+        });
+        jButton_Intermediario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_IntermediarioActionPerformed(evt);
+            }
+        });
         add(jButton_Intermediario, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 190, 191, 62));
 
         jButton_Avancado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/energyDown/gui/imagens/CenAvançadoLampadaApagada.png"))); // NOI18N
@@ -63,6 +75,19 @@ public class PnlEscolhaCenario extends javax.swing.JPanel {
         jButton_Avancado.setMaximumSize(new java.awt.Dimension(191, 63));
         jButton_Avancado.setMinimumSize(new java.awt.Dimension(191, 63));
         jButton_Avancado.setPreferredSize(new java.awt.Dimension(191, 63));
+        jButton_Avancado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton_AvancadoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton_AvancadoMouseExited(evt);
+            }
+        });
+        jButton_Avancado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_AvancadoActionPerformed(evt);
+            }
+        });
         add(jButton_Avancado, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 260, 191, 62));
 
         jLabel_Background.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -86,6 +111,30 @@ public class PnlEscolhaCenario extends javax.swing.JPanel {
     private void jButton_FacilMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_FacilMouseExited
         jButton_Facil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/energyDown/gui/imagens/CenFácilLampadaApagada.png")));
     }//GEN-LAST:event_jButton_FacilMouseExited
+
+    private void jButton_IntermediarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_IntermediarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton_IntermediarioActionPerformed
+
+    private void jButton_IntermediarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_IntermediarioMouseEntered
+        jButton_Intermediario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/energyDown/gui/imagens/CenIntermediárioLampadaAcesa.png")));
+    }//GEN-LAST:event_jButton_IntermediarioMouseEntered
+
+    private void jButton_IntermediarioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_IntermediarioMouseExited
+        jButton_Intermediario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/energyDown/gui/imagens/CenIntermediárioLampadaApagada.png")));
+    }//GEN-LAST:event_jButton_IntermediarioMouseExited
+
+    private void jButton_AvancadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_AvancadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton_AvancadoActionPerformed
+
+    private void jButton_AvancadoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_AvancadoMouseEntered
+        jButton_Avancado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/energyDown/gui/imagens/CenAvançadoLampadaAcesa.png")));
+    }//GEN-LAST:event_jButton_AvancadoMouseEntered
+
+    private void jButton_AvancadoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_AvancadoMouseExited
+        jButton_Avancado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/energyDown/gui/imagens/CenAvançadoLampadaApagada.png")));
+    }//GEN-LAST:event_jButton_AvancadoMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
