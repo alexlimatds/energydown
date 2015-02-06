@@ -1,10 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package energyDown.gui;
 
-import energyDown.cenario.cenarioFacil.CenarioFacil;
 import energyDown.cenario.cenarioFacil.PnlCenarioFacil;
 import energyDown.modelo.Cenario;
 import java.awt.BorderLayout;
@@ -65,7 +60,6 @@ public class DialogResultDerrota extends javax.swing.JDialog {
         jLabelResultado.setFont(new java.awt.Font("Elephant", 0, 18)); // NOI18N
         jLabelResultado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelResultado.setText("resultado");
-        jLabelResultado.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jLabelResultado.setOpaque(true);
 
         btnNão.setFont(new java.awt.Font("Elephant", 0, 14)); // NOI18N
@@ -157,7 +151,12 @@ public class DialogResultDerrota extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnNãoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNãoActionPerformed
-        System.exit(0);       
+        PnlInicio pnl = new PnlInicio(rootContainer);
+        rootContainer.removeAll();
+        rootContainer.add(pnl, BorderLayout.CENTER);
+        rootContainer.revalidate();
+        rootContainer.repaint();
+        this.dispose();
     }//GEN-LAST:event_btnNãoActionPerformed
 
     private void btnSimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimActionPerformed

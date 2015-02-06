@@ -18,13 +18,13 @@ public class PersonagemAlexandre extends Personagem {
     @Override
     public Conforto calcular(List<UsoAparelho> aparelhosCenario) {
         for (UsoAparelho a : aparelhosCenario) {
-            if ("TV 21\"".equals(a.getDescricao())) {
+            if ("TV 32\"".equals(a.getDescricao())) {
                 double tempoEmHorasNoMes = a.getUnidadeDeTempo().getFatorConversao() * a.getTempoUso();
                 if (tempoEmHorasNoMes > (60.0 * 30.0 / 60.0)) {
-                    //se tempo de uso maior que 60 min/dia
+                    //se tempo de uso maior que 180 min/dia
                     return Conforto.OTIMO;
                 } else if (tempoEmHorasNoMes > (30.0 * 30.0 / 60.0)) {
-                    //se tempo de uso maior que 30 min/dia
+                    //se tempo de uso maior que 100 min/dia
                     return Conforto.BOM;
                 }
                 return Conforto.PESSIMO;

@@ -9,7 +9,6 @@ import energyDown.modelo.unidade.FimDeJogo;
 import java.text.DecimalFormat; 
 import java.util.HashMap;
 import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -168,7 +167,7 @@ public class PnlStatusCenarioFacil extends javax.swing.JPanel {
         
         if(cenario.getFimDeJogo() == FimDeJogo.METAS_ATINGIDAS){
             
-            DialogResultVitoria dialog = new DialogResultVitoria(cenario);
+            DialogResultVitoria dialog = new DialogResultVitoria(cenario, rootContainer);
             dialog.setTitle("Venceu!!!");
             dialog.setLocationRelativeTo(this.getRootPane());
             dialog.setVisible(true);       

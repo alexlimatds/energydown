@@ -1,6 +1,7 @@
 package energyDown.gui;
 
 import energyDown.cenario.cenarioFacil.PnlCenarioFacil;
+import energyDown.cenario.cenarioIntermediario.PnlCenarioIntermediario;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
 /**
@@ -113,7 +114,11 @@ public class PnlEscolhaCenario extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton_FacilMouseExited
 
     private void jButton_IntermediarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_IntermediarioActionPerformed
-        // TODO add your handling code here:
+        PnlCenarioIntermediario pnl = new PnlCenarioIntermediario(rootContainer);
+        rootContainer.removeAll();
+        rootContainer.add(pnl, BorderLayout.CENTER);
+        rootContainer.revalidate();
+        rootContainer.repaint();
     }//GEN-LAST:event_jButton_IntermediarioActionPerformed
 
     private void jButton_IntermediarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_IntermediarioMouseEntered

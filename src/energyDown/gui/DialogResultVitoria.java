@@ -1,12 +1,10 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package energyDown.gui;
 
-import energyDown.cenario.cenarioFacil.CenarioFacil;
+import energyDown.cenario.cenarioIntermediario.PnlCenarioIntermediario;
 import energyDown.modelo.Cenario;
+import java.awt.BorderLayout;
 import java.text.DecimalFormat;
+import javax.swing.JPanel;
 
 /**
  *
@@ -16,21 +14,21 @@ public class DialogResultVitoria extends javax.swing.JDialog {
 
     private Cenario cenario;
     private DecimalFormat fmt = new DecimalFormat("#,##0.00");
+    private JPanel rootContainer;
 
     /**
      * Creates new form DialogEdicaoAparelho
      */
-    public DialogResultVitoria(Cenario cenario) {
+    public DialogResultVitoria(Cenario cenario, JPanel rootPanel) {
         super();
         this.cenario = cenario;
+        this.rootContainer = rootPanel;
         initComponents();
                       
         jLabelResultado.setText("Parabéns! Você atingiu as metas! :D\n");
         jLabelMetaDespesa.setText("Meta de despesa do Cenário =  R$ " + fmt.format(cenario.getMetaDespesa()));
         jLabelUltimaDespesa.setText("Despesa atual do Cenário = R$ " + fmt.format(cenario.getUltimaDespesa()) );
         jLabelConsumo.setText("Consumo atual do Cenário =  " + fmt.format(cenario.calcularConsumoEmKWh()) + " KWh.\n");
-            
-        CenarioFacil.getCenario();                       
     }
     
         
@@ -158,7 +156,13 @@ public class DialogResultVitoria extends javax.swing.JDialog {
     }//GEN-LAST:event_btnNãoActionPerformed
 
     private void btnSimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimActionPerformed
-        
+       
+        PnlCenarioIntermediario pnl = new PnlCenarioIntermediario(rootContainer);
+        rootContainer.removeAll();
+        rootContainer.add(pnl, BorderLayout.CENTER);
+        rootContainer.revalidate();
+        rootContainer.repaint();
+        this.dispose();
     }//GEN-LAST:event_btnSimActionPerformed
 
     /**
