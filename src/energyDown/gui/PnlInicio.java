@@ -1,10 +1,6 @@
 package energyDown.gui;
 
 import java.awt.BorderLayout;
-import java.awt.Container;
-import java.awt.Frame;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;

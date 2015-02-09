@@ -4,10 +4,6 @@ import energyDown.modelo.UsoAparelho;
 import energyDown.modelo.unidade.Tempo;
 import java.util.Arrays;
 import java.util.List;
-import javax.swing.JOptionPane;
-//import java.util.Collection;
-//import java.util.Collections;
-//import energyDown.cenario.cenarioFacil.CenarioFacil;
 
 /**
  *

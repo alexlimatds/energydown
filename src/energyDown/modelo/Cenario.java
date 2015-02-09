@@ -7,8 +7,8 @@ import java.util.List;
 
 public class Cenario {
 
-    private double orcamento;
     private String descricao;
+    private double orcamento;
     private int prazo;
     private int mesAtual;
     private double metaDespesa;
