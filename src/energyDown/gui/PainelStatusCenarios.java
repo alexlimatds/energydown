@@ -28,16 +28,16 @@ public class PainelStatusCenarios extends javax.swing.JPanel {
         
         if (cenario.getMesAtual() == 11){
             txtMesAtual.setText("10");
-            txtConsumoAtual.setText(fmt.format(cenario.getUltimoConsumo()));
-            txtDespesaAtual.setText(fmt.format(cenario.getUltimaDespesa()));
-            txtMetaDespesa.setText(fmt.format(cenario.getMetaDespesa()));
-            txtOrcamento.setText(fmt.format(cenario.getOrcamento()));
+            txtConsumoAtual.setText(fmt.format(cenario.getUltimoConsumo())+ " Kwh");
+            txtDespesaAtual.setText("R$ " + fmt.format(cenario.getUltimaDespesa()));
+            txtMetaDespesa.setText("R$ " + fmt.format(cenario.getMetaDespesa()));
+            txtOrcamento.setText("R$ " + fmt.format(cenario.getOrcamento()));
         }else{
             txtMesAtual.setText(String.valueOf(cenario.getMesAtual()));
-            txtConsumoAtual.setText(fmt.format(cenario.getUltimoConsumo()));
-            txtDespesaAtual.setText(fmt.format(cenario.getUltimaDespesa()));
-            txtMetaDespesa.setText(fmt.format(cenario.getMetaDespesa()));
-            txtOrcamento.setText(fmt.format(cenario.getOrcamento()));
+            txtConsumoAtual.setText( fmt.format(cenario.getUltimoConsumo()) + " Kwh");
+            txtDespesaAtual.setText("R$ " + fmt.format(cenario.getUltimaDespesa()));
+            txtMetaDespesa.setText("R$ " + fmt.format(cenario.getMetaDespesa()));
+            txtOrcamento.setText("R$ " + fmt.format(cenario.getOrcamento()));
         }       
     }
 
@@ -63,27 +63,31 @@ public class PainelStatusCenarios extends javax.swing.JPanel {
 
         jLabel1.setText("Mês atual");
 
-        jLabel2.setText("Consumo Atual (KWh)");
+        jLabel2.setText("Consumo Atual ");
 
-        jLabel3.setText("Despesa Atual (R$)");
+        jLabel3.setForeground(new java.awt.Color(255, 0, 51));
+        jLabel3.setText("Despesa Atual ");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel4.setText("Meta Despesa (R$)");
+        jLabel4.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel4.setText("Meta Despesa");
 
         txtConsumoAtual.setEditable(false);
         txtConsumoAtual.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
 
         txtDespesaAtual.setEditable(false);
+        txtDespesaAtual.setForeground(new java.awt.Color(255, 0, 0));
         txtDespesaAtual.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
 
         txtMetaDespesa.setEditable(false);
         txtMetaDespesa.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        txtMetaDespesa.setForeground(new java.awt.Color(0, 0, 255));
         txtMetaDespesa.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
 
         txtMesAtual.setEditable(false);
         txtMesAtual.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
 
-        jLabel5.setText("Orçamento (R$)");
+        jLabel5.setText("Orçamento");
 
         txtOrcamento.setEditable(false);
         txtOrcamento.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
@@ -107,7 +111,7 @@ public class PainelStatusCenarios extends javax.swing.JPanel {
                     .addComponent(txtMetaDespesa, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
                     .addComponent(txtMesAtual)
                     .addComponent(txtOrcamento))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,16 +126,16 @@ public class PainelStatusCenarios extends javax.swing.JPanel {
                     .addComponent(txtMesAtual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtConsumoAtual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txtDespesaAtual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(txtMetaDespesa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txtConsumoAtual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents

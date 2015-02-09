@@ -1,5 +1,6 @@
 package energyDown.gui;
 
+import energyDown.cenario.cenarioAvancado.PnlCenarioAvancado;
 import energyDown.cenario.cenarioFacil.PnlCenarioFacil;
 import energyDown.cenario.cenarioIntermediario.PnlCenarioIntermediario;
 import java.awt.BorderLayout;
@@ -73,6 +74,7 @@ public class PnlEscolhaCenario extends javax.swing.JPanel {
         jButton_Avancado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/energyDown/gui/imagens/CenAvançadoLampadaApagada.png"))); // NOI18N
         jButton_Avancado.setBorderPainted(false);
         jButton_Avancado.setContentAreaFilled(false);
+        jButton_Avancado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Avancado.setMaximumSize(new java.awt.Dimension(191, 63));
         jButton_Avancado.setMinimumSize(new java.awt.Dimension(191, 63));
         jButton_Avancado.setPreferredSize(new java.awt.Dimension(191, 63));
@@ -130,7 +132,11 @@ public class PnlEscolhaCenario extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton_IntermediarioMouseExited
 
     private void jButton_AvancadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_AvancadoActionPerformed
-        // TODO add your handling code here:
+        PnlCenarioAvancado pnl = new PnlCenarioAvancado(rootContainer);
+        rootContainer.removeAll();
+        rootContainer.add(pnl, BorderLayout.CENTER);
+        rootContainer.revalidate();
+        rootContainer.repaint();
     }//GEN-LAST:event_jButton_AvancadoActionPerformed
 
     private void jButton_AvancadoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_AvancadoMouseEntered
