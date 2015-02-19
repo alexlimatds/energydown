@@ -61,6 +61,8 @@ public class DialogEdicaoAparelho extends javax.swing.JDialog {
 
         cbxUnidadeTempo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        spnTempoUso.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(0), Integer.valueOf(0), null, Integer.valueOf(1)));
+
         txtPotencia.setEditable(false);
         txtPotencia.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
 
