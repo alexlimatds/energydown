@@ -57,12 +57,12 @@ public class DialogResultDerrota extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabelResultado.setFont(new java.awt.Font("Elephant", 0, 18)); // NOI18N
+        jLabelResultado.setFont(new java.awt.Font("ChunkFive Ex", 0, 18)); // NOI18N
         jLabelResultado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelResultado.setText("resultado");
         jLabelResultado.setOpaque(true);
 
-        btnNão.setFont(new java.awt.Font("Elephant", 0, 14)); // NOI18N
+        btnNão.setFont(new java.awt.Font("ChunkFive Ex", 0, 18)); // NOI18N
         btnNão.setText("Não");
         btnNão.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,7 +70,7 @@ public class DialogResultDerrota extends javax.swing.JDialog {
             }
         });
 
-        btnSim.setFont(new java.awt.Font("Elephant", 0, 14)); // NOI18N
+        btnSim.setFont(new java.awt.Font("ChunkFive Ex", 0, 18)); // NOI18N
         btnSim.setText("Sim");
         btnSim.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,16 +78,16 @@ public class DialogResultDerrota extends javax.swing.JDialog {
             }
         });
 
-        jLabelMetaDespesa.setFont(new java.awt.Font("Elephant", 0, 14)); // NOI18N
+        jLabelMetaDespesa.setFont(new java.awt.Font("ChunkFive Ex", 0, 18)); // NOI18N
         jLabelMetaDespesa.setText("meta");
 
-        jLabelUltimaDespesa.setFont(new java.awt.Font("Elephant", 0, 14)); // NOI18N
+        jLabelUltimaDespesa.setFont(new java.awt.Font("ChunkFive Ex", 0, 18)); // NOI18N
         jLabelUltimaDespesa.setText("despesa");
 
-        jLabelConsumo.setFont(new java.awt.Font("Elephant", 0, 14)); // NOI18N
+        jLabelConsumo.setFont(new java.awt.Font("ChunkFive Ex", 0, 18)); // NOI18N
         jLabelConsumo.setText("consumo");
 
-        jLabelMensagem.setFont(new java.awt.Font("Elephant", 0, 14)); // NOI18N
+        jLabelMensagem.setFont(new java.awt.Font("ChunkFive Ex", 0, 18)); // NOI18N
         jLabelMensagem.setText("Quer tentar novamente?");
 
         jLabelLampada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/energyDown/gui/imagens/LampadaApagada-GameOver.png"))); // NOI18N
@@ -113,13 +113,13 @@ public class DialogResultDerrota extends javax.swing.JDialog {
                         .addGap(0, 33, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(105, 105, 105)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnSim, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnNão, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnNão))
                             .addComponent(jLabelMensagem))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(133, 133, 133))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)

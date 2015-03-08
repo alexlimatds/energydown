@@ -1,7 +1,7 @@
 package energyDown.gui;
 
 import energyDown.cenario.cenarioAvancado.PnlCenarioAvancado;
-import energyDown.cenario.cenarioFacil.PnlCenarioFacil;
+import energyDown.cenario.cenarioFacil.PnlRegrasCenarioFacil;
 import energyDown.cenario.cenarioIntermediario.PnlCenarioIntermediario;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
@@ -100,7 +100,7 @@ public class PnlEscolhaCenario extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton_FacilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_FacilActionPerformed
-        PnlCenarioFacil pnl = new PnlCenarioFacil(rootContainer);
+        PnlRegrasCenarioFacil pnl = new PnlRegrasCenarioFacil(rootContainer);
         rootContainer.removeAll();
         rootContainer.add(pnl, BorderLayout.CENTER);
         rootContainer.revalidate();

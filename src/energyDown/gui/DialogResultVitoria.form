@@ -104,7 +104,7 @@
     <Component class="javax.swing.JLabel" name="jLabelResultado">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Elephant" size="16" style="0"/>
+          <Font name="ChunkFive Ex" size="16" style="0"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="resultado"/>
@@ -114,7 +114,7 @@
     <Component class="javax.swing.JButton" name="btnN&#xe3;o">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Elephant" size="14" style="0"/>
+          <Font name="ChunkFive Ex" size="16" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="N&#xe3;o"/>
       </Properties>
@@ -125,7 +125,7 @@
     <Component class="javax.swing.JButton" name="btnSim">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Elephant" size="14" style="0"/>
+          <Font name="ChunkFive Ex" size="16" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Sim"/>
       </Properties>
@@ -136,7 +136,7 @@
     <Component class="javax.swing.JLabel" name="jLabelMetaDespesa">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Elephant" size="14" style="0"/>
+          <Font name="ChunkFive Ex" size="16" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="meta"/>
       </Properties>
@@ -144,7 +144,7 @@
     <Component class="javax.swing.JLabel" name="jLabelUltimaDespesa">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Elephant" size="14" style="0"/>
+          <Font name="ChunkFive Ex" size="16" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="despesa"/>
       </Properties>
@@ -152,7 +152,7 @@
     <Component class="javax.swing.JLabel" name="jLabelConsumo">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Elephant" size="14" style="0"/>
+          <Font name="ChunkFive Ex" size="16" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="consumo"/>
       </Properties>
@@ -160,7 +160,7 @@
     <Component class="javax.swing.JLabel" name="jLabelMensagem">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Elephant" size="14" style="0"/>
+          <Font name="ChunkFive Ex" size="16" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Quer tentar o pr&#xf3;ximo cen&#xe1;rio?"/>
       </Properties>

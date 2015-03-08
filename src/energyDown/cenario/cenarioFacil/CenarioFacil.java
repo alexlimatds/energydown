@@ -26,13 +26,13 @@ public class CenarioFacil {
        //Aparelhos da suíte 
         
         cenarioFacil.addUsoAparelho(new UsoAparelho(1125, "Ar Condicionado - Janela 12.000btus", 1000, 
-                8, Tempo.HORAS_DIA, "quarto_casal"));
+                7, Tempo.HORAS_DIA, "quarto_casal"));
         cenarioFacil.addUsoAparelho(new UsoAparelho(140, "TV 32\"",780, 
                 4, Tempo.HORAS_DIA, "quarto_casal"));
         cenarioFacil.addUsoAparelho(new UsoAparelho(60, "Lâmpada Fluorescente", 7,
                 4, Tempo.HORAS_DIA, "quarto_casal"));
         cenarioFacil.addUsoAparelho(new UsoAparelho(90, "Abajur", 60,
-                2, Tempo.HORAS_DIA, "quarto_casal"));
+                1, Tempo.HORAS_DIA, "quarto_casal"));
         cenarioFacil.addUsoAparelho(new UsoAparelho(8, "Carregador de Bateria Celular", 5,
                 4, Tempo.HORAS_DIA, "quarto_casal"));
         cenarioFacil.addUsoAparelho(new UsoAparelho(4, "Rádio relógio", 59,

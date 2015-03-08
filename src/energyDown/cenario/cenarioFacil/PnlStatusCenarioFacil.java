@@ -70,10 +70,13 @@ public class PnlStatusCenarioFacil extends javax.swing.JPanel {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        labelAna.setFont(new java.awt.Font("ChunkFive Ex", 0, 12)); // NOI18N
         labelAna.setText("Ana");
 
+        labelRafael.setFont(new java.awt.Font("ChunkFive Ex", 0, 12)); // NOI18N
         labelRafael.setText("Rafael");
 
+        labelAlexandre.setFont(new java.awt.Font("ChunkFive Ex", 0, 12)); // NOI18N
         labelAlexandre.setText("Alexandre");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -114,6 +117,7 @@ public class PnlStatusCenarioFacil extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
+        botaoAvancar.setFont(new java.awt.Font("ChunkFive Ex", 0, 11)); // NOI18N
         botaoAvancar.setText("Avançar");
         botaoAvancar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,6 +125,7 @@ public class PnlStatusCenarioFacil extends javax.swing.JPanel {
             }
         });
 
+        botaoHistorico.setFont(new java.awt.Font("ChunkFive Ex", 0, 11)); // NOI18N
         botaoHistorico.setText("Histórico");
         botaoHistorico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

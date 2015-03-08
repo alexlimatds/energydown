@@ -134,15 +134,15 @@ public class PnlCenarioFacil extends javax.swing.JPanel {
         });
         jPanel2.add(botao_banheiroSocial_, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 70, 120));
 
-        labelTitulol.setFont(new java.awt.Font("Elephant", 1, 18)); // NOI18N
+        labelTitulol.setFont(new java.awt.Font("ChunkFive Ex", 0, 18)); // NOI18N
         labelTitulol.setText("EnergyDown - Cenário Fácil");
-        jPanel2.add(labelTitulol, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, -1, 30));
+        jPanel2.add(labelTitulol, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, 300, 30));
 
         jLabelCenarioIcon.setBackground(java.awt.Color.lightGray);
         jLabelCenarioIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/energyDown/gui/imagens/image_cenarioFacil.jpg"))); // NOI18N
         jLabelCenarioIcon.setText("EnergyDown");
         jLabelCenarioIcon.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel2.add(jLabelCenarioIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 20, 710, 360));
+        jPanel2.add(jLabelCenarioIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 710, 390));
 
         pnlStatusCenario.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -164,7 +164,7 @@ public class PnlCenarioFacil extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pnlStatusCenario, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

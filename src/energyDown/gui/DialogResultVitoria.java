@@ -53,12 +53,12 @@ public class DialogResultVitoria extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabelResultado.setFont(new java.awt.Font("Elephant", 0, 16)); // NOI18N
+        jLabelResultado.setFont(new java.awt.Font("ChunkFive Ex", 0, 16)); // NOI18N
         jLabelResultado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelResultado.setText("resultado");
         jLabelResultado.setOpaque(true);
 
-        btnNão.setFont(new java.awt.Font("Elephant", 0, 14)); // NOI18N
+        btnNão.setFont(new java.awt.Font("ChunkFive Ex", 0, 16)); // NOI18N
         btnNão.setText("Não");
         btnNão.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,7 +66,7 @@ public class DialogResultVitoria extends javax.swing.JDialog {
             }
         });
 
-        btnSim.setFont(new java.awt.Font("Elephant", 0, 14)); // NOI18N
+        btnSim.setFont(new java.awt.Font("ChunkFive Ex", 0, 16)); // NOI18N
         btnSim.setText("Sim");
         btnSim.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,16 +74,16 @@ public class DialogResultVitoria extends javax.swing.JDialog {
             }
         });
 
-        jLabelMetaDespesa.setFont(new java.awt.Font("Elephant", 0, 14)); // NOI18N
+        jLabelMetaDespesa.setFont(new java.awt.Font("ChunkFive Ex", 0, 16)); // NOI18N
         jLabelMetaDespesa.setText("meta");
 
-        jLabelUltimaDespesa.setFont(new java.awt.Font("Elephant", 0, 14)); // NOI18N
+        jLabelUltimaDespesa.setFont(new java.awt.Font("ChunkFive Ex", 0, 16)); // NOI18N
         jLabelUltimaDespesa.setText("despesa");
 
-        jLabelConsumo.setFont(new java.awt.Font("Elephant", 0, 14)); // NOI18N
+        jLabelConsumo.setFont(new java.awt.Font("ChunkFive Ex", 0, 16)); // NOI18N
         jLabelConsumo.setText("consumo");
 
-        jLabelMensagem.setFont(new java.awt.Font("Elephant", 0, 14)); // NOI18N
+        jLabelMensagem.setFont(new java.awt.Font("ChunkFive Ex", 0, 16)); // NOI18N
         jLabelMensagem.setText("Quer tentar o próximo cenário?");
 
         jLabelLampada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/energyDown/gui/imagens/LampadaAcesa-Winner.png"))); // NOI18N

@@ -60,6 +60,7 @@ public class DialogEdicaoAparelhosComodo extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        tabelaAparelhosComodo.setFont(new java.awt.Font("ChunkFive Ex", 0, 11)); // NOI18N
         tabelaAparelhosComodo.setColumnSelectionAllowed(true);
 
         org.jdesktop.beansbinding.ELProperty eLProperty = org.jdesktop.beansbinding.ELProperty.create("${model.usoAparelhosVisualizados}");
@@ -81,12 +82,16 @@ public class DialogEdicaoAparelhosComodo extends javax.swing.JDialog {
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${model.usoAparelhoSelecionado.descricao}"), labelDescricao, org.jdesktop.beansbinding.BeanProperty.create("text"));
         bindingGroup.addBinding(binding);
 
+        labelPotencia.setFont(new java.awt.Font("ChunkFive Ex", 0, 12)); // NOI18N
         labelPotencia.setText("Potência (W)");
 
+        labelTempoUso.setFont(new java.awt.Font("ChunkFive Ex", 0, 12)); // NOI18N
         labelTempoUso.setText("Tempo de uso");
 
+        labelUnidadeTempo.setFont(new java.awt.Font("ChunkFive Ex", 0, 12)); // NOI18N
         labelUnidadeTempo.setText("Unidade de tempo");
 
+        cbxUnidadeTempo.setFont(new java.awt.Font("ChunkFive Ex", 0, 11)); // NOI18N
         cbxUnidadeTempo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "HORAS/DIA" }));
 
         eLProperty = org.jdesktop.beansbinding.ELProperty.create("${unidadesDeTempo}");
@@ -95,6 +100,7 @@ public class DialogEdicaoAparelhosComodo extends javax.swing.JDialog {
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${model.usoAparelhoSelecionado.unidadeDeTempo}"), cbxUnidadeTempo, org.jdesktop.beansbinding.BeanProperty.create("selectedItem"));
         bindingGroup.addBinding(binding);
 
+        spnTempoUso.setFont(new java.awt.Font("ChunkFive Ex", 0, 11)); // NOI18N
         spnTempoUso.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(0), Integer.valueOf(0), null, Integer.valueOf(1)));
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${model.usoAparelhoSelecionado.tempoUso}"), spnTempoUso, org.jdesktop.beansbinding.BeanProperty.create("value"));
@@ -103,11 +109,13 @@ public class DialogEdicaoAparelhosComodo extends javax.swing.JDialog {
         bindingGroup.addBinding(binding);
 
         txtPotencia.setEditable(false);
+        txtPotencia.setFont(new java.awt.Font("ChunkFive Ex", 0, 11)); // NOI18N
         txtPotencia.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${model.usoAparelhoSelecionado.potencia}"), txtPotencia, org.jdesktop.beansbinding.BeanProperty.create("text"));
         bindingGroup.addBinding(binding);
 
+        jButton1.setFont(new java.awt.Font("ChunkFive Ex", 0, 12)); // NOI18N
         jButton1.setText("Fechar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -163,7 +171,7 @@ public class DialogEdicaoAparelhosComodo extends javax.swing.JDialog {
                 .addContainerGap())
         );
 
-        jLabel1.setFont(new java.awt.Font("Elephant", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("ChunkFive Ex", 0, 18)); // NOI18N
         jLabel1.setText("Selecione o aparelho e realize a alteração desejada!");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

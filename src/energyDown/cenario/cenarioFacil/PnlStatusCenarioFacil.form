@@ -109,16 +109,25 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="labelAna">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="ChunkFive Ex" size="12" style="0"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Ana"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="labelRafael">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="ChunkFive Ex" size="12" style="0"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Rafael"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="labelAlexandre">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="ChunkFive Ex" size="12" style="0"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Alexandre"/>
           </Properties>
         </Component>
@@ -132,6 +141,9 @@
     </Container>
     <Component class="javax.swing.JButton" name="botaoAvancar">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="ChunkFive Ex" size="11" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Avan&#xe7;ar"/>
       </Properties>
       <Events>
@@ -140,6 +152,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="botaoHistorico">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="ChunkFive Ex" size="11" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Hist&#xf3;rico"/>
       </Properties>
       <Events>

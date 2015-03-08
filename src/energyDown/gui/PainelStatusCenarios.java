@@ -61,35 +61,43 @@ public class PainelStatusCenarios extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         txtOrcamento = new javax.swing.JTextField();
 
+        jLabel1.setFont(new java.awt.Font("ChunkFive Ex", 0, 11)); // NOI18N
         jLabel1.setText("Mês atual");
 
+        jLabel2.setFont(new java.awt.Font("ChunkFive Ex", 0, 11)); // NOI18N
         jLabel2.setText("Consumo Atual ");
 
+        jLabel3.setFont(new java.awt.Font("ChunkFive Ex", 0, 11)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 0, 51));
         jLabel3.setText("Despesa Atual ");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("ChunkFive Ex", 0, 11)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 255));
         jLabel4.setText("Meta Despesa");
 
         txtConsumoAtual.setEditable(false);
+        txtConsumoAtual.setFont(new java.awt.Font("ChunkFive Ex", 0, 10)); // NOI18N
         txtConsumoAtual.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
 
         txtDespesaAtual.setEditable(false);
+        txtDespesaAtual.setFont(new java.awt.Font("ChunkFive Ex", 0, 10)); // NOI18N
         txtDespesaAtual.setForeground(new java.awt.Color(255, 0, 0));
         txtDespesaAtual.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
 
         txtMetaDespesa.setEditable(false);
-        txtMetaDespesa.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        txtMetaDespesa.setFont(new java.awt.Font("ChunkFive Ex", 0, 10)); // NOI18N
         txtMetaDespesa.setForeground(new java.awt.Color(0, 0, 255));
         txtMetaDespesa.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
 
         txtMesAtual.setEditable(false);
+        txtMesAtual.setFont(new java.awt.Font("ChunkFive Ex", 0, 10)); // NOI18N
         txtMesAtual.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
 
+        jLabel5.setFont(new java.awt.Font("ChunkFive Ex", 0, 11)); // NOI18N
         jLabel5.setText("Orçamento");
 
         txtOrcamento.setEditable(false);
+        txtOrcamento.setFont(new java.awt.Font("ChunkFive Ex", 0, 10)); // NOI18N
         txtOrcamento.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -111,7 +119,7 @@ public class PainelStatusCenarios extends javax.swing.JPanel {
                     .addComponent(txtMetaDespesa, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
                     .addComponent(txtMesAtual)
                     .addComponent(txtOrcamento))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
